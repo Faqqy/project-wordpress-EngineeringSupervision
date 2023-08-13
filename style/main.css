@@ -1,0 +1,29 @@
+/* vars edit bootstrap */
+
+@media (min-width: 360px) {
+    .container-sm, .container {
+      max-width: 360px;
+    }
+  }
+@media (min-width: 768px) {
+    .container-md, .container-sm, .container {
+      max-width: 768px;
+    }
+  }
+@media (min-width: 1000px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1000px;
+    }
+  }
+@media (min-width: 1600px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1600px;
+    }
+  }
+
+/* vars edit bootstrap end*/
+
+
+.container {
+    background-color: red;
+}
