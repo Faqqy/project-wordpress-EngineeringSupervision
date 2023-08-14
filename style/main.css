@@ -144,6 +144,30 @@ body {
   margin: auto;
 }
 
+.button_menu {
+  background-color: var(--accent);
+  color: #000;
+  padding: 12px 22px;
+  border-radius: 10px;
+  display: flex;
+  font-size: 20px;
+  margin: auto;
+}
+
+.button-mini_menu {
+  background-color: var(--accent);
+  color: #000;
+  padding: 12px 22px;
+  border-radius: 10px;
+  display: flex;
+  font-size: 20px;
+  margin: auto;
+}
+
+.button-mini_menu {
+  display: none;
+}
+
 /* end header styles */
 
 /* section banner */
@@ -206,6 +230,10 @@ body {
   display: none;
 }
 
+.button_menu {
+  display: none;
+}
+
 /* end section banner */
 
 /* media header and banner */
@@ -217,6 +245,50 @@ body {
 
   .big_menu {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .switch_menu {
+    display: none;
+  }
+
+  .big_menu {
+    display: none;
+  }
+
+  .button_menu {
+    display: flex;
+  }
+
+  .button_contact-us {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .switch_menu {
+    display: none;
+  }
+
+  .big_menu {
+    display: none;
+  }
+
+  .button_menu {
+    display: none;
+  }
+
+  .button_contact-us {
+    display: none;
+  }
+
+  .logo_header span {
+    display: none;
+  }
+
+  .button-mini_menu {
+    display: flex;
   }
 }
 
