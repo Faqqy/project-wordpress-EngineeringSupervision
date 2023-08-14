@@ -2,20 +2,20 @@
 
 @media (min-width: 360px) {
     .container-sm, .container {
-      max-width: 360px;
+      max-width: 768px;
     }
   }
 @media (min-width: 768px) {
     .container-md, .container-sm, .container {
-      max-width: 768px;
+      max-width: 1000px;
     }
   }
 @media (min-width: 1000px) {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
-      max-width: 1000px;
+      max-width: 1600px;
     }
   }
-@media (min-width: 1600px) {
+@media (min-width: 1140px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
       max-width: 1600px;
     }
@@ -23,7 +23,201 @@
 
 /* vars edit bootstrap end*/
 
+/* fonts */
 
-.container {
-    background-color: red;
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url('../fonts/gilroy/Gilroy-Regular.woff') format('woff')
 }
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url('../fonts/gilroy/Gilroy-Medium.woff') format('woff')
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url('../fonts/gilroy/Gilroy-Bold.woff') format('woff')
+}
+
+/* end fonts */
+
+/* root */
+
+:root {
+  --accent: #FFEB39;
+  --main: #1B1B1B;
+  --text_color: #FFF;
+}
+
+/* end root */
+
+/* reset style */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+}
+
+&::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* end reset style */
+
+body {
+  font-family: "Gilroy-Regular";
+  background: var(--main);
+  overflow-x: hidden;
+}
+
+/* header styles */
+
+.main-header {
+  height: 103px;
+  font-family: "Gilroy-Bold";
+}
+
+.top_line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 103px;
+}
+
+.logo_header span {
+  color: var(--accent);
+  font-size: 32px;
+  vertical-align: middle;
+  padding-left: 14px;
+}
+
+.menu_header {
+  color: var(--text_color);
+  display: flex;
+}
+
+.menu_header li {
+  display: inline-block;
+  padding-right: 46px;
+}
+
+.menu_header li:last-child {
+  padding-right: 26px;
+}
+
+.menu_header li a {
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--text_color);
+}
+
+.button_contact-us {
+  background-color: var(--accent);
+  color: #000;
+  padding: 12px 22px;
+  border-radius: 10px;
+  display: flex;
+  font-size: 20px;
+  margin: auto;
+}
+
+/* end header styles */
+
+/* section banner */
+.top_banner {
+  height: 921px;
+  width: 100%;
+  position: relative;
+}
+
+.section_banner {
+  height: 921px;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), url(../img/top-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title_page {
+  height: 100%;
+  color: var(--text_color);
+  width: 818px;
+  margin-top: 404px;
+}
+
+.title_page .line {
+  background: var(--accent);
+  display: block;
+  height: 4px;
+  width: 100%;
+}
+
+.title_page h1 {
+  font-family: "Gilroy-Bold";
+  font-size: 48px;
+  line-height: 63px;
+}
+
+.title_page p {
+  font-size: 20px;
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+
+.button_about-us button {
+  font-family: "Gilroy-Bold";
+  background-color: var(--accent);
+  color: #000;
+  width: 231px;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.big_menu {
+  display: block;
+}
+
+.switch_menu {
+  display: none;
+}
+
+/* end section banner */
+
+/* media header and banner */
+
+@media (max-width: 1160px) {
+  .switch_menu {
+    display: block;
+  }
+
+  .big_menu {
+    display: none;
+  }
+}
+
+/* end media header and banner */
