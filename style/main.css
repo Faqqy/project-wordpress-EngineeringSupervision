@@ -50,27 +50,6 @@
   --text_color: #FFF;
 }
 
-h1 {
-  font-family: "Gilroy-Bold";
-  font-size: 48px;
-  line-height: 63px;
-  color: #fff;
-}
-
-h2 {
-  font-family: "Gilroy-Bold";
-  color: #fff;
-  font-size: 32px;
-  line-height: 48px;
-}
-
-p {
-  font-size: 20px;
-  padding-top: 16px;
-  padding-bottom: 32px;
-  color: #fff;
-}
-
 /* end root */
 
 /* reset style */
@@ -78,10 +57,6 @@ p {
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-
-h1, p {
   margin: 0;
 }
 
@@ -102,6 +77,29 @@ button {
 &::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: "Gilroy-Bold";
+  font-size: 48px;
+  line-height: 63px;
+  color: #fff;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Gilroy-Bold";
+  color: #fff;
+  font-size: 32px;
+  line-height: 48px;
+  margin: 0;
+}
+
+p {
+  font-size: 20px;
+  padding-top: 16px;
+  padding-bottom: 32px;
+  color: #fff;
 }
 
 /* end reset style */
@@ -194,7 +192,7 @@ body {
 /* section banner */
 
 .section_banner {
-  height: 921px;
+  height: calc(100vh - 103px);
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), url(../img/top-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -313,17 +311,22 @@ body {
   justify-content: space-between;
 }
 
-.items_box .item {
+.item {
+  position: relative;
   width: 433px;
   height: auto;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  word-wrap: break-word;
 }
 
-/* .item p {
-  width: 433px;
-} */
+.item p {
+  padding-bottom: 40px;
+}
+
+.item h2 {
+  padding-top: 32px;
+}
 
 .item img {
   width: 438px;
@@ -333,6 +336,11 @@ body {
 }
 
 .button_read-more button {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
   display: block;
   font-family: "Gilroy-Bold";
   background-color: var(--accent);
@@ -348,6 +356,43 @@ body {
 .item .button_read-more {
   margin: 10px auto;
   text-align: center;
+}
+
+.broken_text-left {
+  background-color: var(--accent);
+  margin-top: 160px;
+  margin-bottom: 64px;
+  height: 278px;
+  display: flex;
+  align-items: center
+}
+
+.broken_text-left p {
+  padding: 64px 48px 48px 64px;
+  margin: 0;
+  color: #222;
+  display: block;
+}
+
+.broken_text-right {
+  background-color: var(--accent);
+  margin-top: 120px;
+  height: 280px;
+}
+
+.broken_text-right p {
+  font-family: "Gilroy-Bold";
+  padding: 64px 48px 72px 64px;
+  color: #222;
+  text-align: right;
+  font-size: 32px;
+}
+
+.line_dark {
+  height: 4px;
+  display: block;
+  background: #000;
+  width: 100%;
 }
 
 /* end services section */
