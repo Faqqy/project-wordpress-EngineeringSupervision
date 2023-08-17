@@ -48,6 +48,8 @@
   --accent: #FFEB39;
   --main: #1B1B1B;
   --text_color: #FFF;
+  --text_hover: #BEBEBE;
+  --accent_hover: #E7D000;
 }
 
 /* end root */
@@ -72,6 +74,7 @@ button {
   line-height: normal;
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
+  transition: .25s ease-in-out;
 }
 
 &::-moz-focus-inner {
@@ -139,11 +142,11 @@ body {
 
 .menu_header li {
   display: inline-block;
-  padding-right: 46px;
+  padding-right: 24px;
 }
 
 .menu_header li:last-child {
-  padding-right: 26px;
+  padding-right: 16px;
 }
 
 .menu_header li a {
@@ -151,6 +154,11 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   color: var(--text_color);
+  transition: .25s ease;
+}
+
+.menu_header li a:hover {
+  color: var(--text_hover);
 }
 
 .button_contact-us {
@@ -161,6 +169,11 @@ body {
   display: flex;
   font-size: 20px;
   margin: auto;
+  transition: .25s ease;
+}
+
+.button_contact-us:hover {
+  background-color: var(--accent_hover);
 }
 
 .button_menu {
@@ -396,3 +409,18 @@ body {
 }
 
 /* end services section */
+
+/* work_section */
+
+.work_section {
+  perspective: 1px;
+  overflow-y: auto;
+  width: 100%;
+  height: 4096px;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), url(../img/work_banner.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+/* end work_section */
