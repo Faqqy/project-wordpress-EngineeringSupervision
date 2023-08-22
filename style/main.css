@@ -460,7 +460,9 @@ body {
 
 /* end work_section */
 
-/* contact section */
+/*main footer */
+
+  /* contact section */
 
 .title_contact {
   padding-left: 0;
@@ -553,3 +555,69 @@ body {
 }
 
 /* end contact section */
+
+/* section bottom menu */
+
+.about_info {
+  height: 156px;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+}
+
+.about_info-items {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.bottom_menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom_menu a {
+  color: var(--main);
+  font-family: "Gilroy-Bold";
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.dark_logo {
+  display: flex;
+  align-items: center;
+}
+
+.dark_logo span {
+  color: var(--main);
+  font-family: "Gilroy-Bold";
+  font-size: 32px;
+  padding-left: 14px;
+}
+
+.social_menu {
+  margin-left: 129px;
+}
+
+
+/* end section bottom menu */
+
+/* section politics */
+
+.politics_menu ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0 24px 0;
+}
+
+.politics_section a {
+  text-decoration: none;
+  color: var(--text_color);
+  font-size: 18px;
+}
+
+/* end section politics */
+
+/* end main footer */  
