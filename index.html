@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style/main.css">
 
     <title>Engineering Supervision</title>
-
     <script src="js/script.js" defer></script>
-
 </head>
 
     <body>
@@ -190,11 +188,38 @@
                                     <input type="text" id="company" name="company" placeholder="Company Name" />
                                     <input type="text" id="title" name="title" placeholder="Title/Position" />
                                     <textarea id="help" name="help" placeholder="How Can We Help You" required ></textarea>
-                                    <input type="submit" value="Submit">
+                                    <input class="button_submit" type="submit" value="Submit">
                                 </form>
                             </div>
                         </div>
-                        <div class="col-6"></div>
+                        <div class="col-6">
+                            <div class="contacts_list">
+                                <div class="contacts_list-email">
+                                    <span>Email</span>
+                                    <div class="d-flex item_contact">
+                                        <img src="./img/mail-img.svg" alt="Email">
+                                        <a href="mailto:contact@es.ae">contact@es.ae</a>
+                                    </div>
+                                </div>
+                                <div class="contscts_list-phone">
+                                    <span>Phone</span>
+                                    <div class="d-flex item_contact">
+                                        <img src="./img/phone-img.svg" alt="Email">
+                                        <a href="tel:+97111111-11-11">+971 (111) 111-11-11</a>
+                                    </div>
+                                </div>
+                                <div class="contacts_list-addres">
+                                    <span>Address</span>
+                                    <div class="d-flex item_contact">
+                                        <img src="./img/addres-img.svg" alt="Email">
+                                        <a href="https://goo.gl/maps/swoURBWo5epXUmCj6">1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="map"></div>
+                            <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                                ({key: "AIzaSyB4rx_VuE8TmDT1Sq4-TZ5MeVVIaHFKRng", v: "weekly"});</script>
+                        </div>
                     </div>
                 </div>
             </section>

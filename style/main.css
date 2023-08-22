@@ -482,6 +482,7 @@ body {
   border-radius: 20px;
   width: 611px;
   height: 594px;
+  margin-bottom: 128px;
 }
 
 .from-contact form {
@@ -520,6 +521,35 @@ body {
   text-transform: uppercase;
   border: none;
   margin: 32px auto;
+}
+
+.contacts_list {
+  margin-top: 64px;
+}
+
+.contacts_list span {
+  color: var(--accent);
+  font-family: "Gilroy-Bold";
+  font-size: 20px;
+}
+
+.contacts_list a {
+  text-decoration: none;
+  color: var(--text_color);
+  font-family: "Gilroy-Bold";
+  font-size: 20px;
+  padding-left: 8px;
+  
+}
+
+.contacts_list>div {
+  margin-bottom: 16px;
+}
+
+#map {
+  height: 357px;
+  background: lightgray 50% / cover no-repeat;
+  border-radius: 20px;
 }
 
 /* end contact section */
