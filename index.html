@@ -217,7 +217,7 @@
                                     <input type="text" id="title" name="title" placeholder="Title/Position" />
                                     <textarea id="message" name="message" placeholder="How Can We Help You" required ></textarea>
                                     <div id="error" class="hidden"></div>
-                                    <button onclick="validateForm()" class="button_submit" type="submit">Submit</button>
+                                    <input onclick="validateForm()" type="submit" class="button_submit" />
                                 </form>
                             </div>
                         </div>
@@ -311,7 +311,10 @@
                 </div>
             </section>
         </div>
-
+        <div id="modal" style="display: none;">
+            <h2>Спасибо за отправку формы!</h2>
+            <p>Мы свяжемся с вами в ближайшее время.</p>
+        </div>
     </body>
 
 </html> 

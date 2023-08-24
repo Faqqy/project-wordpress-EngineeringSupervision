@@ -676,4 +676,19 @@ body {
 
 /* end section politics */
 
+/* modal */
+
+#modal {
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  background-color: #fff;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* end modal */
+
 /* end main footer */  

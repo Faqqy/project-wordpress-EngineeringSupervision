@@ -189,6 +189,25 @@ initMap();
 
 //form validation
 
+const popup = document.getElementById('modal');
+const form = document.getElementById("feedbackForm");
+
+// from
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Предотвращение отправки формы
+  
+    if (validateForm()) {
+      submitForm();
+    }
+});
+
+function submitForm() {
+    console.log('done')
+
+    // Отображение всплывающего окна
+    popup.style.display = "block";
+} 
+
 function validateForm() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -217,3 +236,12 @@ function validateForm() {
   
     return true;
   }
+
+
+
+
+
+
+
+
+
