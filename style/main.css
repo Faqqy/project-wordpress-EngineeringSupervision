@@ -328,35 +328,82 @@ body {
   justify-content: space-between;
 }
 
-.item {
+.item-front {
   position: relative;
-  width: 433px;
+  background: var(--main);
+  width: 533px;
+  padding: 48px;
   height: auto;
   display: flex;
+  border-radius: 3%;
   flex-direction: column;
   word-wrap: break-word;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.item p {
-  padding-bottom: 40px;
+.item-front .additional-text {
+  position: absolute;
+  bottom: -130%;
+  padding: 48px;
+  left: 0;
 }
 
-.item h2 {
-  padding-top: 32px;
+.item-front:hover {
+  background: var(--text_color);
+} 
+
+.item-front:hover img {
+  transform: translateY(-120%);
 }
 
-.item img {
+.item-front:hover .additional-text {
+  bottom: -275px;
+  color: var(--main);
+}
+
+.item-front img {
   width: 438px;
   border-radius: 10px;
   background-color: var(--main);
   object-fit: cover;
+  transition: transform 0.3s;
 }
+
+.item-front p {
+  padding-bottom: 40px;
+  transition: transform 0.3s;
+}
+
+.item-front:hover p{
+  transform: translateY(-382px);
+  color: var(--main);
+}
+
+.item-front:hover h2 {
+  transform: translateY(-385px);
+  color: var(--main);
+}
+
+.item-front .line {
+  transition: transform 0.3s;
+}
+
+.item-front:hover .line {
+  transform: translateY(-385px);
+}
+
+.item-front h2 {
+  padding-top: 32px;
+  transition: transform 0.3s;
+}
+
 
 .button_read-more button {
   position: absolute;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 48px;
   margin: 0 auto;
   display: block;
   font-family: "Gilroy-Bold";
