@@ -191,6 +191,7 @@ initMap();
 
 const popup = document.getElementById('modal');
 const form = document.getElementById("feedbackForm");
+const formData = new FormData(form);
 
 // from
 form.addEventListener("submit", function(e) {
@@ -203,9 +204,29 @@ form.addEventListener("submit", function(e) {
 
 function submitForm() {
     console.log('done')
+    fetch(form.action, {
+        url: 'server.php',
+        method: 'POST',
+        body: formData
+    })
+    .then(function(response) {
+        if (response.ok) {
+          popup.style.display = "block";
+          return response.json(); // Можно использовать response.text() или другие методы для получения тела ответа
+        } else {
+          // Ошибка при получении ответа
+          throw new Error('Ошибка ' + response.status);
+        }
+    })
+    .then(function(data) {
+        // Обработка данных ответа от сервера
+        console.log(data);
+      })
+      .catch(function(error) {
+        // Обработка ошибки
+        console.log(error);
+    });
 
-    // Отображение всплывающего окна
-    popup.style.display = "block";
 } 
 
 function validateForm() {
