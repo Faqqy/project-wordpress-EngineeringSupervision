@@ -102,18 +102,6 @@
                                         <button>Read more</button>
                                     </div>
                                 </div>
-                                <!-- <div class="item-back">
-                                    <h2>Inspection</h2>
-                                    <span class="line"></span>
-                                    <p>
-                                        We are committed to fulfilling your global inspection requirements across diverse engineering disciplines for a wide range
-                                        of industries.
-                                    </p>
-                                    <div class="button_read-more">
-                                        <button>Read more</button>
-                                    </div>
-                                </div> -->
-
                                 <div class="item-front">
                                     <img src="./img/services_photo-2.jpg" alt="Services">
                                     <h2>Audit</h2>
@@ -121,6 +109,15 @@
                                     <p>
                                         Conducting ISO Certification Audits with 
                                         a well-defined plan to enhance operational efficiency and drive organizational improvement.
+                                    </p>
+                                    <p class="additional-text">
+                                        As a highly trusted third-party inspection company based in Dubai, UAE, we provide comprehensive services that extend 
+                                        to various regions worldwide. Our team 
+                                        of skilled industrial experts possesses diverse talents to effectively address 
+                                        the inspection needs of our clients 
+                                        in the Oil & Gas Chemicals, Process Industries, Urban Infrastructure, Power 
+                                        & Renewable Energy, Marine, Desalination, 
+                                        and Transportation sectors...
                                     </p>
                                     <div class="button_read-more">
                                         <button>Read more</button>
@@ -133,6 +130,15 @@
                                     <p>
                                         Efficient third-party expediting of the entire supply chain to ensure project deadlines 
                                         are met.
+                                    </p>
+                                    <p class="additional-text">
+                                        As a highly trusted third-party inspection company based in Dubai, UAE, we provide comprehensive services that extend 
+                                        to various regions worldwide. Our team 
+                                        of skilled industrial experts possesses diverse talents to effectively address 
+                                        the inspection needs of our clients 
+                                        in the Oil & Gas Chemicals, Process Industries, Urban Infrastructure, Power 
+                                        & Renewable Energy, Marine, Desalination, 
+                                        and Transportation sectors...
                                     </p>
                                     <div class="button_read-more">
                                         <button>Read more</button>
@@ -204,13 +210,14 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="from-contact">
-                                <form action="">
-                                    <input type="text" id="full-name" name="full-name" placeholder="Full name" required />
+                                <form id="feedbackForm">
+                                    <input type="text" id="name" name="name" placeholder="Full name" required />
                                     <input type="text" id="email" name="email" placeholder="Email Adress" required />
                                     <input type="text" id="company" name="company" placeholder="Company Name" />
                                     <input type="text" id="title" name="title" placeholder="Title/Position" />
-                                    <textarea id="help" name="help" placeholder="How Can We Help You" required ></textarea>
-                                    <input class="button_submit" type="submit" value="Submit">
+                                    <textarea id="message" name="message" placeholder="How Can We Help You" required ></textarea>
+                                    <div id="error" class="hidden"></div>
+                                    <button onclick="validateForm()" class="button_submit" type="submit">Submit</button>
                                 </form>
                             </div>
                         </div>

@@ -398,7 +398,6 @@ body {
   transition: transform 0.3s;
 }
 
-
 .button_read-more button {
   position: absolute;
   right: 0;
@@ -511,6 +510,16 @@ body {
 
   /* contact section */
 
+.hidden {
+  display: none;
+  color: red;
+}
+
+#error {
+  display: block;
+  color: red;
+}
+
 .title_contact {
   padding-left: 0;
   padding-bottom: 8px;
@@ -558,7 +567,7 @@ body {
   border: 1px solid #5A5A5A;
 }
 
-.button_submit input[type=button], input[type=submit], input[type=reset] {
+.button_submit {
   font-family: "Gilroy-Bold";
   background-color: var(--accent);
   color: #000;

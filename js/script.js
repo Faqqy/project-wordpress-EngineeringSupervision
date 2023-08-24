@@ -186,3 +186,34 @@ async function initMap() {
 }
 
 initMap();
+
+//form validation
+
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let errorElement = document.getElementById("error");
+  
+    errorElement.classList.add("hidden");
+  
+    if (name === "") {
+        errorElement.innerHTML = "Empty name field ";
+        errorElement.classList.remove("hidden");
+        return false;
+    }
+
+    if (email === "") {
+        errorElement.innerHTML = "Wrong email format ";
+        errorElement.classList.remove("hidden");
+        return false;
+    }
+
+    if (message === "") {
+        errorElement.innerHTML = "Empty message field";
+        errorElement.classList.remove("hidden");
+        return false;
+    }
+  
+    return true;
+  }
