@@ -105,6 +105,7 @@ p {
   color: #fff;
 }
 
+input, textarea {outline:none;}
 /* end reset style */
 
 body {
@@ -211,10 +212,12 @@ body {
 }
 
 .title_page {
-  height: 100%;
   color: var(--text_color);
   width: 818px;
-  margin-top: 404px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 103px);
 }
 
 .line {
@@ -510,6 +513,14 @@ body {
 
   /* contact section */
 
+.req::placeholder {
+  color: red;
+}
+
+.req:invalid {
+  border: 1px solid red!important;
+}
+
 .hidden {
   display: none;
   color: red;
@@ -678,15 +689,44 @@ body {
 
 /* modal */
 
-#modal {
-  height: 300px;
-  width: 300px;
+#overlay {
   position: fixed;
-  background-color: #fff;
-  top: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.7);
+  z-index: 100;
+}
+
+#modal {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  position: fixed;
+  background-color: var(--main);
+  top: 25%;
   left: 0;
   right: 0;
   margin: 0 auto;
+  overflow: hidden;
+  z-index: 101;
+}
+
+.modal-body {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body .close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+  top: 16px;
 }
 
 /* end modal */

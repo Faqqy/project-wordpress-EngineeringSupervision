@@ -53,17 +53,23 @@
                     <div class="row">
                         <div class="col">
                             <div class="title_page">
-                                <h1>
-                                    We provide a wide range of services related to inspections, all kinds of control, and expediting
-                                </h1>
-                                <span class="line"></span>
-                                <p>
-                                    Our mission is to help our customers achieve confidence in the quality and safety 
-                                    of the products and services they receive by providing our services
-                                    to minimize risks at all stages of production, transportation and installation
-                                </p>
-                                <div class="button_about-us">
-                                    <button>About us</button>
+                                <div class="header_banner-title">
+                                    <h1>
+                                        We provide a wide range of services related to inspections, all kinds of control, and expediting
+                                    </h1>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="body_banner">
+                                    <p>
+                                        Our mission is to help our customers achieve confidence in the quality and safety 
+                                        of the products and services they receive by providing our services
+                                        to minimize risks at all stages of production, transportation and installation
+                                    </p>
+                                </div>
+                                <div class="footer_banner">
+                                    <div class="button_about-us">
+                                        <button>About us</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -208,14 +214,14 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="from-contact">
-                                <form id="feedbackForm">
-                                    <input type="text" id="name" name="name" placeholder="Full name" required />
-                                    <input type="text" id="email" name="email" placeholder="Email Adress" required />
+                                <form novalidate id="feedbackForm">
+                                    <input type="text" id="name" name="name" placeholder="Full name*" required />
+                                    <input type="text" id="email" name="email" placeholder="Email Adress*" required />
                                     <input type="text" id="company" name="company" placeholder="Company Name" />
                                     <input type="text" id="title" name="title" placeholder="Title/Position" />
-                                    <textarea id="message" name="message" placeholder="How Can We Help You" required ></textarea>
+                                    <textarea id="message" name="message" placeholder="How Can We Help You*" required ></textarea>
                                     <div id="error" class="hidden"></div>
-                                    <input onclick="validateForm()" type="submit" class="button_submit" />
+                                    <button onclick="validateForm()" type="submit" class="button_submit">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -309,10 +315,23 @@
                 </div>
             </section>
         </div>
-        <div id="modal" style="display: none;">
-            <h2>Спасибо за отправку формы!</h2>
-            <p>Мы свяжемся с вами в ближайшее время.</p>
-        </div>
+        <div id="overlay" style="display: none;"></div>
+            <div id="modal" style="display: none;">
+                <div class="modal-body">
+                    <div id="close-btn" class="close-btn">
+                        <img src="./img/close_modal.svg" alt="Close">
+                    </div>
+                    <div class="img-popup">
+                        <img src="./img/ok_form.svg" alt="Submit-ok">
+                    </div>
+                    <div class="text-success">
+                        <p>Your submission has been sent!</p>
+                    </div>
+                    
+                </div>
+            </div>
+       
+
     </body>
 
 </html> 

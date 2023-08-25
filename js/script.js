@@ -1,3 +1,5 @@
+// google map
+
 let map;
 let imageMarker = '../img/pin.svg';
 let grayStyles = [
@@ -187,44 +189,74 @@ async function initMap() {
 
 initMap();
 
-//form validation
+//form and modal
 
 const popup = document.getElementById('modal');
+const overlay = document.getElementById('overlay');
 const form = document.getElementById("feedbackForm");
 const formData = new FormData(form);
+const closeBtn = document.getElementById('close-btn');
 
-// from
 form.addEventListener("submit", function(e) {
-    e.preventDefault(); // Предотвращение отправки формы
+    e.preventDefault();
   
     if (validateForm()) {
       submitForm();
+      openModal();
+      form.reset();
     }
 });
+
+function openModal() {
+    document.body.style.overflow = "hidden";
+    popup.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function closeModal() {
+    document.body.style.overflow = "";
+    popup.style.display = "none";
+    overlay.style.display = "none";
+}
+
+function closeByEscape(e)  {
+    if(e.key === 'Esc') {
+        closeModal();
+    }
+}
+
+overlay.onclick = function(e) {
+    let target = e.target;
+    if (target.tagName === 'modal') return;
+    closeModal();
+};
+
+
+closeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal();
+})
+
 
 function submitForm() {
     console.log('done')
     fetch(form.action, {
-        url: 'server.php',
+        url: 'http://gupmm.ru/server.php',
         method: 'POST',
         body: formData
     })
     .then(function(response) {
         if (response.ok) {
-          popup.style.display = "block";
-          return response.json(); // Можно использовать response.text() или другие методы для получения тела ответа
+          return response.json();
         } else {
-          // Ошибка при получении ответа
           throw new Error('Ошибка ' + response.status);
         }
     })
     .then(function(data) {
-        // Обработка данных ответа от сервера
         console.log(data);
       })
-      .catch(function(error) {
-        // Обработка ошибки
-        console.log(error);
+    .catch(function(error) {
+        console.error(error);
     });
 
 } 
@@ -234,22 +266,28 @@ function validateForm() {
     let email = document.getElementById("email").value;
     let message = document.getElementById("message").value;
     let errorElement = document.getElementById("error");
+    const inputSelectorName = document.querySelector('input[name="name"]');
+    const inputSelectorEmail = document.querySelector('input[name="email"]');
+    const inputSelectorText = document.querySelector('textarea');
   
     errorElement.classList.add("hidden");
   
     if (name === "") {
+        inputSelectorName.classList.add('req');
         errorElement.innerHTML = "Empty name field ";
         errorElement.classList.remove("hidden");
         return false;
     }
 
     if (email === "") {
+        inputSelectorEmail.classList.add('req');
         errorElement.innerHTML = "Wrong email format ";
         errorElement.classList.remove("hidden");
         return false;
     }
 
     if (message === "") {
+        inputSelectorText.classList.add('req');
         errorElement.innerHTML = "Empty message field";
         errorElement.classList.remove("hidden");
         return false;
