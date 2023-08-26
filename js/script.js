@@ -297,6 +297,38 @@ function validateForm() {
   }
 
 
+//mobile menu
+
+const menuButtonBig = document.getElementById('openMenu');
+const menuButtonMin = document.getElementById('openMenu2');
+const menuOpenBig = document.getElementById('mobile_menu');
+const menuOpenBig2 = document.getElementById('mobile_menu2');
+const overlayMenu = document.getElementById('overlay_menu');
+
+menuButtonBig.onclick = function() {
+    menuOpenBig.classList.toggle('open');
+    document.body.classList.toggle('open');
+    overlayMenu.classList.toggle('open');
+};
+
+menuButtonMin.onclick = function() {
+    menuButtonMin.classList.toggle('open');
+    menuOpenBig2.classList.toggle('open');
+    document.body.classList.toggle('open');
+    overlayMenu.classList.toggle('open');
+};
+
+overlayMenu.onclick = function(e) {
+    menuButtonMin.classList.remove('open');
+    menuOpenBig.classList.remove('open');
+    menuOpenBig2.classList.remove('open');
+    document.body.classList.remove('open');
+    overlayMenu.classList.remove('open');
+};
+
+
+
+
 
 
 
