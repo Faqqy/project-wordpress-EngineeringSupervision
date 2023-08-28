@@ -1146,3 +1146,22 @@ body.open {
 /* end modal */
 
 /* end main footer */  
+
+/* OURTEAM */
+
+.section_banner-team {
+  height: calc(100vh - 103px); 
+  background-image: rgba(255, 235, 57, 0.09), url(../img/our_team-banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.title_page-team {
+  color: var(--text_color);
+  width: 818px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: calc(90vh - 103px);
+}
