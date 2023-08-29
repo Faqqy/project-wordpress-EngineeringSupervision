@@ -299,11 +299,20 @@ function validateForm() {
 
 //mobile menu
 
+
+
+
+
 const menuButtonBig = document.getElementById('openMenu');
 const menuButtonMin = document.getElementById('openMenu2');
 const menuOpenBig = document.getElementById('mobile_menu');
 const menuOpenBig2 = document.getElementById('mobile_menu2');
 const overlayMenu = document.getElementById('overlay_menu');
+const btnCOntact = document.querySelector('#button_contact-us-mobile');
+const btnCOntact2 = document.querySelector('#button_contact-us-mobile2');
+
+
+
 
 menuButtonBig.onclick = function() {
     menuOpenBig.classList.toggle('open');
@@ -325,6 +334,23 @@ overlayMenu.onclick = function(e) {
     document.body.classList.remove('open');
     overlayMenu.classList.remove('open');
 };
+
+btnCOntact.onclick = function() {
+    menuButtonMin.classList.remove('open');
+    menuOpenBig.classList.remove('open');
+    menuOpenBig2.classList.remove('open');
+    document.body.classList.remove('open');
+    overlayMenu.classList.remove('open');
+};
+
+btnCOntact2.onclick = function() {
+    menuButtonMin.classList.remove('open');
+    menuOpenBig.classList.remove('open');
+    menuOpenBig2.classList.remove('open');
+    document.body.classList.remove('open');
+    overlayMenu.classList.remove('open');
+};
+
 
 
 
