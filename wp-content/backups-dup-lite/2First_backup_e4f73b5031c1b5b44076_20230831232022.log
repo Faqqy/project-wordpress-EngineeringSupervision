@@ -1,0 +1,75 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: August 31, 2023 11:20 pm
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.5.5.1
+WORDPRESS:	6.3.1
+PHP INFO:	8.2.4 | SAPI: apache2handler
+SERVER:		Apache/2.4.56 (Unix) OpenSSL/1.1.1t PHP/8.2.4 mod_perl/2.0.12 Perl/v5.34.1 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 4294967296 (512M default) 
+MEMORY STACK: 36.5MB
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported
+TABLES: total:13 | filtered:0 | create:13
+FILTERED: []
+SQL CREATED: 2First_backup_e4f73b5031c1b5b44076_20230831232022_database.sql
+SQL FILE SIZE: 1.45MB (1521807)
+SQL FILE TIME: 2023-08-31 23:20:25
+SQL RUNTIME: 0.05 sec.
+
+********************************************************************************
+ARCHIVE (ZIP):
+********************************************************************************
+ARCHIVE DIR:  /opt/lampp/htdocs/Engineering
+ARCHIVE FILE: 2First_backup_e4f73b5031c1b5b44076_20230831232022_archive.zip
+FILTERS: *OFF*
+DIRS:
+	not set
+FILES:
+	not set
+EXTS:  not set
+----------------------------------------
+COMPRESSING
+SIZE:	98.48MB
+STATS:	Dirs 592 | Files 4,054
+SQL ADDED: 2First_backup_e4f73b5031c1b5b44076_20230831232022_database.sql
+ZipArchive Object
+(
+    [lastId] => 4645
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 4646
+    [filename] => /opt/lampp/htdocs/Engineering/wp-content/backups-dup-lite/tmp/2First_backup_e4f73b5031c1b5b44076_20230831232022_archive.zip
+    [comment] => 
+)
+
+FILE ADDED TO ZIP: 4645
+COMPRESSION RESULT: '1'
+COMPRESSED SIZE: 52.51MB
+ARCHIVE RUNTIME: 3.36 sec.
+MEMORY STACK: 38.5MB
+building installer
+ARCHIVE CONSISTENCY TEST: PASS
+
+********************************************************************************
+INTEGRITY CHECKS:
+********************************************************************************
+SQL FILE: 1.45MB
+INSTALLER FILE: 73.47KB
+ARCHIVE FILE: 54.34MB 
+EXPECTED FILE/DIRECTORY COUNT: 4,646
+ACTUAL FILE/DIRECTORY COUNT: 4,645
+ARCHIVE CONSISTENCY TEST: Pass
+
+********************************************************************************
+RECORD ID:[2]
+TOTAL PROCESS RUNTIME: 3.79 sec.
+PEAK PHP MEMORY USED: 44.5MB
+DONE PROCESSING => 2First_backup August 31, 2023 11:20 pm
+
