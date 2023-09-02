@@ -27,7 +27,11 @@
                         <div class="col-md-6 col-xs-12">
                             <div class="from-contact">
                                 <?php echo do_shortcode( '[contact-form-7 id="86f0bce" title="COntact form footer"]' ); ?>
-                                <div id="error"></div>
+                                <div class="error_block">
+                                    <div id="errorName"></div>
+                                    <div id="errorMail"></div>
+                                    <div id="errorMessage"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xs-12">
@@ -67,7 +71,7 @@
                         <div class="col">
                             <div class="about_info-items">
                                 <div class="dark_logo">
-                                    <a href="./index.html">
+                                    <a href="<?php echo home_url(); ?>">
                                         <img src="<?php echo get_bloginfo('template_url') ?>/img/black_logo.svg" alt="Engineering Supervision">
                                         <span>Engineering Supervision</span>
                                     </a>

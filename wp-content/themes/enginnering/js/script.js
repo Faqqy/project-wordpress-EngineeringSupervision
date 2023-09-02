@@ -195,7 +195,10 @@ const popup = document.getElementById('modal');
 const overlay = document.getElementById('overlay');
 const closeBtn = document.getElementById('close-btn');
 const wpcf7Elm = document.querySelector( '.wpcf7-form' );
-const errorElement = document.getElementById("error");
+const errorBlock = document.querySelector('.error_block');
+const errorElementName = document.getElementById("errorName");
+const errorElementMail = document.getElementById("errorMail");
+const errorElementMessage = document.getElementById("errorMessage");
 
 wpcf7Elm.addEventListener( 'wpcf7submit', function() {
         validateForm();
@@ -203,8 +206,8 @@ wpcf7Elm.addEventListener( 'wpcf7submit', function() {
 
 wpcf7Elm.addEventListener( 'wpcf7mailsent', function() {
         openModal();
+        errorBlock.classList.toggle('open');
         wpcf7Elm.reset();
-        errorElement.style.display = "none";
 });
 
 function openModal() {
@@ -236,28 +239,40 @@ closeBtn.addEventListener('click', (e) => {
     closeModal();
 });
 
+
+
 function validateForm() {
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let isOk = true;
+    
     if (name === "") {
-        errorElement.innerHTML = "Empty name field ";
-        return false;
+        errorElementName.innerHTML = "Empty name field &#xb7 ";
+        isOk = false;
+    } else {
+        errorElementName.innerHTML = "";
     }
-
     if (email === "") {
-        errorElement.innerHTML = "Wrong email format ";
-        return false;
+        errorElementMail.innerHTML = " Wrong email format &#xb7 ";
+        isOk = false;
+    } else {
+        errorElementMail.innerHTML = "";
+    } 
+    if (email.match(pattern)) {
+        errorElementMail.innerHTML = "";
+    } else {
+        errorElementMail.innerHTML = " Wrong email format &#xb7 ";
     }
-
     if (message === "") {
-        errorElement.innerHTML = "Empty message field";
-        return false;
+        errorElementMessage.innerHTML = " Empty message field";
+        isOk = false;
+    } else {
+        errorElementMessage.innerHTML = "";   
     }
-  
-    return;
+    return isOk;
   }
 
 //mobile menu

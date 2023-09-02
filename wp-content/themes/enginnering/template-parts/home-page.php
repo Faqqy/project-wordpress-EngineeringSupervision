@@ -1,5 +1,7 @@
 <?php 
 /* Template Name: Home Page */
+$edittexttitle = carbon_get_the_post_meta('engineering_banner_section_title');
+$edittextparagraph = carbon_get_the_post_meta('engineering_banner_section_paragraph');
 
 get_header();
 ?>
@@ -11,15 +13,13 @@ get_header();
                             <div class="title_page">
                                 <div class="header_banner-title">
                                     <h1>
-                                        We provide a wide range of services related to inspections, all kinds of control, and expediting
+                                        <?php echo $edittexttitle; ?>
                                     </h1>
                                     <span class="line"></span>
                                 </div>
                                 <div class="body_banner">
                                     <p>
-                                        Our mission is to help our customers achieve confidence in the quality and safety 
-                                        of the products and services they receive by providing our services
-                                        to minimize risks at all stages of production, transportation and installation
+                                        <?php echo $edittextparagraph; ?>
                                     </p>
                                 </div>
                                 <div class="footer_banner">
@@ -48,7 +48,7 @@ get_header();
                                     <div class="mobile_activation">
                                         <h2>Inspection</h2>
                                         <span class="line"></span>
-                                        <p>
+                                        <p class="body_copy">
                                             We are committed to fulfilling your global inspection requirements across diverse engineering disciplines for a wide range
                                             of industries.
                                         </p>
@@ -75,7 +75,7 @@ get_header();
                                     <div class="mobile_activation">
                                         <h2>Audit</h2>
                                         <span class="line"></span>
-                                        <p>
+                                        <p class="body_copy">
                                             Conducting ISO Certification Audits with 
                                             a well-defined plan to enhance operational efficiency and drive organizational improvement.
                                         </p>
@@ -100,7 +100,7 @@ get_header();
                                     <div class="mobile_activation">
                                         <h2>Expediting</h2>
                                         <span class="line"></span>
-                                        <p>
+                                        <p class="body_copy">
                                             Efficient third-party expediting of the entire supply chain to ensure project deadlines 
                                             are met.
                                         </p>

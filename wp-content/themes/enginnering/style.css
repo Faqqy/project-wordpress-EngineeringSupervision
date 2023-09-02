@@ -465,13 +465,12 @@ body.open {
 }
 
 .item-front .additional-text {
-  position: absolute;
-  bottom: -130%;
-  padding: 48px;
-  left: 0;
+  opacity: 0;
+  height: 0;
 }
 
 .item-front:hover {
+  height: 100%;
   background: var(--text_color);
 } 
 
@@ -480,8 +479,10 @@ body.open {
 }
 
 .item-front:hover .additional-text {
-  bottom: -275px;
+  opacity: 1;
   color: var(--main);
+  display: table;
+  margin-bottom: -291px;
 }
 
 .item-front img {
@@ -491,8 +492,11 @@ body.open {
   transition: transform 0.3s;
 }
 
+.body_copy {
+  padding-bottom: 0;
+}
+
 .item-front p {
-  padding-bottom: 40px;
   transition: transform 0.3s;
 }
 
@@ -584,7 +588,6 @@ body.open {
   display: none;
 }
 
-
 @media (max-width: 768px) {
   .section_services .items_box {
     display: block;
@@ -641,8 +644,13 @@ body.open {
     transform: none;
   }
 
+  .item-front .additional-text {
+    display: none;
+  }
   .item-front:hover .additional-text {
     display: none;
+    opacity: 0;
+    margin: 0;
   }
   .item-front:hover p{
     transform: none;
@@ -729,23 +737,9 @@ body.open {
     margin-top: 0;
   }
 }
-@media (max-width: 1000px) {
-  .item-front {
-    padding: 20px;
-    height: 725px;
-  }
-  .item-front:hover .additional-text {
-    bottom: -146px;
-    padding: 20px;
-  }
+@media (max-width: 1300px) {
   .button_read-more button {
     bottom: 47px;
-  }
-}
-
-@media (max-width: 768px) {
-  .item-front {
-    height: 300px;
   }
 }
 
@@ -841,12 +835,20 @@ input::placeholder, textarea::placeholder {
   color: red;
 }
 
-#error {
+.error_block {
 	position: absolute;
 	bottom: 90px;
-    left: 34px;
-    display: block;
-    color: red;
+  left: 34px;
+  display: flex;
+  color: red;
+}
+
+#errorMail, #errorMessage {
+  padding-left: 3px;
+}
+
+.error_block.open {
+  display: none;
 }
 
 .title_contact {
@@ -1008,7 +1010,7 @@ textarea {
 @media (max-width: 360px) {
   .title_contact h2 {
     font-size: 20px;
-    padding-top: 64px;
+    padding-top: 0;
   }
   .line_h2-contact {
     width: 105px;
@@ -1065,6 +1067,7 @@ textarea {
 }
 
 .dark_logo a {
+  display: flex;
   text-decoration: none;
 }
 
@@ -1093,6 +1096,13 @@ textarea {
     font-size: 24px;
     line-height: normal;
     width: 200px;
+  }
+  .dark_logo a {
+    display: flex;
+    flex-direction: column;
+  }
+  .dark_logo img {
+    width: 50px;
   }
   .bottom_menu a {
     font-size: 10px;

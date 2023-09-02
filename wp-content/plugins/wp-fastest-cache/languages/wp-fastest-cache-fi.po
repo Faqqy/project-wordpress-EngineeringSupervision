@@ -1,0 +1,639 @@
+# Translation of Plugins - WP Fastest Cache - Development (trunk) in Finnish
+# This file is distributed under the same license as the Plugins - WP Fastest Cache - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-03-19 21:29:25+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: fi\n"
+"Project-Id-Version: Plugins - WP Fastest Cache - Development (trunk)\n"
+
+#: inc/admin.php:1405 inc/admin.php:1411 inc/admin.php:1418
+msgid "Some js sources will not be loaded until scrolling or moving the mouse"
+msgstr ""
+
+#: inc/admin.php:1404 inc/admin.php:1410 inc/admin.php:1417
+msgid "Delay Js"
+msgstr ""
+
+#: inc/admin.php:1049
+msgid "WP Fastest Cache Options"
+msgstr ""
+
+#: inc/admin.php:1925 templates/exclude.php:114
+msgid "has Yandex Click ID Parameters"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.wpfastestcache.com/"
+msgstr ""
+
+#: inc/admin.php:1703
+msgid "Clearing Specific Pages"
+msgstr ""
+
+#: templates/toolbar_settings.php:71
+msgid "Save"
+msgstr ""
+
+#: templates/toolbar_settings.php:68
+msgid "Cancel"
+msgstr ""
+
+#: templates/toolbar_settings.php:20
+msgid "Toolbar Settings"
+msgstr ""
+
+#: inc/admin-toolbar.php:74 inc/admin-toolbar.php:106
+msgid "Clear Cache of All Sites"
+msgstr ""
+
+#: wpFastestCache.php:407
+msgid "<a href=\"%s\">Settings</a>"
+msgstr "<a href=\"%s\">Asetukset</a>"
+
+#: inc/column.php:15
+msgid "Clear Cache"
+msgstr "Tyhjennä välimuisti"
+
+#: inc/admin.php:1317 inc/admin.php:1323 inc/admin.php:1330
+msgid "Eliminate render-blocking JavaScript resources"
+msgstr "Poista näyttämisen blokkaavat JS resurssit"
+
+#: inc/admin.php:450 inc/admin.php:453
+msgid "Options have been saved"
+msgstr "Asetukset on tallennettu"
+
+#: inc/admin.php:1871
+msgid "Download"
+msgstr "Lataa"
+
+#: inc/admin.php:1866
+msgid "Update"
+msgstr "Päivitä"
+
+#: inc/admin.php:1860
+msgid "Please don't delete the free version. Premium version works with the free version."
+msgstr "Älä poista maksutonta versiota. Maksullinen versio toimii maksuttoman kanssa."
+
+#: inc/admin.php:1859
+msgid "Get It Now!"
+msgstr "Hanki se nyt!"
+
+#: inc/admin.php:1853
+msgid "You can download and update the premium when you want if you paid."
+msgstr "Voit ladata ja päivittää maksulliseen milloin vain kun olet olet maksanut sen"
+
+#: inc/admin.php:1850
+msgid "Download & Update"
+msgstr "Lataa & päivitä"
+
+#: inc/admin.php:1838
+msgid "Buy"
+msgstr "Osta"
+
+#: inc/admin.php:1827
+msgid "Purchased"
+msgstr "Ostettu"
+
+#: inc/admin.php:1823
+msgid "The download button will be available after paid. You can buy the premium version now."
+msgstr "Latauspainike näkyy kun olet maksanut. Voit ostaa maksullisen version nyt."
+
+#: inc/admin.php:1822
+msgid "Just"
+msgstr "Vain"
+
+#: inc/admin.php:1810
+msgid "You need to pay before downloading the premium version."
+msgstr "Ennen maksullisen version lataamista se on maksettava"
+
+#: inc/admin.php:1807
+msgid "Checkout"
+msgstr "Maksu"
+
+#: inc/admin.php:1793
+msgid "New Features"
+msgstr "Uudet ominaisuudet"
+
+#: inc/admin.php:1787
+msgid "In the premium version there are some new features which speed up the sites more."
+msgstr "Maksullisessa versiossa on joitakin ominaisuuksia jotka nopeuttvat sivustoa lisää."
+
+#: inc/admin.php:1784
+msgid "Discover Features"
+msgstr "Löydä ominaisuuksia"
+
+#: inc/admin.php:1926 templates/exclude.php:115
+msgid "has Woocommerce Items in Cart"
+msgstr "Woocommerce kohteita on ostoskorissa"
+
+#: inc/admin.php:1924 templates/exclude.php:113
+msgid "has Google Analytics Parameters"
+msgstr "on Google Analytics -parametrejä"
+
+#: inc/admin.php:1914 templates/exclude.php:100
+msgid "Archives"
+msgstr "Arkistot"
+
+#: templates/timeout.php:189
+msgid "Server Time"
+msgstr "Palvelimen aika"
+
+#: templates/timeout.php:169
+msgid "delete the files"
+msgstr "poistaa tiedostot"
+
+#: inc/admin.php:1600 inc/admin.php:1919 templates/exclude.php:106
+#: templates/timeout.php:99
+msgid "Contains"
+msgstr "Sisältää"
+
+#: inc/admin.php:1601 inc/admin.php:1920 templates/exclude.php:107
+#: templates/timeout.php:98
+msgid "Is Equal To"
+msgstr "Yhtäsuuri kuin"
+
+#: inc/admin.php:1599 inc/admin.php:1918 templates/exclude.php:105
+#: templates/timeout.php:97
+msgid "Starts With"
+msgstr "Alkaa"
+
+#: inc/admin.php:1598 inc/admin.php:1911 templates/exclude.php:95
+#: templates/timeout.php:96
+msgid "Home Page"
+msgstr "Kotisivu"
+
+#: inc/admin.php:1597 templates/timeout.php:95
+msgid "All"
+msgstr "Kaikki"
+
+#: templates/exclude.php:66
+msgid "Exclude Page Wizard"
+msgstr "Rajaa pois sivu -velho"
+
+#: templates/timeout.php:124
+msgid "Then"
+msgstr "Sitten"
+
+#: templates/exclude.php:89 templates/timeout.php:91
+msgid "If REQUEST_URI"
+msgstr "Jos REQUEST_URI"
+
+#: templates/timeout.php:68
+msgid "Cache Timeout Wizard"
+msgstr "Välimuisti aikaraja -velho"
+
+#: templates/lazy_load.php:9
+msgid "Lazy Load Settings"
+msgstr "Vaiheittainen lataus asetukset"
+
+#: templates/nginx_gzip.php:9
+msgid "Enable Gzip"
+msgstr "Ota Gzip käyttöön"
+
+#: templates/update_now.php:9
+msgid "Please Update"
+msgstr "Päivitä, ole hyvä"
+
+#: templates/update_success.php:9
+msgid "Success"
+msgstr "Onnistui"
+
+#: templates/disable_wp_cron.php:20
+msgid "Warning"
+msgstr "Varoitus"
+
+#: inc/admin.php:1635 inc/admin.php:1707 inc/admin.php:1947 inc/admin.php:1964
+#: inc/admin.php:1983 inc/admin.php:2001 inc/admin.php:2021
+msgid "Add New Rule"
+msgstr "Lisää uusi sääntö"
+
+#: inc/admin-toolbar.php:98 inc/admin.php:1569
+msgid "Delete Cache and Minified CSS/JS"
+msgstr "Tyhjennä välimuisti ja pienennetyt CSS/JS"
+
+#: inc/admin.php:1501 inc/admin.php:2190 inc/admin.php:2390
+msgid "Only available in Premium version"
+msgstr "Vain Maksullisessa versiossa"
+
+#: templates/timeout.php:141
+msgid "Choose One"
+msgstr "Valitse yksi"
+
+#: inc/admin.php:1574
+msgid "All cache files will be removed as well"
+msgstr "Myös kaikki välimuistin tiedostot poistetaan"
+
+#: inc/admin.php:1573
+msgid "If you modify any css file, you have to delete minified css files"
+msgstr "Jos muutat mitä tahansa css-tiedostoa, on poistettava pienennetty css-tiedosto"
+
+#: inc/admin.php:1561 inc/admin.php:1575 inc/admin.php:1576
+msgid "Target folder"
+msgstr "Kohde hakemisto"
+
+#: inc/admin.php:1560
+msgid "You can delete all cache files"
+msgstr "Voit poistaa kaikki välimuistin tiedostot"
+
+#: inc/admin.php:1060
+msgid "Exclude"
+msgstr "Rajaa pois"
+
+#: inc/admin.php:1058
+msgid "Image Optimization"
+msgstr "Kuvien optimointi"
+
+#: inc/admin-toolbar.php:115 inc/admin.php:1055
+msgid "Settings"
+msgstr "Asetukset"
+
+#: inc/admin.php:2163
+msgid "Database Cleanup"
+msgstr "Tietokannan siivous"
+
+#: inc/admin.php:2054
+msgid "CDN Settings"
+msgstr "CDN-Asetukset"
+
+#: inc/admin.php:2017
+msgid "Exclude JS"
+msgstr "Rajaa pois JS"
+
+#: inc/admin.php:1997
+msgid "Exclude CSS"
+msgstr "Rajaa pois CSS"
+
+#: inc/admin.php:1979
+msgid "Exclude Cookies"
+msgstr "Rajaa pois evästeet"
+
+#: inc/admin.php:1960
+msgid "Exclude User-Agents"
+msgstr "Rajaa pois käyttäjäagentit"
+
+#: inc/admin.php:1943
+msgid "Exclude Pages"
+msgstr "Rajaa pois sivut"
+
+#: inc/admin.php:1760
+msgid "Optimize Image Tool"
+msgstr "Työkalu kuvien optimointiin"
+
+#: inc/admin.php:1590
+msgid "Timeout Rules"
+msgstr "Aikasäännöt"
+
+#: inc/admin-toolbar.php:86 inc/admin.php:1056 inc/admin.php:1548
+msgid "Delete Cache"
+msgstr "Tyhjennä välimuisti"
+
+#: inc/admin.php:1508
+msgid "Cache Statistics"
+msgstr "Välimuistin tilastot"
+
+#: templates/updatepost.php:53
+msgid "Clear Cache of Post / Page"
+msgstr "Tyhjennä sivun/artikkelin välimuisti"
+
+#: templates/updatepost.php:29
+msgid "What do you want to happen after update a post or a page?"
+msgstr "Mitä haluat tapahtuvaksi artikkelin tai sivun päivityksen jälkeen?"
+
+#: templates/newpost.php:58
+msgid "Clear Cache of Pagination"
+msgstr "Tyhjennä sivutuksen välimuisti"
+
+#: templates/newpost.php:57 templates/updatepost.php:55
+msgid "Clear Cache of Post Tags"
+msgstr "Tyhjennä artikkelin avainsanojen välimuisti"
+
+#: templates/newpost.php:56 templates/updatepost.php:54
+msgid "Clear Cache of Post Categories"
+msgstr "Tyhjennä artikkelin kategorioiden välimuisti"
+
+#: templates/newpost.php:55 templates/updatepost.php:56
+msgid "Clear Cache of Homepage"
+msgstr "Tyhjennä etusivun välimuisti"
+
+#: inc/admin-toolbar.php:91 inc/admin.php:1556 templates/newpost.php:51
+#: templates/updatepost.php:49
+msgid "Clear All Cache"
+msgstr "Tyhjennä koko välimuisti"
+
+#: templates/newpost.php:29
+msgid "What do you want to happen after publishing the new post?"
+msgstr "Mitä haluat tapahtuvaksi kun uusi artikkeli on julkaistu?"
+
+#: templates/newpost.php:68 templates/preload.php:115
+#: templates/updatepost.php:64
+msgid "OK"
+msgstr "OK"
+
+#: templates/preload.php:101
+msgid "Restart After Completed"
+msgstr "Käynnistä uudelleen kun valmista"
+
+#: templates/preload.php:96
+msgid "pages per minute"
+msgstr "sivua minuutissa"
+
+#: templates/preload.php:70
+msgid "Custom Taxonomies"
+msgstr "Mukautettu luokittelu"
+
+#: templates/preload.php:65
+msgid "Custom Post Types"
+msgstr "Mukautetut artikkelityypit"
+
+#: inc/admin.php:1917 templates/exclude.php:101 templates/preload.php:60
+msgid "Attachments"
+msgstr "Liitteet"
+
+#: inc/admin.php:1913 templates/exclude.php:97 templates/preload.php:56
+msgid "Tags"
+msgstr "Avainsanat"
+
+#: inc/admin.php:1916 templates/exclude.php:99 templates/preload.php:52
+msgid "Pages"
+msgstr "Sivut"
+
+#: inc/admin.php:1912 templates/exclude.php:96 templates/preload.php:48
+msgid "Categories"
+msgstr "Osastot"
+
+#: inc/admin.php:1915 templates/exclude.php:98 templates/preload.php:44
+msgid "Posts"
+msgstr "Artikkelit"
+
+#: templates/preload.php:40
+msgid "Homepage"
+msgstr "Etusivu"
+
+#: inc/admin.php:1264 inc/admin.php:1272 inc/admin.php:1278 inc/admin.php:1284
+msgid "Reduce HTTP requests through combined js files"
+msgstr "Vähennä HTTP-kutsuja yhdistämällä js-tiedostoja"
+
+#: inc/admin.php:1372 inc/admin.php:1386 inc/admin.php:1393
+msgid "Load images and iframes when they enter the browsers viewport"
+msgstr "Lataa kuvat ja iframes kun ne saapuvat selaimen näyttöön"
+
+#: inc/admin.php:1343 inc/admin.php:1349 inc/admin.php:1356
+msgid "Load Google Fonts asynchronously"
+msgstr "Lataa Google fontit asynkronisesti"
+
+#: inc/admin.php:1342 inc/admin.php:1348 inc/admin.php:1355
+msgid "Google Fonts"
+msgstr "Google fontit"
+
+#: inc/admin.php:1316 inc/admin.php:1322 inc/admin.php:1329
+msgid "Render Blocking Js"
+msgstr "Näytä blokkaava Js"
+
+#: inc/admin.php:1308
+msgid "You can remove the emoji inline css and wp-emoji-release.min.js"
+msgstr "Voit poistaa hymiön rivin sisäisen css ja wp-emoji-release.min.js"
+
+#: inc/admin.php:1307
+msgid "Disable Emojis"
+msgstr "Poista hymiöt käytöstä"
+
+#: inc/admin.php:1302
+msgid "Reduce page load times for repeat visitors"
+msgstr "Vähennä sivun latausaikoja toistuville vierailijoille"
+
+#: inc/admin.php:1301
+msgid "Browser Caching"
+msgstr "Selaimen välimuisti"
+
+#: inc/admin.php:1290
+msgid "Reduce the size of files sent from your server"
+msgstr "Pienennä palvelimelta lähetettyjen tiedostojen kokoa"
+
+#: inc/admin.php:1289
+msgid "Gzip"
+msgstr "Gzip"
+
+#: inc/admin.php:1270 inc/admin.php:1277 inc/admin.php:1283
+msgid "Combine Js Plus"
+msgstr "Yhdistä Js Plus"
+
+#: inc/admin.php:1263
+msgid "Combine Js"
+msgstr "Yhdistä Js"
+
+#: inc/admin.php:1247 inc/admin.php:1252 inc/admin.php:1258
+msgid "You can decrease the size of js files"
+msgstr "Voit pienentää js-tiedostojen kokoa"
+
+#: inc/admin.php:1246 inc/admin.php:1251 inc/admin.php:1257
+msgid "Minify Js"
+msgstr "Pienennä Js"
+
+#: inc/admin.php:1239
+msgid "Reduce HTTP requests through combined css files"
+msgstr "Vähennä HTTP-kutsuja yhdistämällä css-tiedostoja"
+
+#: inc/admin.php:1238
+msgid "Combine Css"
+msgstr "Yhdistä Css"
+
+#: inc/admin.php:1227 inc/admin.php:1232
+msgid "More powerful minify css"
+msgstr "Tehokkaampi css pienennys"
+
+#: inc/admin.php:1226 inc/admin.php:1231
+msgid "Minify Css Plus"
+msgstr "Pienennä Css Plus"
+
+#: inc/admin.php:1218
+msgid "You can decrease the size of css files"
+msgstr "Voit pienentää css-tiedostojen kokoa"
+
+#: inc/admin.php:1217
+msgid "Minify Css"
+msgstr "Pienennä Css"
+
+#: inc/admin.php:1205 inc/admin.php:1210
+msgid "More powerful minify html"
+msgstr "Tehokkaampi HTML-pienennys"
+
+#: inc/admin.php:1204 inc/admin.php:1209
+msgid "Minify HTML Plus"
+msgstr "Pienennä HTML Plus"
+
+#: inc/admin.php:1198
+msgid "You can decrease the size of page"
+msgstr "Voit pienentää sivun kokoa"
+
+#: inc/admin.php:1197
+msgid "Minify HTML"
+msgstr "Pienennä HTML"
+
+#: inc/admin.php:1189
+msgid "Clear cache files when a post or page is updated"
+msgstr "Tyhjennä välimuistin tiedostot kun sivu tai artikkeli päivitetty"
+
+#: inc/admin.php:1188 templates/updatepost.php:18
+msgid "Update Post"
+msgstr "Päivitä artikkeli"
+
+#: inc/admin.php:1182
+msgid "Clear cache files when a post or page is published"
+msgstr "Tyhjennä välimuistin tiedostot kun sivu tai artikkeli julkaistu"
+
+#: inc/admin.php:1181 templates/newpost.php:18
+msgid "New Post"
+msgstr "Uusi artikkeli"
+
+#: inc/admin.php:1149 inc/admin.php:1175
+msgid "Create cache for mobile theme"
+msgstr "Tee välimuisti mobiili teemalle"
+
+#: inc/admin.php:1148 inc/admin.php:1174
+msgid "Mobile Theme"
+msgstr "Mobiili teema"
+
+#: inc/admin.php:1143
+msgid "Don't show the cached version for desktop to mobile devices"
+msgstr "Älä näytä mobiili laitteille pöytäkoneille välimuistitettua versiota"
+
+#: inc/admin.php:1142
+msgid "Mobile"
+msgstr "Mobiili"
+
+#: inc/admin.php:1138
+msgid "Don't show the cached version for logged-in users"
+msgstr "Älä näytä välimuistitettua versiota kirjautuneille käyttäjille"
+
+#: inc/admin.php:1137
+msgid "Logged-in Users"
+msgstr "Kirjautuneet käyttäjät"
+
+#: inc/admin.php:1128
+msgid "Create the cache of all the site automatically"
+msgstr "Luo välimuisti automaattisesti koko sivustolle"
+
+#: inc/admin.php:1127 templates/preload.php:27
+msgid "Preload"
+msgstr "Esilataa"
+
+#: inc/admin.php:1099 inc/admin.php:1105 inc/admin.php:1112 inc/admin.php:1119
+msgid "Reduce the number of SQL queries"
+msgstr "Vähennä SQL-kutsujen määrää"
+
+#: inc/admin.php:1098 inc/admin.php:1104 inc/admin.php:1111 inc/admin.php:1118
+msgid "Widget Cache"
+msgstr "Vimpain välimuisti"
+
+#: inc/admin.php:1089
+msgid "Enable"
+msgstr "Ota käyttöön"
+
+#: inc/admin.php:1088
+msgid "Cache System"
+msgstr "Välimuistijärjestelmä"
+
+#: wpFastestCache.php:2208
+msgid "Once Every 15 Days"
+msgstr "15 päivän välein"
+
+#: wpFastestCache.php:2196
+msgid "Once Every 7 Days"
+msgstr "7 päivän välein"
+
+#: wpFastestCache.php:2190
+msgid "Once Every 3 Days"
+msgstr "3 päivän välein"
+
+#: wpFastestCache.php:2178
+msgid "Once Every 10 Hours"
+msgstr "10 tunnin välein"
+
+#: wpFastestCache.php:2172
+msgid "Once Every 9 Hours"
+msgstr "9 tunnin välein"
+
+#: wpFastestCache.php:2166
+msgid "Once Every 8 Hours"
+msgstr "8 tunnin välein"
+
+#: wpFastestCache.php:2160
+msgid "Once Every 7 Hours"
+msgstr "7 tunnin välein"
+
+#: wpFastestCache.php:2148
+msgid "Once Every 5 Hours"
+msgstr "5 tunnin välein"
+
+#: wpFastestCache.php:2142
+msgid "Once Every 4 Hours"
+msgstr "4 tunnin välein"
+
+#: wpFastestCache.php:2136
+msgid "Once Every 3 Hours"
+msgstr "3 tunnin välein"
+
+#: wpFastestCache.php:2130
+msgid "Once Every 2 Hours"
+msgstr "2 tunnin välein"
+
+#: wpFastestCache.php:2202
+msgid "Once Every 10 Days"
+msgstr "10 päivän välein"
+
+#. Author of the plugin
+msgid "Emre Vona"
+msgstr "Emre Vona"
+
+#. Description of the plugin
+msgid "The simplest and fastest WP Cache system"
+msgstr "Yksinkertaisin ja nopein WP-välimuistijärjestelmä"
+
+#. Plugin URI of the plugin
+msgid "http://wordpress.org/plugins/wp-fastest-cache/"
+msgstr "http://wordpress.org/plugins/wp-fastest-cache/"
+
+#. Plugin Name of the plugin
+msgid "WP Fastest Cache"
+msgstr "WP Fastest Cache"
+
+#: wpFastestCache.php:2220
+msgid "Once a Year"
+msgstr "Kerran vuodessa"
+
+#: wpFastestCache.php:2214
+msgid "Once a Month"
+msgstr "Kerran kuukaudessa"
+
+#: wpFastestCache.php:2184
+msgid "Once a Day"
+msgstr "Kerran päivässä"
+
+#: wpFastestCache.php:2154
+msgid "Once Every 6 Hours"
+msgstr "6 tunnin välein"
+
+#: wpFastestCache.php:2124
+msgid "Once an Hour"
+msgstr "Kerran tunnissa"
+
+#: wpFastestCache.php:2118
+msgid "Twice an Hour"
+msgstr "Kahdesti tunnissa"
+
+#: wpFastestCache.php:2112
+msgid "Once Every 15 Minutes"
+msgstr "15 minuutin välein"
+
+#: wpFastestCache.php:2106
+msgid "Once Every 5 Minutes"
+msgstr "5 minuutin välein"
+
+#: wpFastestCache.php:2100
+msgid "Once Every 1 Minute"
+msgstr "1 minuutin välein"
