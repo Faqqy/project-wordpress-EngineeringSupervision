@@ -9,6 +9,14 @@
  * @package Enginnering
  */
 
+$editLinkFacebook = carbon_get_theme_option('engineering_social_facebook_link');
+$editLinkInst = carbon_get_theme_option('engineering_social_inst_link');
+$editLinkTwitter = carbon_get_theme_option('engineering_social_twitter_link');
+$editLinkEmail = carbon_get_theme_option('engineering_contact_mail');
+$editLinkPhone = carbon_get_theme_option('engineering_contact_phone');
+$editAddress = carbon_get_theme_option('engineering_contact_address');
+$editLinkAddress = carbon_get_theme_option('engineering_contact_address_link');
+
 ?>
 <div class="main-footer">
             <section class="contat_us" id="contacts">
@@ -40,21 +48,21 @@
                                     <span>Email</span>
                                     <div class="d-flex item_contact">
                                         <img src="<?php echo get_bloginfo('template_url') ?>/img/mail-img.svg" alt="Email">
-                                        <a href="mailto:contact@es.ae">contact@es.ae</a>
+                                        <a href="mailto:<?php echo $editLinkEmail; ?>"><?php echo $editLinkEmail; ?></a>
                                     </div>
                                 </div>
                                 <div class="contscts_list-phone">
                                     <span>Phone</span>
                                     <div class="d-flex item_contact">
                                         <img src="<?php echo get_bloginfo('template_url') ?>/img/phone-img.svg" alt="Email">
-                                        <a href="tel:+97111111-11-11">+971 (111) 111-11-11</a>
+                                        <a href="tel:<?php echo $editLinkPhone; ?>"><?php echo $editLinkPhone; ?></a>
                                     </div>
                                 </div>
                                 <div class="contacts_list-addres">
                                     <span>Address</span>
                                     <div class="d-flex item_contact">
                                         <img src="<?php echo get_bloginfo('template_url') ?>/img/addres-img.svg" alt="Email">
-                                        <a href="https://goo.gl/maps/swoURBWo5epXUmCj6">1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai</a>
+                                        <a href="<?php echo $editLinkAddress; ?>"><?php echo $editAddress; ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -81,37 +89,23 @@
 										wp_nav_menu( array(
 											'menu'              => 'footer_menu',
 											'menu_class'        => 'menu',
-											'menu_id'           => '',
 											'container'         => 'div',
-											'container_class'   => '',
-											'container_id'      => '',
-											'fallback_cb'       => 'wp_page_menu',
-											'before'            => '',
-											'after'             => '',
-											'link_before'       => '',
-											'link_after'        => '',
-											'echo'              => true,
-											'depth'             => 0,
-											'walker'            => '', 
-											'theme_location'    => '', 
-											'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-												'item_spacing'      => 'preserve',
 										) );
 									?>
                                     <div class="social_menu">
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="<?php echo $editLinkFacebook; ?>">
                                                     <img src="<?php echo get_bloginfo('template_url') ?>/img/facebook.svg" alt="facebook">
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="<?php echo $editLinkInst; ?>">
                                                     <img src="<?php echo get_bloginfo('template_url') ?>/img/insta.svg" alt="Instagram">
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="<?php echo $editLinkTwitter; ?>">
                                                     <img src="<?php echo get_bloginfo('template_url') ?>/img/twitter.svg" alt="Twitter">
                                                 </a>
                                             </li>

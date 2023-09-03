@@ -1,24 +1,34 @@
 <?php 
 /* Template Name: Inspection Page */
 
+
+$editInspectionTitle = carbon_get_the_post_meta('engineering_banner_inspection_title');
+$editInspectionParagraph = carbon_get_the_post_meta('engineering_banner_inspection_paragraph');
+$editInspectionTitleWrapper = carbon_get_the_post_meta('engineering_banner_inspection_title_wrapper');
+$editInspectionParagraphWrapper = carbon_get_the_post_meta('engineering_banner_inspection_paragraph_tile');
+
     get_header();
 ?>
 
 <div class="wrapper">
-            <section class="section_banner-team inspection">
+            <?php
+                $inspectionBgImage = carbon_get_the_post_meta('engineering_background_image_inspection');
+                $photo = $inspectionBgImage ? wp_get_attachment_image_src($inspectionBgImage, 'full') : '';
+            ?>
+            <section class="section_banner-team inspection" style="  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(0deg, rgba(255, 235, 57, 0.09) 0%, rgba(255, 235, 57, 0.09) 100%), url('<?php echo $photo[0];?>');">
                 <div class="container">
                     <div class="row">
                         <div class="col">
                             <div class="title_page-team inspection">
                                 <div class="header_banner-title inspection">
                                     <h1>
-                                        Inspection                                        
+                                       <?php echo $editInspectionTitle; ?>                                     
                                     </h1>
                                     <span class="line"></span>
                                 </div>
                                 <div class="body_banner">
                                     <p>
-                                        We are committed to fulfilling your global inspection requirements across diverse engineering disciplines for a wide range of industries
+                                        <?php echo $editInspectionParagraph; ?>   
                                     </p>
                                 </div>
                             </div>
@@ -32,21 +42,10 @@
                         <div class="col">
                             <div class="picture_our-team-text">
                                 <h2>
-                                    We maintain unwavering focus
-                                    on product quality throughout every stage of a project's lifecycle...
+                                    <?php echo $editInspectionTitleWrapper; ?>   
                                 </h2>
                                 <p>
-                                    As a highly trusted third-party inspection company based in Dubai, UAE,
-                                    we provide comprehensive services that extend to various regions worldwide. Our team of skilled industrial experts possesses diverse talents to effectively address the inspection needs of our clients in the Oil & Gas Chemicals, Process Industries, Urban Infrastructure, Power & Renewable Energy, Marine, Desalination, and Transportation sectors.
-                                </p>
-                                <p>    
-                                    Our primary objective during inspections is to ensure strict adherence 
-                                    to compliance codes, safety standards, and client specifications for products, processes, and assets. We maintain unwavering focus on product quality throughout every stage of a project's lifecycle, implementing a robust quality assurance and quality control system.
-                                </p>
-                                <p>    
-                                    We actively support our clients in conducting inspections according 
-                                    to approved plans and procedures, covering crucial stages such as Material Inspection, Pre-fabrication Fit-ups Inspection, Welding Inspection, Post Weld Heat Treatment, Pressure Testing, and a final inspection prior to dispatch.
-                                    
+                                    <?php echo $editInspectionParagraphWrapper; ?>  
                                 </p>
                             </div>
                         </div>
@@ -64,116 +63,20 @@
                                 <span class="line"></span>
                             </div>
                             <div class="we_provide-grid inspection">
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        3rd / 2nd-party inspection 
-                                    </h3>
-                                    <p>
-                                        Facilitating impartial and independent inspection coordination in compliance with ISO 17020 standards 
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Static and rotating equipment inspection
-                                    </h3>
-                                    <p>
-                                        Conduct assessments on property purchases
-                                        to ensure value for money, instilling confidence and satisfaction in your investment                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Vendor inspection 
-                                    </h3>
-                                    <p>
-                                        Thoroughly examine the product at the vendor's location based on a mutually agreed scope of work outlined by the buyer                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Regulatory inspection 
-                                    </h3>
-                                    <p>
-                                        Our team of skilled professionals, equipped with legaland technical expertise, ensures the diligent enforcement of regulatory compliance throughout business operations
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Structural inspection
-                                    </h3>
-                                    <p>
-                                        Perform comprehensive visual inspections 
-                                        to provide detailed insights into the structural integrity, identify any signs of deterioration, 
-                                        and highlight potential hazards. 
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Oil country tubular goods
-                                        inspection & services (OCTG) 
-                                    </h3>
-                                    <p>
-                                        Comprehensive support in providing inspection services for all OCTG goods, including drilling equipment, tubular pipes, and casing materials                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Pre-shipment inspections
-                                    </h3>
-                                    <p>
-                                        Verify the compliance of goods with order requirements and shipping specifications prior
-                                        to dispatch, ensuring adherence to quality standards                                    
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Fall protection equipment inspection 
-                                    </h3>
-                                    <p>
-                                        Conduct inspections of fall protection and height safety equipmentat the site to identify and address any defects or issues promptly
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        QA/QC inspection
-                                    </h3>
-                                    <p>
-                                        Elevate the product's credibility through thorough quality assurance and quality control measures
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Periodic shutdown / Turnaround inspections 
-                                    </h3>
-                                    <p>
-                                        Highly skilled API, CWI, or NDE certified professionals adeptly conduct inspections at industrial plants during total, partial, or planned shutdowns
-                                        with utmost efficiency
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Amusement park ride / Device safety inspection
-                                    </h3>
-                                    <p>
-                                        Conduct inspections of fall protection and height safety equipment at the site to identify and address any defects or issues promptly
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        ASME authorized inspection
-                                    </h3>
-                                    <p>
-                                        Ensure the quality and safety of pressure vessels through the expertise of competent inspectors 
-                                        who are duly authorized by construction codes 
-                                        and aligned with client requirements
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item inspection">
-                                    <h3>
-                                        Product inspection / Verification
-                                    </h3>
-                                    <p>
-                                        Our team of quality control professionals conducts thorough inspections to verify that products meet customer-specific requirements, ensuring compliance with specifications, safety standards,
-                                        and performance expectations
-                                    </p>
-                                </div>
+                                <?php
+                                    $slides = carbon_get_the_post_meta( 'engineering_inspection_slides' );
+                                    
+                                    foreach ( $slides as $slide ) {
+                                        echo '<div class="we_provide-grid__item inspection">';
+                                        if( $slide[ 'title' ] ) {
+                                            echo '<h3>' . $slide['title'] . '</h3>';
+                                            echo '<p>' .  $slide['link'] . '</p>';
+                                        }
+                                     
+                                        echo '</div>';
+                                    }
+                                    
+                                ?>
                             </div>
                         </div>
                     </div>

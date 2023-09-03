@@ -1,24 +1,34 @@
 <?php 
 /* Template Name: Expediting Page */
 
+
+$editExpeditingTitle = carbon_get_the_post_meta('engineering_banner_expediting_title');
+$editExpeditingParagraph = carbon_get_the_post_meta('engineering_banner_expediting_paragraph');
+$editExpeditingTitleWrapper = carbon_get_the_post_meta('engineering_banner_expediting_title_wrapper');
+$editExpeditingParagraphWrapper = carbon_get_the_post_meta('engineering_banner_expediting_paragraph_tile');
+
     get_header();
 ?>
 
 <div class="wrapper">
-            <section class="section_banner-team expediting">
+            <?php
+                $expeditingBgImage = carbon_get_the_post_meta('engineering_background_image_expediting');
+                $photo = $expeditingBgImage ? wp_get_attachment_image_src($expeditingBgImage, 'full') : '';
+            ?>
+            <section class="section_banner-team expediting" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(0deg, rgba(255, 235, 57, 0.09) 0%, rgba(255, 235, 57, 0.09) 100%), url('<?php echo $photo[0];?>');">
                 <div class="container">
                     <div class="row">
                         <div class="col">
                             <div class="title_page-team expediting">
                                 <div class="header_banner-title expediting">
                                     <h1>
-                                        Expediting                                        
+                                        <?php echo $editExpeditingTitle; ?>                                       
                                     </h1>
                                     <span class="line"></span>
                                 </div>
                                 <div class="body_banner">
                                     <p>
-                                        Efficient third-party expediting of the entire supply chain to ensure project deadlines are met
+                                        <?php echo $editExpeditingParagraph; ?>  
                                     </p>
                                 </div>
                             </div>
@@ -32,25 +42,10 @@
                         <div class="col">
                             <div class="picture_our-team-text">
                                 <h2>
-                                    We expedite the processes at every stage of the project...
+                                    <?php echo $editExpeditingParagraph; ?> 
                                 </h2>
                                 <p>
-                                    In the energy industry, meeting project deadlines can be challenging 
-                                    due to complexities in production and supply chains. Our knowledgeable expeditors provide quality control, testing, and expediting services both on-site 
-                                    and in offices in Dubai, UAE, and worldwide.
-                                    
-                                </p>
-                                <p>    
-                                    We expedite the processes of production, packaging, and delivery at every stage of the project, considering two key factors: quality and time. We closely monitor and track work with manufacturers, regularly updating our clients 
-                                    on the project status to ensure smooth and efficient project execution.                                    
-                                </p>
-                                <p>    
-                                    By conducting thorough audits, we aim to promote transparency, reliability, and adherence to industry standards. Our certified auditors utilize 
-                                    their expertise to evaluate the effectiveness of existing processes, identify areas for improvement, and provide valuable recommendations.
-
-                                </p>
-                                <p> 
-                                    We promptly take corrective actions to prevent potential delays or damage, ensuring that orders are fulfilled according to our clients' expectations.   
+                                    <?php echo $editExpeditingParagraphWrapper; ?> 
                                 </p>
                             </div>
                         </div>
@@ -68,22 +63,20 @@
                                 <span class="line"></span>
                             </div>
                             <div class="we_provide-grid expediting">
-                                <div class="we_provide-grid__item expediting">
-                                    <h3>
-                                        Field expediting
-                                    </h3>
-                                    <p>
-                                        On-site inspection and expediting services to ensure the project progresses in accordance with the client's plan and schedule
-                                    </p>
-                                </div>
-                                <div class="we_provide-grid__item expediting">
-                                    <h3>
-                                        Desk expediting
-                                    </h3>
-                                    <p>
-                                        Regular updates on order progress facilitated through efficient off-site expediting
-                                    </p>
-                                </div>
+                            <?php
+                                    $slides = carbon_get_the_post_meta( 'engineering_expediting_slides' );
+                                    
+                                    foreach ( $slides as $slide ) {
+                                        echo '<div class="we_provide-grid__item expediting">';
+                                        if( $slide[ 'title' ] ) {
+                                            echo '<h3>' . $slide['title'] . '</h3>';
+                                            echo '<p>' .  $slide['link'] . '</p>';
+                                        }
+                                     
+                                        echo '</div>';
+                                    }
+                                    
+                                ?>
                             </div>
                         </div>
                     </div>

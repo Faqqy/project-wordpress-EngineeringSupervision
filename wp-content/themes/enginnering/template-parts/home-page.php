@@ -1,12 +1,40 @@
 <?php 
 /* Template Name: Home Page */
+
+//Banner section
 $edittexttitle = carbon_get_the_post_meta('engineering_banner_section_title');
 $edittextparagraph = carbon_get_the_post_meta('engineering_banner_section_paragraph');
+
+//Services section
+$editServicesTitle = carbon_get_the_post_meta('engineering_services_section_title');
+$editServicesLeftText = carbon_get_the_post_meta('engineering_services_section_left_text');
+$editServicesRightText = carbon_get_the_post_meta('engineering_services_section_right_text');
+
+//Work  section
+$editWorkTitle = carbon_get_the_post_meta('engineering_work_section_title');
+$editWorkParagraph = carbon_get_the_post_meta('engineering_work_section_left_text');
+
+//Cards
+$firstCardTitle = carbon_get_theme_option('engineering_card_title_first');
+$firstCardParagraph = carbon_get_theme_option('engineering_card_paragraph_first');
+$firstCardParagraphHidden = carbon_get_theme_option('engineering_card_hidden_text_first');
+
+$secondCardTitle = carbon_get_theme_option('engineering_card_title_second');
+$secondCardParagraph = carbon_get_theme_option('engineering_card_paragraph_second');
+$secondCardParagraphHidden = carbon_get_theme_option('engineering_card_hidden_text_second');
+
+$thirdCardTitle = carbon_get_theme_option('engineering_card_title_third');
+$thirdCardParagraph = carbon_get_theme_option('engineering_card_paragraph_third');
+$thirdCardParagraphHidden = carbon_get_theme_option('engineering_card_hidden_text_third');
 
 get_header();
 ?>
 <div class="wrapper">
-            <section class="section_banner">
+            <?php
+                $firstCardImage = carbon_get_the_post_meta('engineering_background_image_home');
+                $photo = $firstCardImage ? wp_get_attachment_image_src($firstCardImage, 'full') : '';
+            ?>
+            <section class="section_banner" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), url('<?php echo $photo[0];?>'); ">
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -38,28 +66,25 @@ get_header();
                         <div class="col">
                             <div class="title_services">
                                 <h2>
-                                    Services
+                                    <?php echo $editServicesTitle; ?>
                                 </h2>
                             </div>
                             <span class="line line_h1"></span>
                             <div class="items_box">
                                 <div class="item-front">
-                                    <img src="<?php echo get_bloginfo('template_url') ?>/img/services_photo-1.jpg" alt="Services">
+                                    <?php
+                                        $firstCardImage = carbon_get_theme_option('engineering_card_image_first');
+                                        $photo = $firstCardImage ? wp_get_attachment_image_src($firstCardImage, 'full') : '';
+                                    ?>
+                                    <img src="<?php echo $photo[0];?>" alt="">
                                     <div class="mobile_activation">
-                                        <h2>Inspection</h2>
+                                        <h2><?php echo $firstCardTitle; ?></h2>
                                         <span class="line"></span>
                                         <p class="body_copy">
-                                            We are committed to fulfilling your global inspection requirements across diverse engineering disciplines for a wide range
-                                            of industries.
+                                            <?php echo $firstCardParagraph; ?>
                                         </p>
                                         <p class="additional-text">
-                                            As a highly trusted third-party inspection company based in Dubai, UAE, we provide comprehensive services that extend 
-                                            to various regions worldwide. Our team 
-                                            of skilled industrial experts possesses diverse talents to effectively address 
-                                            the inspection needs of our clients 
-                                            in the Oil & Gas Chemicals, Process Industries, Urban Infrastructure, Power 
-                                            & Renewable Energy, Marine, Desalination, 
-                                            and Transportation sectors...
+                                            <?php echo $firstCardParagraphHidden; ?>
                                         </p>
                                         <div class="button_read-more">
 
@@ -71,22 +96,19 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="item-front">
-                                    <img src="<?php echo get_bloginfo('template_url') ?>/img/services_photo-2.jpg" alt="Services">
+                                    <?php
+                                        $secondCardImage = carbon_get_theme_option('engineering_card_image_second');
+                                        $photo = $secondCardImage ? wp_get_attachment_image_src($secondCardImage, 'full') : '';
+                                    ?>
+                                    <img src="<?php echo $photo[0];?>" alt="">
                                     <div class="mobile_activation">
-                                        <h2>Audit</h2>
+                                        <h2><?php echo $secondCardTitle; ?></h2>
                                         <span class="line"></span>
                                         <p class="body_copy">
-                                            Conducting ISO Certification Audits with 
-                                            a well-defined plan to enhance operational efficiency and drive organizational improvement.
+                                            <?php echo $secondCardParagraph; ?>
                                         </p>
                                         <p class="additional-text">
-                                            As a highly trusted third-party inspection company based in Dubai, UAE, we provide comprehensive services that extend 
-                                            to various regions worldwide. Our team 
-                                            of skilled industrial experts possesses diverse talents to effectively address 
-                                            the inspection needs of our clients 
-                                            in the Oil & Gas Chemicals, Process Industries, Urban Infrastructure, Power 
-                                            & Renewable Energy, Marine, Desalination, 
-                                            and Transportation sectors...
+                                            <?php echo $secondCardParagraphHidden; ?>
                                         </p>
                                         <div class="button_read-more">
                                             <a href="<?php echo get_permalink(27); ?>">
@@ -96,22 +118,19 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="item-front">
-                                    <img src="<?php echo get_bloginfo('template_url') ?>/img/services_photo-3.jpg" alt="Services"> 
+                                    <?php
+                                        $thirdCardImage = carbon_get_theme_option('engineering_card_image_third');
+                                        $photo = $thirdCardImage ? wp_get_attachment_image_src($thirdCardImage, 'full') : '';
+                                    ?>
+                                    <img src="<?php echo $photo[0];?>" alt="">
                                     <div class="mobile_activation">
-                                        <h2>Expediting</h2>
+                                        <h2><?php echo $thirdCardTitle; ?></h2>
                                         <span class="line"></span>
                                         <p class="body_copy">
-                                            Efficient third-party expediting of the entire supply chain to ensure project deadlines 
-                                            are met.
+                                            <?php echo $thirdCardParagraph; ?>
                                         </p>
                                         <p class="additional-text">
-                                            As a highly trusted third-party inspection company based in Dubai, UAE, we provide comprehensive services that extend 
-                                            to various regions worldwide. Our team 
-                                            of skilled industrial experts possesses diverse talents to effectively address 
-                                            the inspection needs of our clients 
-                                            in the Oil & Gas Chemicals, Process Industries, Urban Infrastructure, Power 
-                                            & Renewable Energy, Marine, Desalination, 
-                                            and Transportation sectors...
+                                            <?php echo $thirdCardParagraphHidden; ?>
                                         </p>
                                         <div class="button_read-more">
                                             <a href="<?php echo get_permalink(29); ?>">
@@ -132,17 +151,14 @@ get_header();
                             <div class="col-md-6 col-sm-12">
                                 <div class="broken_text-left">
                                     <p>
-                                        Our team consists of highly qualified professionals with years of relevant experience, who work closely with you, striving
-                                        to provide a customized approach to you, taking into account your unique needs, to ensure processes are carried out
-                                        in accordance with your requirements.
+                                        <?php echo $editServicesLeftText; ?>
                                     </p>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="broken_text-right">
                                     <p>
-                                        We work in various industries worldwide, ensuring timely completion of work
-                                        and accuracy of results
+                                        <?php echo $editServicesRightText; ?>
                                         <span class="line_dark"></span>
                                     </p>
                                 </div>
@@ -154,8 +170,7 @@ get_header();
                             <div class="col-lg-6 col-md-12">
                                 <div class="broken_text-right">
                                     <p>
-                                        We work in various industries worldwide, ensuring timely completion of work
-                                        and accuracy of results
+                                        <?php echo $editServicesRightText; ?>
                                         <span class="line_dark"></span>
                                     </p>
                                 </div>
@@ -163,9 +178,7 @@ get_header();
                             <div class="col-lg-6 col-md-12">
                                 <div class="broken_text-left">
                                     <p>
-                                        Our team consists of highly qualified professionals with years of relevant experience, who work closely with you, striving
-                                        to provide a customized approach to you, taking into account your unique needs, to ensure processes are carried out
-                                        in accordance with your requirements.
+                                        <?php echo $editServicesLeftText; ?>
                                     </p>
                                 </div>
                             </div>
@@ -173,18 +186,21 @@ get_header();
                     </div>
                 </div>
             </section>  
-            
-            <section class="work_section">
+            <?php
+                $firstCardImage2 = carbon_get_the_post_meta('engineering_background_image_work');
+                $photo = $firstCardImage2 ? wp_get_attachment_image_src($firstCardImage2, 'full') : '';
+            ?>
+            <section class="work_section" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), url('<?php echo $photo[0];?>');">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="title_work align-middle">
                                 <h2>
-                                    Work with us                                
+                                    <?php echo $editWorkTitle; ?>                             
                                 </h2>
                                 <span class="line"></span>
                                 <p>
-                                    If you have experience or knowledge in 3rd-party inspections or technical audit, we are open for cooperation and are happy to invite competent specialists to our team
+                                    <?php echo $editWorkParagraph; ?>  
                                 </p>
                                 <div class="button_view-careers">
                                     <a href="<?php echo get_permalink(13); ?>">
