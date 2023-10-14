@@ -57,7 +57,7 @@
 				$preload_std = json_decode($data);
 
 				if(isset($preload_std->sitemaps)){
-					if(!empty($preload_arr)){
+					if(!empty($preload_arr) && isset($preload_arr["sitemaps"])){
 
 						for ($i=0; $i < count($preload_arr["sitemaps"]) ; $i++) {
 							for ($j=0; $j < count($preload_std->sitemaps); $j++) {
@@ -573,17 +573,36 @@
 			}
 		}
 
-		public static function prepare_sitemap($url = false, $sitemap_cache_path){
-			if($url){
-
+		public static function prepare_sitemap($url, $sitemap_cache_path){
+			if(!empty($url)){
 				$content = $GLOBALS["wp_fastest_cache"]->wpfc_remote_get($url, "xxxx", true);
 
 				$content = strtolower($content);
+
 				$content = preg_replace("/<\?\s*xml[^\>]*>/i", "", $content);
-				$content = preg_replace("/<\/?urlset[^\>]*>/i", "", $content);
+				
+				// to remove comments
+				$content = preg_replace("/\<\!\-\-((?:(?!-->).)+)\-\-\>/", "", $content);
+
 				$content = preg_replace("/<((?:(?!url|loc).)+)>((?:(?!http).)+)<((?:(?!url|loc).)+)>/i", "", $content);
-				$content = preg_replace("/\s/i", "", $content);
-				$content = preg_replace("/<\/url>/i", "</url>\n", $content);
+				
+				// to remove <image:image></image:image> tag
+				$content = preg_replace("/<\s*image\s*:\s*image\s*>((?:(?!\<\s*\/\s*image\s*:\s*image\s*>).)+)<\s*\/\s*image\s*\:\s*image\s*>/s", "", $content);
+				
+				if(preg_match("/<\s*sitemapindex[^\>]+>/", $content)){
+					$content = preg_replace("/<\/?sitemapindex[^\>]*>/i", "", $content);
+					
+					$content = preg_replace("/\s/i", "", $content);
+					$content = preg_replace("/<\/sitemap>/i", "</sitemap>\n", $content);
+
+				}else{
+					$content = preg_replace("/<\/?urlset[^\>]*>/i", "", $content);
+
+
+					$content = preg_replace("/\s/i", "", $content);
+					$content = preg_replace("/<\/url>/i", "</url>\n", $content);
+
+				}
 
 				if(!is_dir($GLOBALS["wp_fastest_cache"]->getWpContentDir("/cache/all/"))){
 					@mkdir($GLOBALS["wp_fastest_cache"]->getWpContentDir("/cache/all/"), 0755, true);
@@ -595,6 +614,24 @@
 			}
 
 			return false;
+		}
+
+		public static function extract_sitemap_index($content, $sitemaps){
+			if($content){
+				preg_match_all("/<sitemap><loc>([^\>\<]+)<\/loc><\/sitemap>/", $content, $out);
+
+				if(isset($out[1]) && isset($out[1][0])){
+					foreach ($out[1] as $key => $value) {
+						$sm_obj = (object) array("url" => $value, "pointer" => 0, "total" => 0);
+
+						if(!in_array($value, array_column($sitemaps, 'url'))){
+							array_push($sitemaps, $sm_obj);
+						}
+					}
+				}
+			}
+
+			return $sitemaps;
 		}
 
 		public static function create_preload_cache_sitemap($pre_load, $options){
@@ -612,24 +649,30 @@
 				$mobile_theme = false;
 			}
 
-			foreach ($pre_load->sitemaps as $sitemap_key => &$sitemap_value) {
-
-				$sitemap_cache_path = $GLOBALS["wp_fastest_cache"]->getWpContentDir("/cache/all/".base64_encode($sitemap_value->url).".xml");
-
-				if(!file_exists($sitemap_cache_path) || !isset($sitemap_value->total)){
-					$content = self::prepare_sitemap($sitemap_value->url, $sitemap_cache_path);
-
-					$sitemap_value->total = substr_count($content, '<url>');
-				}
-
-			}
-
 
 			foreach ($pre_load->sitemaps as $s_key => &$s_value) {
+				$sitemap_cache_path = $GLOBALS["wp_fastest_cache"]->getWpContentDir("/cache/all/".base64_encode($s_value->url).".xml");
+
+				if(!file_exists($sitemap_cache_path) || !isset($s_value->total)){
+					$content = self::prepare_sitemap($s_value->url, $sitemap_cache_path);
+
+					$s_value->total = substr_count($content, '<url>');
+
+					if($s_value->total == 0){
+						$pre_load->sitemaps = self::extract_sitemap_index($content, $pre_load->sitemaps);
+						unset($pre_load->sitemaps[$s_key]);
+
+						$pre_load->sitemaps = array_values($pre_load->sitemaps);
+
+						update_option("WpFastestCachePreLoad", json_encode($pre_load));
+
+						die($s_value->url." was extracted");
+					}
+				}
+
 				$s_value->pointer = $s_value->pointer > 0 ? $s_value->pointer : 1;
 				
 				if($s_value->pointer < $s_value->total){
-					$sitemap_cache_path = $GLOBALS["wp_fastest_cache"]->getWpContentDir("/cache/all/".base64_encode($s_value->url).".xml");
 
 					$file = fopen($sitemap_cache_path, "r");
 
@@ -706,7 +749,11 @@
 						$cached_page_number = max($cached_page_number, 0);
 					}
 
-					echo esc_html($sres_value->url).": ".esc_html($cached_page_number)."/".esc_html($sres_value->total)."<br>\n";
+					if(isset($sres_value->total) && $cached_page_number > 0){
+						echo esc_html($sres_value->url).": ".esc_html($cached_page_number)."/".esc_html($sres_value->total)."<br>\n";
+					}else{
+						echo esc_html($sres_value->url).": -<br>\n";
+					}
 				}
 
 				update_option("WpFastestCachePreLoad", json_encode($pre_load));

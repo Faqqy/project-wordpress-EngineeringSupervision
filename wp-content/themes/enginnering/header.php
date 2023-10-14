@@ -30,7 +30,7 @@
                             <div class="logo_header">
                                 <a href="<?php echo home_url(); ?>">
                                     <img src="<?php echo get_bloginfo('template_url') ?>/img/logo.svg" alt="Engineering Supervision">
-                                    <span>Engineering Supervision</span>
+                                    <span>Engıneerıng Supervısıon</span>
                                 </a>
                             </div>
                             <div class="menu_header">

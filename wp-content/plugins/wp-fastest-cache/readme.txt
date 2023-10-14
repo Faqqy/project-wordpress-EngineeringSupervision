@@ -4,7 +4,7 @@ Donate link: https://profiles.wordpress.org/emrevona/
 Tags: cache, Optimize, performance, wp-cache, core web vitals
 Requires at least: 3.3
 Tested up to: 6.3
-Stable tag: 1.1.8
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,15 +115,32 @@ Chinese Simplified (China), Chinese Traditional (Taiwan), Czech, Dutch (Belgium)
 18. Database Cleanup
 
 == Changelog ==
+= 1.2.0 =
+* to make the Preload feature to be compatible with Sitemap Index
+* to hide the premium tab for the premium users
+* to show warning if the Static CSS File Generation option of Divi theme is enabled
+* to update translation files
+* to fix PHP Warning: Undefined array key "sitemaps" in preload.php on line 62
+* to change the cache path for the Polylang-Pro plugin
+* to check if the buffer has only one line (no line breaks)
+* refactoring of checkHtml()
+* to check that Cookie Notice & Compliance for GDPR / CCPA is active or not
+
+= 1.1.9 =
+* to add gear button for the preload feature
+* to remove image urls for sitemap preload
+* to fix PHP Deprecated: Required parameter in preload.php on line 576
+* <strong>[FEATURE]</strong> Moving the menu item under the settings menu [<a target="_blank" href="https://www.wpfastestcache.com/tutorial/how-to-move-the-menu-item-under-the-setting-menu/">Details</a>]
+* to fix Warning: Undefined array key "action" in wpFastestCache.php on line 378 and 395
 
 = 1.1.8 =
-* [FEATURE] to add Sitemap option for the preload feature [<a target="_blank" href="https://www.wpfastestcache.com/features/preload-settings/#methods">Details</a>]
+* <strong>[FEATURE]</strong> to add Sitemap option for the preload feature [<a target="_blank" href="https://www.wpfastestcache.com/features/preload-settings/#methods">Details</a>]
 * to update translation files
 * to fix PHP Warning: Attempt to read property "term_taxonomy_id" on bool in wpFastestCache.php on line 1638
 
 = 1.1.7 =
 * to change the cache path for the Polylang plugin
-* [FEATURE] to add Korean (Korea) language
+* <strong>[FEATURE]</strong> to add Korean (Korea) language
 * to update translation files
 * refactoring of is_amp()
 * to replace empty char which exist in the admin cookie with %20 for RewriteCond

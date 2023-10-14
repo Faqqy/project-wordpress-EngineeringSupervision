@@ -134,6 +134,7 @@ div.questionCon.qsubmit{
 .get-info {
     float: left;
     padding-left: 10px;
+    cursor: pointer;
 }
 #rule-help-tip {
     width: 500px;
@@ -210,13 +211,6 @@ h1.summary-rec {
 
 
 
-
-#vote-us{
-    border-color: #D09847; 
-    background: url("../images/facebook-like-xxl.png") #E39124 no-repeat 103% 130%; 
-    background-size: 30%;
-    cursor: pointer;
-}
 
 #wpfc-beta{
     padding-right: 5px;

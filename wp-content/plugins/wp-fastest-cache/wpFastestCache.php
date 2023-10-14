@@ -3,7 +3,7 @@
 Plugin Name: WP Fastest Cache
 Plugin URI: http://wordpress.org/plugins/wp-fastest-cache/
 Description: The simplest and fastest WP Cache system
-Version: 1.1.8
+Version: 1.2.0
 Author: Emre Vona
 Author URI: https://www.wpfastestcache.com/
 Text Domain: wp-fastest-cache
@@ -375,30 +375,34 @@ GNU General Public License for more details.
 		}
 
 		public function clear_cache_after_update_plugin($upgrader_object, $options){
-			if($options['action'] == 'update'){
-				if($options['type'] == 'plugin' && (isset($options['plugins']) || isset($options['plugin']))){
+			if(isset($options['action']) && isset($options['type'])){
+				if($options['action'] == 'update'){
+					if($options['type'] == 'plugin' && (isset($options['plugins']) || isset($options['plugin']))){
 
-					$options_json = json_encode($options);
+						$options_json = json_encode($options);
 
-					if(preg_match("/elementor\\\\\/elementor\.php/i", $options_json)){
-						$this->deleteCache(true);
-					}
+						if(preg_match("/elementor\\\\\/elementor\.php/i", $options_json)){
+							$this->deleteCache(true);
+						}
 
-					if(defined("WPFC_CLEAR_CACHE_AFTER_PLUGIN_UPDATE") && WPFC_CLEAR_CACHE_AFTER_PLUGIN_UPDATE){
-						$this->deleteCache(true);
+						if(defined("WPFC_CLEAR_CACHE_AFTER_PLUGIN_UPDATE") && WPFC_CLEAR_CACHE_AFTER_PLUGIN_UPDATE){
+							$this->deleteCache(true);
+						}
 					}
 				}
 			}
 		}
 
 		public function clear_cache_after_update_theme($upgrader_object, $options){
-			if($options['action'] == 'update'){
-				if($options['type'] == 'theme' && isset($options['themes'])){
+			if(isset($options['action']) && isset($options['type'])){
+				if($options['action'] == 'update'){
+					if($options['type'] == 'theme' && isset($options['themes'])){
 
-					if(defined("WPFC_CLEAR_CACHE_AFTER_THEME_UPDATE") && WPFC_CLEAR_CACHE_AFTER_THEME_UPDATE){
-						$this->deleteCache(true);
+						if(defined("WPFC_CLEAR_CACHE_AFTER_THEME_UPDATE") && WPFC_CLEAR_CACHE_AFTER_THEME_UPDATE){
+							$this->deleteCache(true);
+						}
+
 					}
-
 				}
 			}
 		}
@@ -458,7 +462,7 @@ GNU General Public License for more details.
 			}
 
 			// to change content url if a different url is used for other langs
-			if($this->isPluginActive('polylang/polylang.php')){
+			if($this->isPluginActive('polylang/polylang.php') || $this->isPluginActive('polylang-pro/polylang.php')){
 				$url =  parse_url($content_url);
 
 				if($url["host"] != $_SERVER['HTTP_HOST']){
@@ -885,8 +889,14 @@ GNU General Public License for more details.
 		}
 
 		public function register_my_custom_menu_page(){
-			if(function_exists('add_menu_page')){ 
-				add_menu_page("WP Fastest Cache Settings", "WP Fastest Cache", 'manage_options', "wpfastestcacheoptions", array($this, 'optionsPage'), plugins_url("wp-fastest-cache/images/icon.svg"));
+			if(function_exists('add_menu_page')){
+
+				if(defined("WPFC_MOVE_MENU_ITEM_UNDER_SETTINGS") && WPFC_MOVE_MENU_ITEM_UNDER_SETTINGS){
+					add_options_page("WP Fastest Cache Settings", "WP Fastest Cache", 'manage_options', 'wpfastestcacheoptions', array($this, 'optionsPage'));
+				}else{
+					add_menu_page("WP Fastest Cache Settings", "WP Fastest Cache", 'manage_options', "wpfastestcacheoptions", array($this, 'optionsPage'), plugins_url("wp-fastest-cache/images/icon.svg"));
+				}
+
 				add_action('admin_init', array($this, 'register_mysettings'));
 
 				wp_enqueue_style("wp-fastest-cache", plugins_url("wp-fastest-cache/css/style.css"), array(), time(), "all");

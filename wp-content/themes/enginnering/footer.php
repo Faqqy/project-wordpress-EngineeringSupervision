@@ -68,7 +68,7 @@ $editLinkAddress = carbon_get_theme_option('engineering_contact_address_link');
                             </div>
                             <div id="map"></div>
                             <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-                                ({key: "AIzaSyB4rx_VuE8TmDT1Sq4-TZ5MeVVIaHFKRng", v: "weekly"});</script>
+                                ({key: "AIzaSyBPsBHmKP_oeCGwvHASx0vdjK0km6afpnQ", v: "weekly"});</script>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ $editLinkAddress = carbon_get_theme_option('engineering_contact_address_link');
                                 <div class="dark_logo">
                                     <a href="<?php echo home_url(); ?>">
                                         <img src="<?php echo get_bloginfo('template_url') ?>/img/black_logo.svg" alt="Engineering Supervision">
-                                        <span>Engineering Supervision</span>
+                                        <span>Engıneerıng Supervısıon</span>
                                     </a>
                                 </div>
                                 <div class="bottom_menu">
@@ -128,7 +128,7 @@ $editLinkAddress = carbon_get_theme_option('engineering_contact_address_link');
                                     <li><a href="#">Cookie Policy</a></li>
                                     <li><a href="#">Cookie Preferences</a></li>
                                     <li><a href="#">Privacy at ES</a></li>
-                                    <li><a href="#">© 2023 Engineering Supervision</a></li>
+                                    <li><a href="#">© 2023 Engıneerıng Supervısıon</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,0 +1,1910 @@
+********************************************************************************
+* DUPLICATOR LITE: Install-Log
+* STEP-0 START @ 07:19:16
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+PACKAGE INFO________ ORIGINAL SERVER                        |CURRENT SERVER
+OS__________________: Linux                                 |Linux
+PHP VERSION_________: 8.0.17                                |7.3.33
+********************************************************************************
+CURRENT SERVER INFO
+PHP_________________: 7.3.33 | SAPI: litespeed
+PHP MEMORY__________: 4294967296 | SUHOSIN: disabled
+ARCHITECTURE________: 64-bit
+SERVER______________: Apache/2.4.37 ()
+DOC ROOT____________: "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+REQUEST URL_________: "https://engsupervision.com"
+********************************************************************************
+OVERWRITE PARAMS
+ *** FROM PACKAGE
+PARAM SET KEY[blogname]
+********************************************************************************
+MAINTENANCE MODE DISABLE
+INSTALLER INFO
+
+TEMPLATE____________: "base"
+SECURE MODE_________: "none"
+URL PLUGINS_________: http://gupmm.ru/wp-content/plugins
+VALIDATE ON START___: "normal"
+PATH_NEW____________: "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+URL_NEW_____________: "https://engsupervision.com"
+********************************************************************************
+ARCHIVE INFO
+
+ARCHIVE NAME________: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/prodprod_[HASH]_20231012065206_archive.zip"
+ARCHIVE SIZE________: 132.53MB
+CREATED_____________: 2023-10-12 06:52:06
+WP VERSION__________: 6.3.1
+DUP VERSION_________: 1.5.6
+LICENSE_____________: Free version
+DB VERSION__________: 5.7.27
+DB FILE SIZE________: 2.91MB
+DB TABLES___________: 13
+DB ROWS_____________: 688
+URL HOME____________: http://gupmm.ru
+URL CORE____________: http://gupmm.ru
+URL CONTENT_________: http://gupmm.ru/wp-content
+URL UPLOAD__________: http://gupmm.ru/wp-content/uploads
+URL PLUGINS_________: http://gupmm.ru/wp-content/plugins
+URL MU PLUGINS______: http://gupmm.ru/wp-content/mu-plugins
+URL THEMES__________: http://gupmm.ru/wp-content/themes
+PATH HOME___________: /var/www/u1656834/data/www/gupmm.ru
+PATH ABS____________: /var/www/u1656834/data/www/gupmm.ru
+PATH WPCONFIG_______: /var/www/u1656834/data/www/gupmm.ru
+PATH WPCONTENT______: /var/www/u1656834/data/www/gupmm.ru/wp-content
+PATH UPLOADS________: /var/www/u1656834/data/www/gupmm.ru/wp-content/uploads
+PATH PLUGINS________: /var/www/u1656834/data/www/gupmm.ru/wp-content/plugins
+PATH MUPLUGINS______: /var/www/u1656834/data/www/gupmm.ru/wp-content/mu-plugins
+PATH THEMES_________: /var/www/u1656834/data/www/gupmm.ru/wp-content/themes
+
+SUBSITES
+SUBSITE [ID:   1] "gupmm.ru/"
+
+PLUGINS
+PLUGIN [SLUG:carbon-fields/carbon-fields-plugin.php            ][ON:true ]  Carbon Fields
+PLUGIN [SLUG:contact-form-7/wp-contact-form-7.php              ][ON:true ]  Contact Form 7
+PLUGIN [SLUG:duplicator/duplicator.php                         ][ON:true ]  Duplicator
+PLUGIN [SLUG:wp-fastest-cache/wpFastestCache.php               ][ON:true ]  WP Fastest Cache
+
+********************************************************************************
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.32051]  MESSAGE:END RENDER PAGE
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [sparam_s1] START
+[PHP ERR][E_WARNING] MSG:mysqli_real_connect(): (HY000/2002): No such file or directory [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php|LINE:55]
+DATABASE CONNECTION ERROR: No such file or directory[ERRNO:2002]
+
+INSTALLER ERROR:
+Unable to connect with the following parameters:
+HOST: "localhost"
+DBUSER: "root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+
+
+DATABASE CHECK CHARSET EXCEPTION:  Unable to connect with the following parameters:<br/>HOST: "localhost"
+DBUSER: "root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+	FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Utils/Log/Log.php[401]
+	TRACE:
+#0 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.functions.php(134): Duplicator\Installer\Utils\Log\Log::error('Unable to conne...')
+#1 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(72): DUPX_DB_Functions->dbConnection(Array)
+#2 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(704): DUPX_Validation_database_service->getDbConnection()
+#3 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.params.php(274): DUPX_Validation_database_service->caseSensitiveTablesValue()
+#4 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.params.php(147): DUPX_Ctrl_Params::setParamsDatabase()
+#5 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(183): DUPX_Ctrl_Params::setParamsStep1()
+#6 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(95): DUPX_Ctrl_ajax::actions('sparam_s1')
+#7 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php(56): DUPX_Ctrl_ajax::controller()
+#8 {main}
+
+AJAX ACTION [sparam_s1] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+STEP ACTION: "on-validate"
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.40641]  MESSAGE:END RENDER PAGE
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [validate] START
+START TEST "Archive Check" [CLASS: DUPX_Validation_test_archive_check]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Archive Check" RESULT: passed
+
+START TEST "Duplicator importer version" [CLASS: DUPX_Validation_test_importer_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Duplicator importer version" RESULT: skip
+
+START TEST "Overwrite Install" [CLASS: DUPX_Validation_test_owrinstall]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Overwrite Install" RESULT: skip
+
+START TEST "Recovery Point" [CLASS: DUPX_Validation_test_recovery]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Recovery Point" RESULT: skip
+
+START TEST "Package is Importable" [CLASS: DUPX_Validation_test_importable]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Package is Importable" RESULT: skip
+
+START TEST "REST API test" [CLASS: DUPX_Validation_test_rest_api]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "REST API test" RESULT: skip
+
+START TEST "Manual extraction detected" [CLASS: DUPX_Validation_test_manual_extraction]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Manual extraction detected" RESULT: good
+
+START TEST "Database Only" [CLASS: DUPX_Validation_test_dbonly_iswordpress]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Database Only" RESULT: skip
+
+START TEST "Package Age" [CLASS: DUPX_Validation_test_package_age]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Package Age" RESULT: good
+
+START TEST "Package Size" [CLASS: DUPX_Validation_test_package_size]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package Size" RESULT: good
+
+START TEST "Replace PATHs in database" [CLASS: DUPX_Validation_test_replace_paths]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Replace PATHs in database" RESULT: skip
+
+START TEST "Managed hosting supported" [CLASS: DUPX_Validation_test_managed_supported]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Managed hosting supported" RESULT: skip
+
+START TEST "Siteground" [CLASS: DUPX_Validation_test_siteground]
+LOG-TIME[DELTA:   0.00008]  MESSAGE:TEST "Siteground" RESULT: skip
+
+START TEST "Addon Sites" [CLASS: DUPX_Validation_test_addon_sites]
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+LOG-TIME[DELTA:   0.00529]  MESSAGE:TEST "Addon Sites" RESULT: good
+
+START TEST "Wordfence" [CLASS: DUPX_Validation_test_wordfence]
+LOG-TIME[DELTA:   0.00008]  MESSAGE:TEST "Wordfence" RESULT: good
+
+START TEST "Table prefix of managed hosting" [CLASS: DUPX_Validation_test_managed_tprefix]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Table prefix of managed hosting" RESULT: skip
+
+START TEST "PHP Version Mismatch" [CLASS: DUPX_Validation_test_php_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Version Mismatch" RESULT: soft warning
+
+START TEST "PHP Open Base" [CLASS: DUPX_Validation_test_open_basedir]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Open Base" RESULT: good
+
+START TEST "PHP Memory Limit" [CLASS: DUPX_Validation_test_memory_limit]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "PHP Memory Limit" RESULT: good
+
+START TEST "PHP Extensions" [CLASS: DUPX_Validation_test_extensions]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Extensions" RESULT: good
+
+START TEST "PHP Mysqli" [CLASS: DUPX_Validation_test_mysql_connect]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Mysqli" RESULT: passed
+
+START TEST "PHP Tokenizer" [CLASS: DUPX_Validation_test_tokenizer]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Tokenizer" RESULT: passed
+
+START TEST "PHP Timeout" [CLASS: DUPX_Validation_test_timeout]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Timeout" RESULT: good
+
+START TEST "Disk Space" [CLASS: DUPX_Validation_test_disk_space]
+LOG-TIME[DELTA:   0.00289]  MESSAGE:TEST "Disk Space" RESULT: good
+
+START TEST "Permissions: General" [CLASS: DUPX_Validation_test_iswritable]
+LOG-TIME[DELTA:   0.00176]  MESSAGE:TEST "Permissions: General" RESULT: passed
+
+START TEST "Permissions: Configs Files " [CLASS: DUPX_Validation_test_iswritable_configs]
+LOG-TIME[DELTA:   0.00004]  MESSAGE:TEST "Permissions: Configs Files " RESULT: passed
+
+START TEST "Host Name" [CLASS: DUPX_Validation_test_db_host_name]
+LOG-TIME[DELTA:   0.00006]  MESSAGE:TEST "Host Name" RESULT: passed
+
+START TEST "Host Connection" [CLASS: DUPX_Validation_test_db_connection]
+[PHP ERR][E_WARNING] MSG:mysqli_real_connect(): (HY000/2002): No such file or directory [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php|LINE:55]
+DATABASE CONNECTION ERROR: No such file or directory[ERRNO:2002]
+
+INSTALLER ERROR:
+Unable to connect with the following parameters:
+HOST: "localhost"
+DBUSER: "root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+
+
+      TEST "Host Connection" EXCEPTION: Unable to connect with the following parameters:<br/>HOST: "localhost"
+DBUSER: "root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+	FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Utils/Log/Log.php[401]
+	TRACE:
+#0 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.functions.php(134): Duplicator\Installer\Utils\Log\Log::error('Unable to conne...')
+#1 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(72): DUPX_DB_Functions->dbConnection(Array)
+#2 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/database-tests/class.validation.test.db.connection.php(26): DUPX_Validation_database_service->getDbConnection()
+#3 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.abstract.item.php(46): DUPX_Validation_test_db_connection->runTest()
+#4 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php(232): DUPX_Validation_abstract_item->test(true)
+#5 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php(205): DUPX_Validation_manager->runTests()
+#6 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(173): DUPX_Validation_manager->getValidateData()
+#7 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(95): DUPX_Ctrl_ajax::actions('validate')
+#8 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php(56): DUPX_Ctrl_ajax::controller()
+#9 {main}
+
+LOG-TIME[DELTA:   0.00053]  MESSAGE:TEST "Host Connection" RESULT: failed
+
+START TEST "Database Version" [CLASS: DUPX_Validation_test_db_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Version" RESULT: skip
+
+START TEST "Create New Database" [CLASS: DUPX_Validation_test_db_create]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Create New Database" RESULT: skip
+
+START TEST "Database Engine Support" [CLASS: DUPX_Validation_test_db_supported_engine]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Engine Support" RESULT: skip
+
+START TEST "Database GTID Mode" [CLASS: DUPX_Validation_test_db_gtid_mode]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Database GTID Mode" RESULT: skip
+
+START TEST "Privileges: User Visibility" [CLASS: DUPX_Validation_test_db_visibility]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: User Visibility" RESULT: skip
+
+START TEST "Manual Table Check" [CLASS: DUPX_Validation_test_db_manual_tabels_count]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Manual Table Check" RESULT: skip
+
+START TEST "Multiple WordPress Installs" [CLASS: DUPX_Validation_test_db_multiple_wp_installs]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Multiple WordPress Installs" RESULT: skip
+
+START TEST "Privileges: User Resources" [CLASS: DUPX_Validation_test_db_user_resources]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Privileges: User Resources" RESULT: skip
+
+START TEST "Privileges: User Table Access" [CLASS: DUPX_Validation_test_db_user_perms]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: User Table Access" RESULT: skip
+
+START TEST "Privileges: 'Show Variables' Query" [CLASS: DUPX_Validation_test_db_custom_queries]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: 'Show Variables' Query" RESULT: skip
+
+START TEST "Source Database Triggers" [CLASS: DUPX_Validation_test_db_triggers]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Source Database Triggers" RESULT: skip
+
+START TEST "Character Set and Collation Support" [CLASS: DUPX_Validation_test_db_supported_default_charset]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Character Set and Collation Support" RESULT: skip
+
+START TEST "Character Set and  Collation Capability" [CLASS: DUPX_Validation_test_db_supported_charset]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Character Set and  Collation Capability" RESULT: skip
+
+START TEST "Tables Case Sensitivity" [CLASS: DUPX_Validation_test_db_case_sensitive_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Case Sensitivity" RESULT: skip
+
+START TEST "Tables Flagged for Removal or Backup" [CLASS: DUPX_Validation_test_db_affected_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Flagged for Removal or Backup" RESULT: skip
+
+START TEST "Prefix too long" [CLASS: DUPX_Validation_test_db_prefix_too_long]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Prefix too long" RESULT: skip
+
+START TEST "Database cleanup" [CLASS: DUPX_Validation_test_db_cleanup]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database cleanup" RESULT: skip
+
+AJAX ACTION [validate] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [sparam_s1] START
+[PHP ERR][E_WARNING] MSG:mysqli_real_connect(): (HY000/2002): No such file or directory [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php|LINE:55]
+DATABASE CONNECTION ERROR: No such file or directory[ERRNO:2002]
+
+INSTALLER ERROR:
+Unable to connect with the following parameters:
+HOST: "localhost"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+
+
+DATABASE CHECK CHARSET EXCEPTION:  Unable to connect with the following parameters:<br/>HOST: "localhost"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+	FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Utils/Log/Log.php[401]
+	TRACE:
+#0 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.functions.php(134): Duplicator\Installer\Utils\Log\Log::error('Unable to conne...')
+#1 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(72): DUPX_DB_Functions->dbConnection(Array)
+#2 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(704): DUPX_Validation_database_service->getDbConnection()
+#3 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.params.php(274): DUPX_Validation_database_service->caseSensitiveTablesValue()
+#4 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.params.php(147): DUPX_Ctrl_Params::setParamsDatabase()
+#5 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(183): DUPX_Ctrl_Params::setParamsStep1()
+#6 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(95): DUPX_Ctrl_ajax::actions('sparam_s1')
+#7 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php(56): DUPX_Ctrl_ajax::controller()
+#8 {main}
+
+AJAX ACTION [sparam_s1] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+STEP ACTION: "on-validate"
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.51613]  MESSAGE:END RENDER PAGE
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [validate] START
+START TEST "Archive Check" [CLASS: DUPX_Validation_test_archive_check]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Archive Check" RESULT: passed
+
+START TEST "Duplicator importer version" [CLASS: DUPX_Validation_test_importer_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Duplicator importer version" RESULT: skip
+
+START TEST "Overwrite Install" [CLASS: DUPX_Validation_test_owrinstall]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Overwrite Install" RESULT: skip
+
+START TEST "Recovery Point" [CLASS: DUPX_Validation_test_recovery]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Recovery Point" RESULT: skip
+
+START TEST "Package is Importable" [CLASS: DUPX_Validation_test_importable]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package is Importable" RESULT: skip
+
+START TEST "REST API test" [CLASS: DUPX_Validation_test_rest_api]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "REST API test" RESULT: skip
+
+START TEST "Manual extraction detected" [CLASS: DUPX_Validation_test_manual_extraction]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Manual extraction detected" RESULT: good
+
+START TEST "Database Only" [CLASS: DUPX_Validation_test_dbonly_iswordpress]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Database Only" RESULT: skip
+
+START TEST "Package Age" [CLASS: DUPX_Validation_test_package_age]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Package Age" RESULT: good
+
+START TEST "Package Size" [CLASS: DUPX_Validation_test_package_size]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package Size" RESULT: good
+
+START TEST "Replace PATHs in database" [CLASS: DUPX_Validation_test_replace_paths]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Replace PATHs in database" RESULT: skip
+
+START TEST "Managed hosting supported" [CLASS: DUPX_Validation_test_managed_supported]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Managed hosting supported" RESULT: skip
+
+START TEST "Siteground" [CLASS: DUPX_Validation_test_siteground]
+LOG-TIME[DELTA:   0.00008]  MESSAGE:TEST "Siteground" RESULT: skip
+
+START TEST "Addon Sites" [CLASS: DUPX_Validation_test_addon_sites]
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+LOG-TIME[DELTA:   0.00323]  MESSAGE:TEST "Addon Sites" RESULT: good
+
+START TEST "Wordfence" [CLASS: DUPX_Validation_test_wordfence]
+LOG-TIME[DELTA:   0.00006]  MESSAGE:TEST "Wordfence" RESULT: good
+
+START TEST "Table prefix of managed hosting" [CLASS: DUPX_Validation_test_managed_tprefix]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Table prefix of managed hosting" RESULT: skip
+
+START TEST "PHP Version Mismatch" [CLASS: DUPX_Validation_test_php_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Version Mismatch" RESULT: soft warning
+
+START TEST "PHP Open Base" [CLASS: DUPX_Validation_test_open_basedir]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Open Base" RESULT: good
+
+START TEST "PHP Memory Limit" [CLASS: DUPX_Validation_test_memory_limit]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "PHP Memory Limit" RESULT: good
+
+START TEST "PHP Extensions" [CLASS: DUPX_Validation_test_extensions]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Extensions" RESULT: good
+
+START TEST "PHP Mysqli" [CLASS: DUPX_Validation_test_mysql_connect]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Mysqli" RESULT: passed
+
+START TEST "PHP Tokenizer" [CLASS: DUPX_Validation_test_tokenizer]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Tokenizer" RESULT: passed
+
+START TEST "PHP Timeout" [CLASS: DUPX_Validation_test_timeout]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Timeout" RESULT: good
+
+START TEST "Disk Space" [CLASS: DUPX_Validation_test_disk_space]
+LOG-TIME[DELTA:   0.00238]  MESSAGE:TEST "Disk Space" RESULT: good
+
+START TEST "Permissions: General" [CLASS: DUPX_Validation_test_iswritable]
+LOG-TIME[DELTA:   0.00163]  MESSAGE:TEST "Permissions: General" RESULT: passed
+
+START TEST "Permissions: Configs Files " [CLASS: DUPX_Validation_test_iswritable_configs]
+LOG-TIME[DELTA:   0.00003]  MESSAGE:TEST "Permissions: Configs Files " RESULT: passed
+
+START TEST "Host Name" [CLASS: DUPX_Validation_test_db_host_name]
+LOG-TIME[DELTA:   0.00005]  MESSAGE:TEST "Host Name" RESULT: passed
+
+START TEST "Host Connection" [CLASS: DUPX_Validation_test_db_connection]
+[PHP ERR][E_WARNING] MSG:mysqli_real_connect(): (HY000/2002): No such file or directory [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php|LINE:55]
+DATABASE CONNECTION ERROR: No such file or directory[ERRNO:2002]
+
+INSTALLER ERROR:
+Unable to connect with the following parameters:
+HOST: "localhost"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+
+
+      TEST "Host Connection" EXCEPTION: Unable to connect with the following parameters:<br/>HOST: "localhost"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: No such file or directory
+	FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Utils/Log/Log.php[401]
+	TRACE:
+#0 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.functions.php(134): Duplicator\Installer\Utils\Log\Log::error('Unable to conne...')
+#1 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(72): DUPX_DB_Functions->dbConnection(Array)
+#2 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/database-tests/class.validation.test.db.connection.php(26): DUPX_Validation_database_service->getDbConnection()
+#3 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.abstract.item.php(46): DUPX_Validation_test_db_connection->runTest()
+#4 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php(232): DUPX_Validation_abstract_item->test(true)
+#5 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php(205): DUPX_Validation_manager->runTests()
+#6 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(173): DUPX_Validation_manager->getValidateData()
+#7 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(95): DUPX_Ctrl_ajax::actions('validate')
+#8 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php(56): DUPX_Ctrl_ajax::controller()
+#9 {main}
+
+LOG-TIME[DELTA:   0.00043]  MESSAGE:TEST "Host Connection" RESULT: failed
+
+START TEST "Database Version" [CLASS: DUPX_Validation_test_db_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Version" RESULT: skip
+
+START TEST "Create New Database" [CLASS: DUPX_Validation_test_db_create]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Create New Database" RESULT: skip
+
+START TEST "Database Engine Support" [CLASS: DUPX_Validation_test_db_supported_engine]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Engine Support" RESULT: skip
+
+START TEST "Database GTID Mode" [CLASS: DUPX_Validation_test_db_gtid_mode]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Database GTID Mode" RESULT: skip
+
+START TEST "Privileges: User Visibility" [CLASS: DUPX_Validation_test_db_visibility]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: User Visibility" RESULT: skip
+
+START TEST "Manual Table Check" [CLASS: DUPX_Validation_test_db_manual_tabels_count]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Manual Table Check" RESULT: skip
+
+START TEST "Multiple WordPress Installs" [CLASS: DUPX_Validation_test_db_multiple_wp_installs]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Multiple WordPress Installs" RESULT: skip
+
+START TEST "Privileges: User Resources" [CLASS: DUPX_Validation_test_db_user_resources]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Privileges: User Resources" RESULT: skip
+
+START TEST "Privileges: User Table Access" [CLASS: DUPX_Validation_test_db_user_perms]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: User Table Access" RESULT: skip
+
+START TEST "Privileges: 'Show Variables' Query" [CLASS: DUPX_Validation_test_db_custom_queries]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Privileges: 'Show Variables' Query" RESULT: skip
+
+START TEST "Source Database Triggers" [CLASS: DUPX_Validation_test_db_triggers]
+LOG-TIME[DELTA:   0.00003]  MESSAGE:TEST "Source Database Triggers" RESULT: skip
+
+START TEST "Character Set and Collation Support" [CLASS: DUPX_Validation_test_db_supported_default_charset]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Character Set and Collation Support" RESULT: skip
+
+START TEST "Character Set and  Collation Capability" [CLASS: DUPX_Validation_test_db_supported_charset]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Character Set and  Collation Capability" RESULT: skip
+
+START TEST "Tables Case Sensitivity" [CLASS: DUPX_Validation_test_db_case_sensitive_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Case Sensitivity" RESULT: skip
+
+START TEST "Tables Flagged for Removal or Backup" [CLASS: DUPX_Validation_test_db_affected_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Flagged for Removal or Backup" RESULT: skip
+
+START TEST "Prefix too long" [CLASS: DUPX_Validation_test_db_prefix_too_long]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Prefix too long" RESULT: skip
+
+START TEST "Database cleanup" [CLASS: DUPX_Validation_test_db_cleanup]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database cleanup" RESULT: skip
+
+AJAX ACTION [validate] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [sparam_s1] START
+[PHP ERR][E_WARNING] MSG:mysqli_real_connect(): (HY000/1045): Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES) [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php|LINE:55]
+DATABASE CONNECTION ERROR: Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES)[ERRNO:1045]
+
+INSTALLER ERROR:
+Unable to connect with the following parameters:
+HOST: "127.0.0.1"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES)
+
+
+DATABASE CHECK CHARSET EXCEPTION:  Unable to connect with the following parameters:<br/>HOST: "127.0.0.1"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES)
+	FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Utils/Log/Log.php[401]
+	TRACE:
+#0 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.functions.php(134): Duplicator\Installer\Utils\Log\Log::error('Unable to conne...')
+#1 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(72): DUPX_DB_Functions->dbConnection(Array)
+#2 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(704): DUPX_Validation_database_service->getDbConnection()
+#3 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.params.php(274): DUPX_Validation_database_service->caseSensitiveTablesValue()
+#4 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.params.php(147): DUPX_Ctrl_Params::setParamsDatabase()
+#5 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(183): DUPX_Ctrl_Params::setParamsStep1()
+#6 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(95): DUPX_Ctrl_ajax::actions('sparam_s1')
+#7 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php(56): DUPX_Ctrl_ajax::controller()
+#8 {main}
+
+AJAX ACTION [sparam_s1] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+STEP ACTION: "on-validate"
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.36820]  MESSAGE:END RENDER PAGE
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [validate] START
+START TEST "Archive Check" [CLASS: DUPX_Validation_test_archive_check]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Archive Check" RESULT: passed
+
+START TEST "Duplicator importer version" [CLASS: DUPX_Validation_test_importer_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Duplicator importer version" RESULT: skip
+
+START TEST "Overwrite Install" [CLASS: DUPX_Validation_test_owrinstall]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Overwrite Install" RESULT: skip
+
+START TEST "Recovery Point" [CLASS: DUPX_Validation_test_recovery]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Recovery Point" RESULT: skip
+
+START TEST "Package is Importable" [CLASS: DUPX_Validation_test_importable]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Package is Importable" RESULT: skip
+
+START TEST "REST API test" [CLASS: DUPX_Validation_test_rest_api]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "REST API test" RESULT: skip
+
+START TEST "Manual extraction detected" [CLASS: DUPX_Validation_test_manual_extraction]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Manual extraction detected" RESULT: good
+
+START TEST "Database Only" [CLASS: DUPX_Validation_test_dbonly_iswordpress]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Database Only" RESULT: skip
+
+START TEST "Package Age" [CLASS: DUPX_Validation_test_package_age]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Package Age" RESULT: good
+
+START TEST "Package Size" [CLASS: DUPX_Validation_test_package_size]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package Size" RESULT: good
+
+START TEST "Replace PATHs in database" [CLASS: DUPX_Validation_test_replace_paths]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Replace PATHs in database" RESULT: skip
+
+START TEST "Managed hosting supported" [CLASS: DUPX_Validation_test_managed_supported]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Managed hosting supported" RESULT: skip
+
+START TEST "Siteground" [CLASS: DUPX_Validation_test_siteground]
+LOG-TIME[DELTA:   0.00008]  MESSAGE:TEST "Siteground" RESULT: skip
+
+START TEST "Addon Sites" [CLASS: DUPX_Validation_test_addon_sites]
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+LOG-TIME[DELTA:   0.00464]  MESSAGE:TEST "Addon Sites" RESULT: good
+
+START TEST "Wordfence" [CLASS: DUPX_Validation_test_wordfence]
+LOG-TIME[DELTA:   0.00004]  MESSAGE:TEST "Wordfence" RESULT: good
+
+START TEST "Table prefix of managed hosting" [CLASS: DUPX_Validation_test_managed_tprefix]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Table prefix of managed hosting" RESULT: skip
+
+START TEST "PHP Version Mismatch" [CLASS: DUPX_Validation_test_php_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Version Mismatch" RESULT: soft warning
+
+START TEST "PHP Open Base" [CLASS: DUPX_Validation_test_open_basedir]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Open Base" RESULT: good
+
+START TEST "PHP Memory Limit" [CLASS: DUPX_Validation_test_memory_limit]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Memory Limit" RESULT: good
+
+START TEST "PHP Extensions" [CLASS: DUPX_Validation_test_extensions]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Extensions" RESULT: good
+
+START TEST "PHP Mysqli" [CLASS: DUPX_Validation_test_mysql_connect]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Mysqli" RESULT: passed
+
+START TEST "PHP Tokenizer" [CLASS: DUPX_Validation_test_tokenizer]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Tokenizer" RESULT: passed
+
+START TEST "PHP Timeout" [CLASS: DUPX_Validation_test_timeout]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Timeout" RESULT: good
+
+START TEST "Disk Space" [CLASS: DUPX_Validation_test_disk_space]
+LOG-TIME[DELTA:   0.00230]  MESSAGE:TEST "Disk Space" RESULT: good
+
+START TEST "Permissions: General" [CLASS: DUPX_Validation_test_iswritable]
+LOG-TIME[DELTA:   0.00164]  MESSAGE:TEST "Permissions: General" RESULT: passed
+
+START TEST "Permissions: Configs Files " [CLASS: DUPX_Validation_test_iswritable_configs]
+LOG-TIME[DELTA:   0.00003]  MESSAGE:TEST "Permissions: Configs Files " RESULT: passed
+
+START TEST "Host Name" [CLASS: DUPX_Validation_test_db_host_name]
+LOG-TIME[DELTA:   0.00004]  MESSAGE:TEST "Host Name" RESULT: passed
+
+START TEST "Host Connection" [CLASS: DUPX_Validation_test_db_connection]
+[PHP ERR][E_WARNING] MSG:mysqli_real_connect(): (HY000/1045): Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES) [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php|LINE:55]
+DATABASE CONNECTION ERROR: Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES)[ERRNO:1045]
+
+INSTALLER ERROR:
+Unable to connect with the following parameters:
+HOST: "127.0.0.1"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES)
+
+
+      TEST "Host Connection" EXCEPTION: Unable to connect with the following parameters:<br/>HOST: "127.0.0.1"
+DBUSER: "aws5cxmwvgz2_root"
+DATABASE: NULL
+MESSAGE: Error: Access denied for user 'aws5cxmwvgz2_root'@'localhost' (using password: YES)
+	FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Utils/Log/Log.php[401]
+	TRACE:
+#0 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.functions.php(134): Duplicator\Installer\Utils\Log\Log::error('Unable to conne...')
+#1 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php(72): DUPX_DB_Functions->dbConnection(Array)
+#2 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/database-tests/class.validation.test.db.connection.php(26): DUPX_Validation_database_service->getDbConnection()
+#3 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.abstract.item.php(46): DUPX_Validation_test_db_connection->runTest()
+#4 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php(232): DUPX_Validation_abstract_item->test(true)
+#5 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php(205): DUPX_Validation_manager->runTests()
+#6 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(173): DUPX_Validation_manager->getValidateData()
+#7 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php(95): DUPX_Ctrl_ajax::actions('validate')
+#8 /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php(56): DUPX_Ctrl_ajax::controller()
+#9 {main}
+
+LOG-TIME[DELTA:   0.00091]  MESSAGE:TEST "Host Connection" RESULT: failed
+
+START TEST "Database Version" [CLASS: DUPX_Validation_test_db_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Version" RESULT: skip
+
+START TEST "Create New Database" [CLASS: DUPX_Validation_test_db_create]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Create New Database" RESULT: skip
+
+START TEST "Database Engine Support" [CLASS: DUPX_Validation_test_db_supported_engine]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Engine Support" RESULT: skip
+
+START TEST "Database GTID Mode" [CLASS: DUPX_Validation_test_db_gtid_mode]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Database GTID Mode" RESULT: skip
+
+START TEST "Privileges: User Visibility" [CLASS: DUPX_Validation_test_db_visibility]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: User Visibility" RESULT: skip
+
+START TEST "Manual Table Check" [CLASS: DUPX_Validation_test_db_manual_tabels_count]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Manual Table Check" RESULT: skip
+
+START TEST "Multiple WordPress Installs" [CLASS: DUPX_Validation_test_db_multiple_wp_installs]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Multiple WordPress Installs" RESULT: skip
+
+START TEST "Privileges: User Resources" [CLASS: DUPX_Validation_test_db_user_resources]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Privileges: User Resources" RESULT: skip
+
+START TEST "Privileges: User Table Access" [CLASS: DUPX_Validation_test_db_user_perms]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Privileges: User Table Access" RESULT: skip
+
+START TEST "Privileges: 'Show Variables' Query" [CLASS: DUPX_Validation_test_db_custom_queries]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Privileges: 'Show Variables' Query" RESULT: skip
+
+START TEST "Source Database Triggers" [CLASS: DUPX_Validation_test_db_triggers]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Source Database Triggers" RESULT: skip
+
+START TEST "Character Set and Collation Support" [CLASS: DUPX_Validation_test_db_supported_default_charset]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Character Set and Collation Support" RESULT: skip
+
+START TEST "Character Set and  Collation Capability" [CLASS: DUPX_Validation_test_db_supported_charset]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Character Set and  Collation Capability" RESULT: skip
+
+START TEST "Tables Case Sensitivity" [CLASS: DUPX_Validation_test_db_case_sensitive_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Case Sensitivity" RESULT: skip
+
+START TEST "Tables Flagged for Removal or Backup" [CLASS: DUPX_Validation_test_db_affected_tables]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Tables Flagged for Removal or Backup" RESULT: skip
+
+START TEST "Prefix too long" [CLASS: DUPX_Validation_test_db_prefix_too_long]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Prefix too long" RESULT: skip
+
+START TEST "Database cleanup" [CLASS: DUPX_Validation_test_db_cleanup]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database cleanup" RESULT: skip
+
+AJAX ACTION [validate] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [sparam_s1] START
+AJAX ACTION [sparam_s1] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+STEP ACTION: "on-validate"
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.33432]  MESSAGE:END RENDER PAGE
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [validate] START
+START TEST "Archive Check" [CLASS: DUPX_Validation_test_archive_check]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Archive Check" RESULT: passed
+
+START TEST "Duplicator importer version" [CLASS: DUPX_Validation_test_importer_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Duplicator importer version" RESULT: skip
+
+START TEST "Overwrite Install" [CLASS: DUPX_Validation_test_owrinstall]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Overwrite Install" RESULT: skip
+
+START TEST "Recovery Point" [CLASS: DUPX_Validation_test_recovery]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Recovery Point" RESULT: skip
+
+START TEST "Package is Importable" [CLASS: DUPX_Validation_test_importable]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Package is Importable" RESULT: skip
+
+START TEST "REST API test" [CLASS: DUPX_Validation_test_rest_api]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "REST API test" RESULT: skip
+
+START TEST "Manual extraction detected" [CLASS: DUPX_Validation_test_manual_extraction]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "Manual extraction detected" RESULT: good
+
+START TEST "Database Only" [CLASS: DUPX_Validation_test_dbonly_iswordpress]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Only" RESULT: skip
+
+START TEST "Package Age" [CLASS: DUPX_Validation_test_package_age]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Package Age" RESULT: good
+
+START TEST "Package Size" [CLASS: DUPX_Validation_test_package_size]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package Size" RESULT: good
+
+START TEST "Replace PATHs in database" [CLASS: DUPX_Validation_test_replace_paths]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Replace PATHs in database" RESULT: skip
+
+START TEST "Managed hosting supported" [CLASS: DUPX_Validation_test_managed_supported]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Managed hosting supported" RESULT: skip
+
+START TEST "Siteground" [CLASS: DUPX_Validation_test_siteground]
+LOG-TIME[DELTA:   0.00008]  MESSAGE:TEST "Siteground" RESULT: skip
+
+START TEST "Addon Sites" [CLASS: DUPX_Validation_test_addon_sites]
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+LOG-TIME[DELTA:   0.00330]  MESSAGE:TEST "Addon Sites" RESULT: good
+
+START TEST "Wordfence" [CLASS: DUPX_Validation_test_wordfence]
+LOG-TIME[DELTA:   0.00005]  MESSAGE:TEST "Wordfence" RESULT: good
+
+START TEST "Table prefix of managed hosting" [CLASS: DUPX_Validation_test_managed_tprefix]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Table prefix of managed hosting" RESULT: skip
+
+START TEST "PHP Version Mismatch" [CLASS: DUPX_Validation_test_php_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Version Mismatch" RESULT: soft warning
+
+START TEST "PHP Open Base" [CLASS: DUPX_Validation_test_open_basedir]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Open Base" RESULT: good
+
+START TEST "PHP Memory Limit" [CLASS: DUPX_Validation_test_memory_limit]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "PHP Memory Limit" RESULT: good
+
+START TEST "PHP Extensions" [CLASS: DUPX_Validation_test_extensions]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Extensions" RESULT: good
+
+START TEST "PHP Mysqli" [CLASS: DUPX_Validation_test_mysql_connect]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Mysqli" RESULT: passed
+
+START TEST "PHP Tokenizer" [CLASS: DUPX_Validation_test_tokenizer]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Tokenizer" RESULT: passed
+
+START TEST "PHP Timeout" [CLASS: DUPX_Validation_test_timeout]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Timeout" RESULT: good
+
+START TEST "Disk Space" [CLASS: DUPX_Validation_test_disk_space]
+LOG-TIME[DELTA:   0.00226]  MESSAGE:TEST "Disk Space" RESULT: good
+
+START TEST "Permissions: General" [CLASS: DUPX_Validation_test_iswritable]
+LOG-TIME[DELTA:   0.00151]  MESSAGE:TEST "Permissions: General" RESULT: passed
+
+START TEST "Permissions: Configs Files " [CLASS: DUPX_Validation_test_iswritable_configs]
+LOG-TIME[DELTA:   0.00003]  MESSAGE:TEST "Permissions: Configs Files " RESULT: passed
+
+START TEST "Host Name" [CLASS: DUPX_Validation_test_db_host_name]
+LOG-TIME[DELTA:   0.00004]  MESSAGE:TEST "Host Name" RESULT: passed
+
+START TEST "Host Connection" [CLASS: DUPX_Validation_test_db_connection]
+LOG-TIME[DELTA:   0.00088]  MESSAGE:TEST "Host Connection" RESULT: passed
+
+START TEST "Database Version" [CLASS: DUPX_Validation_test_db_version]
+LOG-TIME[DELTA:   0.00241]  MESSAGE:TEST "Database Version" RESULT: soft warning
+
+START TEST "Create New Database" [CLASS: DUPX_Validation_test_db_create]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Create New Database" RESULT: skip
+
+START TEST "Database Engine Support" [CLASS: DUPX_Validation_test_db_supported_engine]
+LOG-TIME[DELTA:   0.00022]  MESSAGE:TEST "Database Engine Support" RESULT: passed
+
+START TEST "Database GTID Mode" [CLASS: DUPX_Validation_test_db_gtid_mode]
+LOG-TIME[DELTA:   0.00019]  MESSAGE:TEST "Database GTID Mode" RESULT: passed
+
+START TEST "Privileges: User Visibility" [CLASS: DUPX_Validation_test_db_visibility]
+LOG-TIME[DELTA:   0.00008]  MESSAGE:TEST "Privileges: User Visibility" RESULT: passed
+
+START TEST "Manual Table Check" [CLASS: DUPX_Validation_test_db_manual_tabels_count]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Manual Table Check" RESULT: skip
+
+START TEST "Multiple WordPress Installs" [CLASS: DUPX_Validation_test_db_multiple_wp_installs]
+LOG-TIME[DELTA:   0.00121]  MESSAGE:TEST "Multiple WordPress Installs" RESULT: passed
+
+START TEST "Privileges: User Resources" [CLASS: DUPX_Validation_test_db_user_resources]
+DB QUERY [ERROR][/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php:645] MSG: SELECT command denied to user 'aws5cxmwvgz2_root'@'localhost' for table 'user'
+	SQL: SELECT max_questions, max_updates, max_connections FROM mysql.user WHERE user = 'aws5cxmwvgz2_root' AND host = '127.0.0.1'
+TRACE[1] CLASS___: DUPX_DB::mysqli_query      FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php[742]
+TRACE[2] CLASS___: DUPX_Validation_database_service->getUserResources FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/database-tests/class.validation.test.db.user.resources.php[28]
+TRACE[3] CLASS___: DUPX_Validation_test_db_user_resources->runTest FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.abstract.item.php[46]
+TRACE[4] CLASS___: DUPX_Validation_abstract_item->test FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php[232]
+TRACE[5] CLASS___: DUPX_Validation_manager->runTests FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php[205]
+TRACE[6] CLASS___: DUPX_Validation_manager->getValidateData FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php[173]
+TRACE[7] CLASS___: DUPX_Ctrl_ajax::actions    FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php[95]
+TRACE[8] CLASS___: DUPX_Ctrl_ajax::controller FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php[56]
+
+LOG-TIME[DELTA:   0.00019]  MESSAGE:TEST "Privileges: User Resources" RESULT: passed
+
+START TEST "Privileges: User Table Access" [CLASS: DUPX_Validation_test_db_user_perms]
+LOG-TIME[DELTA:   0.10468]  MESSAGE:TEST "Privileges: User Table Access" RESULT: passed
+
+START TEST "Privileges: 'Show Variables' Query" [CLASS: DUPX_Validation_test_db_custom_queries]
+LOG-TIME[DELTA:   0.00109]  MESSAGE:TEST "Privileges: 'Show Variables' Query" RESULT: passed
+
+START TEST "Source Database Triggers" [CLASS: DUPX_Validation_test_db_triggers]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Source Database Triggers" RESULT: passed
+
+START TEST "Character Set and Collation Support" [CLASS: DUPX_Validation_test_db_supported_default_charset]
+LOG-TIME[DELTA:   0.00215]  MESSAGE:TEST "Character Set and Collation Support" RESULT: soft warning
+
+START TEST "Character Set and  Collation Capability" [CLASS: DUPX_Validation_test_db_supported_charset]
+LOG-TIME[DELTA:   0.00009]  MESSAGE:TEST "Character Set and  Collation Capability" RESULT: passed
+
+START TEST "Tables Case Sensitivity" [CLASS: DUPX_Validation_test_db_case_sensitive_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Case Sensitivity" RESULT: skip
+
+START TEST "Tables Flagged for Removal or Backup" [CLASS: DUPX_Validation_test_db_affected_tables]
+LOG-TIME[DELTA:   0.00117]  MESSAGE:TEST "Tables Flagged for Removal or Backup" RESULT: passed
+
+START TEST "Prefix too long" [CLASS: DUPX_Validation_test_db_prefix_too_long]
+LOG-TIME[DELTA:   0.00005]  MESSAGE:TEST "Prefix too long" RESULT: passed
+
+START TEST "Database cleanup" [CLASS: DUPX_Validation_test_db_cleanup]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database cleanup" RESULT: skip
+
+
+CTRL PARAMS AFTER VALIDATION
+DEFAULT DB_CHARSET [utf8] isn't valid, update DB_CHARSET to utf8mb3 and DB_COLLATE set empty
+AJAX ACTION [validate] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+STEP ACTION: "on-validate"
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.24636]  MESSAGE:END RENDER PAGE
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [validate] START
+START TEST "Archive Check" [CLASS: DUPX_Validation_test_archive_check]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Archive Check" RESULT: passed
+
+START TEST "Duplicator importer version" [CLASS: DUPX_Validation_test_importer_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Duplicator importer version" RESULT: skip
+
+START TEST "Overwrite Install" [CLASS: DUPX_Validation_test_owrinstall]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Overwrite Install" RESULT: skip
+
+START TEST "Recovery Point" [CLASS: DUPX_Validation_test_recovery]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Recovery Point" RESULT: skip
+
+START TEST "Package is Importable" [CLASS: DUPX_Validation_test_importable]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package is Importable" RESULT: skip
+
+START TEST "REST API test" [CLASS: DUPX_Validation_test_rest_api]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "REST API test" RESULT: skip
+
+START TEST "Manual extraction detected" [CLASS: DUPX_Validation_test_manual_extraction]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Manual extraction detected" RESULT: good
+
+START TEST "Database Only" [CLASS: DUPX_Validation_test_dbonly_iswordpress]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database Only" RESULT: skip
+
+START TEST "Package Age" [CLASS: DUPX_Validation_test_package_age]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Package Age" RESULT: good
+
+START TEST "Package Size" [CLASS: DUPX_Validation_test_package_size]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Package Size" RESULT: good
+
+START TEST "Replace PATHs in database" [CLASS: DUPX_Validation_test_replace_paths]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Replace PATHs in database" RESULT: skip
+
+START TEST "Managed hosting supported" [CLASS: DUPX_Validation_test_managed_supported]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Managed hosting supported" RESULT: skip
+
+START TEST "Siteground" [CLASS: DUPX_Validation_test_siteground]
+LOG-TIME[DELTA:   0.00005]  MESSAGE:TEST "Siteground" RESULT: skip
+
+START TEST "Addon Sites" [CLASS: DUPX_Validation_test_addon_sites]
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+LOG-TIME[DELTA:   0.00364]  MESSAGE:TEST "Addon Sites" RESULT: good
+
+START TEST "Wordfence" [CLASS: DUPX_Validation_test_wordfence]
+LOG-TIME[DELTA:   0.00005]  MESSAGE:TEST "Wordfence" RESULT: good
+
+START TEST "Table prefix of managed hosting" [CLASS: DUPX_Validation_test_managed_tprefix]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Table prefix of managed hosting" RESULT: skip
+
+START TEST "PHP Version Mismatch" [CLASS: DUPX_Validation_test_php_version]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Version Mismatch" RESULT: good
+
+START TEST "PHP Open Base" [CLASS: DUPX_Validation_test_open_basedir]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Open Base" RESULT: good
+
+START TEST "PHP Memory Limit" [CLASS: DUPX_Validation_test_memory_limit]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "PHP Memory Limit" RESULT: good
+
+START TEST "PHP Extensions" [CLASS: DUPX_Validation_test_extensions]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Extensions" RESULT: good
+
+START TEST "PHP Mysqli" [CLASS: DUPX_Validation_test_mysql_connect]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Mysqli" RESULT: passed
+
+START TEST "PHP Tokenizer" [CLASS: DUPX_Validation_test_tokenizer]
+LOG-TIME[DELTA:   0.00000]  MESSAGE:TEST "PHP Tokenizer" RESULT: passed
+
+START TEST "PHP Timeout" [CLASS: DUPX_Validation_test_timeout]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "PHP Timeout" RESULT: good
+
+START TEST "Disk Space" [CLASS: DUPX_Validation_test_disk_space]
+LOG-TIME[DELTA:   0.00223]  MESSAGE:TEST "Disk Space" RESULT: good
+
+START TEST "Permissions: General" [CLASS: DUPX_Validation_test_iswritable]
+LOG-TIME[DELTA:   0.00148]  MESSAGE:TEST "Permissions: General" RESULT: passed
+
+START TEST "Permissions: Configs Files " [CLASS: DUPX_Validation_test_iswritable_configs]
+LOG-TIME[DELTA:   0.00003]  MESSAGE:TEST "Permissions: Configs Files " RESULT: passed
+
+START TEST "Host Name" [CLASS: DUPX_Validation_test_db_host_name]
+LOG-TIME[DELTA:   0.00003]  MESSAGE:TEST "Host Name" RESULT: passed
+
+START TEST "Host Connection" [CLASS: DUPX_Validation_test_db_connection]
+LOG-TIME[DELTA:   0.00093]  MESSAGE:TEST "Host Connection" RESULT: passed
+
+START TEST "Database Version" [CLASS: DUPX_Validation_test_db_version]
+LOG-TIME[DELTA:   0.00302]  MESSAGE:TEST "Database Version" RESULT: soft warning
+
+START TEST "Create New Database" [CLASS: DUPX_Validation_test_db_create]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Create New Database" RESULT: skip
+
+START TEST "Database Engine Support" [CLASS: DUPX_Validation_test_db_supported_engine]
+LOG-TIME[DELTA:   0.00029]  MESSAGE:TEST "Database Engine Support" RESULT: passed
+
+START TEST "Database GTID Mode" [CLASS: DUPX_Validation_test_db_gtid_mode]
+LOG-TIME[DELTA:   0.00019]  MESSAGE:TEST "Database GTID Mode" RESULT: passed
+
+START TEST "Privileges: User Visibility" [CLASS: DUPX_Validation_test_db_visibility]
+LOG-TIME[DELTA:   0.00010]  MESSAGE:TEST "Privileges: User Visibility" RESULT: passed
+
+START TEST "Manual Table Check" [CLASS: DUPX_Validation_test_db_manual_tabels_count]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Manual Table Check" RESULT: skip
+
+START TEST "Multiple WordPress Installs" [CLASS: DUPX_Validation_test_db_multiple_wp_installs]
+LOG-TIME[DELTA:   0.00124]  MESSAGE:TEST "Multiple WordPress Installs" RESULT: passed
+
+START TEST "Privileges: User Resources" [CLASS: DUPX_Validation_test_db_user_resources]
+DB QUERY [ERROR][/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/database/class.db.php:645] MSG: SELECT command denied to user 'aws5cxmwvgz2_root'@'localhost' for table 'user'
+	SQL: SELECT max_questions, max_updates, max_connections FROM mysql.user WHERE user = 'aws5cxmwvgz2_root' AND host = '127.0.0.1'
+TRACE[1] CLASS___: DUPX_DB::mysqli_query      FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.database.service.php[742]
+TRACE[2] CLASS___: DUPX_Validation_database_service->getUserResources FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/database-tests/class.validation.test.db.user.resources.php[28]
+TRACE[3] CLASS___: DUPX_Validation_test_db_user_resources->runTest FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.abstract.item.php[46]
+TRACE[4] CLASS___: DUPX_Validation_abstract_item->test FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php[232]
+TRACE[5] CLASS___: DUPX_Validation_manager->runTests FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/classes/validation/class.validation.manager.php[205]
+TRACE[6] CLASS___: DUPX_Validation_manager->getValidateData FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php[173]
+TRACE[7] CLASS___: DUPX_Ctrl_ajax::actions    FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/classes/class.ctrl.ajax.php[95]
+TRACE[8] CLASS___: DUPX_Ctrl_ajax::controller FILE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/main.installer.php[56]
+
+LOG-TIME[DELTA:   0.00021]  MESSAGE:TEST "Privileges: User Resources" RESULT: passed
+
+START TEST "Privileges: User Table Access" [CLASS: DUPX_Validation_test_db_user_perms]
+LOG-TIME[DELTA:   0.09643]  MESSAGE:TEST "Privileges: User Table Access" RESULT: passed
+
+START TEST "Privileges: 'Show Variables' Query" [CLASS: DUPX_Validation_test_db_custom_queries]
+LOG-TIME[DELTA:   0.00143]  MESSAGE:TEST "Privileges: 'Show Variables' Query" RESULT: passed
+
+START TEST "Source Database Triggers" [CLASS: DUPX_Validation_test_db_triggers]
+LOG-TIME[DELTA:   0.00002]  MESSAGE:TEST "Source Database Triggers" RESULT: passed
+
+START TEST "Character Set and Collation Support" [CLASS: DUPX_Validation_test_db_supported_default_charset]
+LOG-TIME[DELTA:   0.00260]  MESSAGE:TEST "Character Set and Collation Support" RESULT: soft warning
+
+START TEST "Character Set and  Collation Capability" [CLASS: DUPX_Validation_test_db_supported_charset]
+LOG-TIME[DELTA:   0.00006]  MESSAGE:TEST "Character Set and  Collation Capability" RESULT: passed
+
+START TEST "Tables Case Sensitivity" [CLASS: DUPX_Validation_test_db_case_sensitive_tables]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Tables Case Sensitivity" RESULT: skip
+
+START TEST "Tables Flagged for Removal or Backup" [CLASS: DUPX_Validation_test_db_affected_tables]
+LOG-TIME[DELTA:   0.00145]  MESSAGE:TEST "Tables Flagged for Removal or Backup" RESULT: passed
+
+START TEST "Prefix too long" [CLASS: DUPX_Validation_test_db_prefix_too_long]
+LOG-TIME[DELTA:   0.00005]  MESSAGE:TEST "Prefix too long" RESULT: passed
+
+START TEST "Database cleanup" [CLASS: DUPX_Validation_test_db_cleanup]
+LOG-TIME[DELTA:   0.00001]  MESSAGE:TEST "Database cleanup" RESULT: skip
+
+
+CTRL PARAMS AFTER VALIDATION
+AJAX ACTION [validate] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [proceed_confirm_dialog] START
+AJAX ACTION [proceed_confirm_dialog] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [sparam_s1] START
+AJAX ACTION [sparam_s1] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+INITIALIZE FILTERS
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+********************************************************************************
+* DUPLICATOR LITE: Install-Log
+* STEP-1 START @ 07:23:46
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+USER INPUTS
+INSTALL TYPE________: single site
+BLOG NAME___________: "Engineering Supervision"
+HOME URL NEW________: "https://engsupervision.com"
+SITE URL NEW________: "https://engsupervision.com/"
+CONTENT URL NEW_____: "https://engsupervision.com/wp-content"
+UPLOAD URL NEW______: "https://engsupervision.com/wp-content/uploads"
+PLUGINS URL NEW_____: "https://engsupervision.com/wp-content/plugins"
+MUPLUGINS URL NEW___: "https://engsupervision.com/wp-content/mu-plugins"
+HOME PATH NEW_______: "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+SITE PATH NEW_______: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/"
+CONTENT PATH NEW____: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/wp-content"
+UPLOAD PATH NEW_____: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/wp-content/uploads"
+PLUGINS PATH NEW____: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/wp-content/plugins"
+MUPLUGINS PATH NEW__: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/wp-content/mu-plugins"
+ARCHIVE ACTION______: "donothing"
+SKIP WP FILES_______: "none"
+ARCHIVE ENGINE______: "ziparchivechunking"
+SET DIR PERMS_______: true
+DIR PERMS VALUE_____: 0755
+SET FILE PERMS______: true
+FILE PERMS VALUE____: 0644
+SAFE MODE___________: 0
+LOGGING_____________: 1
+ZIP THROTTLING______: false
+WP CONFIG___________: "modify"
+HTACCESS CONFIG_____: "new"
+OTHER CONFIG________: "new"
+FILE TIME___________: "current"
+********************************************************************************
+
+REMOVE FILTERS
+	DIR : "/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer"
+	FILE: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/prodprod_[HASH]_20231012065206_installer-backup.php"
+	FILE: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/prodprod_[HASH]_20231012065206_archive.zip"
+	FILE: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/installer.php"
+	FILE: "/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer-bootlog__bf63191-12065206.txt"
+EXTRACTION FILTERS
+	DIR : "dup-installer"
+	FILE: "prodprod_[HASH]_20231012065206_installer-backup.php"
+--------------------------------------
+
+
+EXTRACTION: ZIP CHUNKING >>> START
+MAINTENANCE MODE ENABLE
+BEFORE EXTRACION ACTIONS
+
+*** RESET CONFIG FILES IN CURRENT HOSTING >>> START
+
+*** RESET CONFIG FILES IN CURRENT HOSTING >>> END
+MAINTENANCE MODE ENABLE
+
+*** CREATE FOLDER AND PERMISSION PREPARE
+FOLDER PREPARE DONE
+ARCHIVE OFFSET 0
+CHUNK COMPLETE - RUNTIME: 5.0180 sec. - Files processed: 1,010 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1010
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.1766 sec. - Files processed: 1,240 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1240
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0130 sec. - Files processed: 1,351 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1351
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.5859 sec. - Files processed: 1,422 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1422
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0097 sec. - Files processed: 1,457 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1457
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.4321 sec. - Files processed: 1,473 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1473
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0143 sec. - Files processed: 1,689 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1689
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0401 sec. - Files processed: 1,967 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 1967
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0083 sec. - Files processed: 2,704 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 2704
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0588 sec. - Files processed: 3,070 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 3070
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0300 sec. - Files processed: 3,271 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 3271
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0248 sec. - Files processed: 3,643 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 3643
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0955 sec. - Files processed: 4,151 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 4151
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 6.8681 sec. - Files processed: 4,429 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 4429
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0091 sec. - Files processed: 4,724 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 4724
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0248 sec. - Files processed: 5,091 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5091
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 6.8915 sec. - Files processed: 5,093 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5093
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.6652 sec. - Files processed: 5,096 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5096
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.3936 sec. - Files processed: 5,126 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5126
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.0455 sec. - Files processed: 5,149 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5149
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 6.1343 sec. - Files processed: 5,165 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5165
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 6.2158 sec. - Files processed: 5,202 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5202
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.2670 sec. - Files processed: 5,211 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5211
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 8.6606 sec. - Files processed: 5,218 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5218
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.8819 sec. - Files processed: 5,219 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5219
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.7715 sec. - Files processed: 5,237 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5237
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 7.2459 sec. - Files processed: 5,253 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5253
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.1085 sec. - Files processed: 5,282 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5282
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.9683 sec. - Files processed: 5,296 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5296
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 10.4814 sec. - Files processed: 5,341 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5341
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 11.7252 sec. - Files processed: 5,357 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5357
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+CHUNK COMPLETE - RUNTIME: 5.7807 sec. - Files processed: 5,358 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [extract] START
+MAINTENANCE MODE ENABLE
+ARCHIVE OFFSET 5358
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+FILE EXTRACTION: done processing last file in list of 6005
+
+EXTRACTION: ZIP CHUNKING >>> DONE
+
+EXTRACTION COMPLETE @ 07:27:02 - RUNTIME: 196.7448 sec. - Files processed: 5,399 of 5,399
+AJAX ACTION [extract] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [dbinstall] START
+ADD PREFIX META MAP ID 0 wp_
+
+
+
+********************************************************************************
+* DUPLICATOR LITE: INSTALL-LOG
+* STEP-2 START @ 07:27:03
+* NOTICE: Do NOT post to public sites or forums!!
+********************************************************************************
+USER INPUTS
+DB ENGINE___________: "chunk"
+VIEW MODE___________: "basic"
+DB ACTION___________: "empty"
+DB HOST_____________: "**OBSCURED**"
+DB NAME_____________: "**OBSCURED**"
+DB PASS_____________: "**OBSCURED**"
+DB PORT_____________: "**OBSCURED**"
+USER MODE___________: "overwrite"
+TABLE PREFIX________: "wp_"
+MYSQL MODE__________: "DEFAULT"
+MYSQL MODE OPTS_____: ""
+CHARSET_____________: "utf8mb3"
+COLLATE_____________: ""
+CUNKING_____________: true
+VIEW CREATION_______: true
+STORED PROCEDURE____: true
+FUNCTIONS___________: true
+REMOVE DEFINER______: false
+SPLIT CREATES_______: true
+--------------------------------------
+TABLES
+--------------------------------------
+TABLE "wp_commentmeta"__________________________________[ROWS:       0] [EXTRACT|REPLACE] [INST NAME: wp_commentmeta]
+TABLE "wp_comments"_____________________________________[ROWS:       1] [EXTRACT|REPLACE] [INST NAME: wp_comments]
+TABLE "wp_duplicator_packages"__________________________[ROWS:       1] [EXTRACT|REPLACE] [INST NAME: wp_duplicator_packages]
+TABLE "wp_links"________________________________________[ROWS:       0] [EXTRACT|REPLACE] [INST NAME: wp_links]
+TABLE "wp_options"______________________________________[ROWS:     202] [EXTRACT|REPLACE] [INST NAME: wp_options]
+TABLE "wp_postmeta"_____________________________________[ROWS:     384] [EXTRACT|REPLACE] [INST NAME: wp_postmeta]
+TABLE "wp_posts"________________________________________[ROWS:      64] [EXTRACT|REPLACE] [INST NAME: wp_posts]
+TABLE "wp_termmeta"_____________________________________[ROWS:       0] [EXTRACT|REPLACE] [INST NAME: wp_termmeta]
+TABLE "wp_terms"________________________________________[ROWS:       3] [EXTRACT|REPLACE] [INST NAME: wp_terms]
+TABLE "wp_term_relationships"___________________________[ROWS:       7] [EXTRACT|REPLACE] [INST NAME: wp_term_relationships]
+TABLE "wp_term_taxonomy"________________________________[ROWS:       3] [EXTRACT|REPLACE] [INST NAME: wp_term_taxonomy]
+TABLE "wp_usermeta"_____________________________________[ROWS:      27] [EXTRACT|REPLACE] [INST NAME: wp_usermeta]
+TABLE "wp_users"________________________________________[ROWS:       1] [EXTRACT|REPLACE] [INST NAME: wp_users]
+********************************************************************************
+
+DATABASE ERROR: mysqli_set_charset "utf8mb3" MSG: Invalid character set was provided
+DATABASE ERROR: mysqli_set_charset "utf8mb3" MSG: Invalid character set was provided
+--------------------------------------
+DATABASE-ENVIRONMENT
+--------------------------------------
+MYSQL VERSION:	This Server: 8.0.34 -- Build Server: 5.7.27
+FILE SIZE:	dup-database__[HASH].sql (1014.9KB)
+TIMEOUT:	5000
+MAXPACK:	67108864
+SQLMODE-GLOBAL:	
+SQLMODE-SESSION:NO_AUTO_VALUE_ON_ZERO
+DROP ALL TABLES
+--------------------------------------
+DATABASE RESULTS
+--------------------------------------
+QUERY FIXES
+GLOBAL RULES ADDED: PROC AND VIEWS
+
+QUERY FIXES GLOBAL RULES
+	SEARCH  => /^(\s*(?:\/\*!\d+\s)?\s*(?:CREATE.+)?DEFINER\s*=)([^\*\s]+)(.*)$/m
+	REPLACE => $1`aws5cxmwvgz2_root`@`127.0.0.1`$3
+
+	SEARCH  => /^(\s*CREATE.+(?:PROCEDURE|FUNCTION)[\s\S]*)(BEGIN)([\s\S]*)$/
+	REPLACE => $1SQL SECURITY INVOKER
+$2$3
+
+--------------------------------------
+** DATABASE CHUNK install start
+--------------------------------------
+DATABASE CHUNK SEEK POSITION: 0
+DATABASE ERROR: mysqli_set_charset "utf8mb3" MSG: Invalid character set was provided
+Auto Commit set to false successfully
+NO TABLE TO SKIP
+Auto Commit set to true successfully
+--------------------------------------
+** DATABASE CHUNK install end
+--------------------------------------
+ERRORS FOUND:	0
+DROPPED TABLES:	0
+RENAMED TABLES:	0
+QUERIES RAN:	138
+
+TABLES ROWS IN DATABASE AFTER EXTRACTION
+
+TABLE "wp_commentmeta"__________________________________[ROWS:     0]
+TABLE "wp_comments"_____________________________________[ROWS:     1]
+TABLE "wp_duplicator_packages"__________________________[ROWS:     1]
+TABLE "wp_links"________________________________________[ROWS:     0]
+TABLE "wp_options"______________________________________[ROWS:   202]
+TABLE "wp_postmeta"_____________________________________[ROWS:   384]
+TABLE "wp_posts"________________________________________[ROWS:    64]
+TABLE "wp_term_relationships"___________________________[ROWS:     7]
+TABLE "wp_term_taxonomy"________________________________[ROWS:     3]
+TABLE "wp_termmeta"_____________________________________[ROWS:     0]
+TABLE "wp_terms"________________________________________[ROWS:     3]
+TABLE "wp_usermeta"_____________________________________[ROWS:    27]
+TABLE "wp_users"________________________________________[ROWS:     1]
+
+INSERT DATA RUNTIME: 1.4005 sec.
+STEP-2 COMPLETE @ 07:27:04 - RUNTIME: 1.4005 sec.
+AJAX ACTION [dbinstall] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [webupdate] START
+
+====================================
+SET SEARCH AND REPLACE LIST INSTALL TYPE single site
+====================================
+SEARCH ITEM[T:path |P:12] SEARCH: /var/www/u1656834/data/www/gupmm.ru REPLACE: /home/olxnc8yunw20/vhosts/engsupervision.com/www/ [SCOPE: ALL]
+SEARCH ITEM[T:path |P:12] SEARCH: /var/www/u1656834/data/www/gupmm.ru REPLACE: /home/olxnc8yunw20/vhosts/engsupervision.com/www [SCOPE: ALL]
+SEARCH ITEM[T:urlnd|P:12] SEARCH: http://gupmm.ru REPLACE: https://engsupervision.com/ [SCOPE: ALL]
+SEARCH ITEM[T:urlnd|P:12] SEARCH: http://gupmm.ru REPLACE: https://engsupervision.com [SCOPE: ALL]
+CHUNK LOAD DATA: IS NULL 
+CHUNK ACTION: CURRENT [start][][]
+DATABASE ERROR: mysqli_set_charset "utf8mb3" MSG: Invalid character set was provided
+
+
+********************************************************************************
+DUPLICATOR LITE: INSTALL-LOG
+STEP-3 START @ 07:27:04
+NOTICE: Do NOT post to public sites or forums
+********************************************************************************
+CHARSET SERVER:	"utf8"
+CHARSET CLIENT:	"utf8"
+********************************************************************************
+OPTIONS:
+SKIP PATH REPLACE_____: false
+DISALLOW_FILE_EDIT____: [value = ], [inWpConfig = ]
+DISALLOW_FILE_MODS____: [value = ], [inWpConfig = ]
+AUTOSAVE_INTERVAL_____: [value = 60], [inWpConfig = ]
+WP_POST_REVISIONS_____: [value = 1], [inWpConfig = ]
+FORCE_SSL_ADMIN_______: [value = ], [inWpConfig = ]
+WP_AUTO_UPDATE_CORE___: [value = false], [inWpConfig = ]
+WP_CACHE______________: [value = ], [inWpConfig = ]
+WPCACHEHOME___________: [value = /], [inWpConfig = ]
+WP_DEBUG______________: [value = ], [inWpConfig = 1]
+WP_DEBUG_LOG__________: [value = ], [inWpConfig = ]
+WP_DEBUG_DISPLAY______: [value = 1], [inWpConfig = ]
+WP_DISABLE_FATAL_ERROR_HANDLER: [value = ], [inWpConfig = ]
+SCRIPT_DEBUG__________: [value = ], [inWpConfig = ]
+CONCATENATE_SCRIPTS___: [value = ], [inWpConfig = ]
+SAVEQUERIES___________: [value = ], [inWpConfig = ]
+ALTERNATE_WP_CRON_____: [value = ], [inWpConfig = ]
+DISABLE_WP_CRON_______: [value = ], [inWpConfig = ]
+WP_CRON_LOCK_TIMEOUT__: [value = 60], [inWpConfig = ]
+COOKIE_DOMAIN_________: [value = ], [inWpConfig = ]
+WP_MEMORY_LIMIT_______: [value = 40M], [inWpConfig = ]
+WP_MAX_MEMORY_LIMIT___: [value = 1024M], [inWpConfig = ]
+WP_TEMP_DIR___________: [value = ], [inWpConfig = ]
+********************************************************************************
+
+********************************************************************************
+CHUNK PARAMS:
+maxIteration__________: 0
+timeOut_______________: 5000
+throttling____________: 2
+rowsPerPage___________: 1000
+********************************************************************************
+
+CHUNK ACTION: CURRENT [cleanup_trans][][]
+[PHP ERR][E_WARNING] MSG:foreach() argument must be of type array|object, string given [CODE:2|FILE:/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Deploy/Database/DbCleanup.php|LINE:95]
+CLEAN OPTIONS [wp_options]
+	`option_name` = "duplicator_plugin_data_stats"
+	`option_name` LIKE "\_transient%"
+	`option_name` LIKE "\_site\_transient%"
+DATABASE OPTIONS DELETED [ROWS:    25]
+CHUNK ACTION: CURRENT [cleanup_extra][][]
+CLEANUP EXTRA
+	- SKIP DROP VIEWS
+	- SKIP DROP PROCS
+	- SKIP DROP FUNCS
+CHUNK ACTION: CURRENT [cleanup_packages][][]
+EMPTY PACKAGES TABLE
+CLEAN PACKAGES
+DATABASE PACKAGE DELETED [ROWS:     1]
+CHUNK ACTION: CURRENT [init][][]
+
+EVALUATE TABLE: "wp_commentmeta"__________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_comments"_____________________________________[ROWS:     1][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_comments][0]
+
+EVALUATE TABLE: "wp_duplicator_packages"__________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_links"________________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_options"______________________________________[ROWS:   177][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_options][0]
+
+EVALUATE TABLE: "wp_postmeta"_____________________________________[ROWS:   384][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_postmeta][0]
+
+EVALUATE TABLE: "wp_posts"________________________________________[ROWS:    64][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_posts][0]
+
+EVALUATE TABLE: "wp_termmeta"_____________________________________[ROWS:     0][PG:   0][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_terms"________________________________________[ROWS:     3][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_terms][0]
+
+EVALUATE TABLE: "wp_term_relationships"___________________________[ROWS:     7][PG:   1][SCAN:no columns  ]
+
+EVALUATE TABLE: "wp_term_taxonomy"________________________________[ROWS:     3][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_term_taxonomy][0]
+
+EVALUATE TABLE: "wp_usermeta"_____________________________________[ROWS:    27][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_usermeta][0]
+
+EVALUATE TABLE: "wp_users"________________________________________[ROWS:     1][PG:   1][SCAN:text columns]
+	--- BASE STRINGS ---
+	SEARCH[path ]  1:"/var/www/u1656834/data/www/gupmm.ru" =============> "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+	SEARCH[urlnd]  2:"http://gupmm.ru" =================================> "https://engsupervision.com"
+	CHUNK ACTION: CURRENT [search_replace][wp_users][0]
+--------------------------------------
+SCANNED:	Tables:13 	|	 Rows:660 	|	 Cells:3879 
+UPDATED:	Tables:3 	|	 Rows:70 	|	 Cells:71 
+ERRORS:		0 
+RUNTIME:	0.761600 sec
+CHUNK ACTION: CURRENT [rem_maintenance][][]
+
+====================================
+REMOVE MAINTENANCE MODE
+====================================
+MAINTENANCE MODE DISABLE
+CHUNK ACTION: CURRENT [config_update][][]
+SET CONFIG FILES
+Retained original entry wpconfig target:/home/olxnc8yunw20/vhosts/engsupervision.com/www/wp-config.php
+New htaccess file created:/home/olxnc8yunw20/vhosts/engsupervision.com/www/.htaccess
+
+====================================
+CONFIGURATION FILE UPDATES
+====================================
+	UPDATE ABSPATH "dirname(__FILE__) . '/'"
+	UPDATE WP_SITEURL "https://engsupervision.com/"
+	UPDATE DB_NAME ""aws5cxmwvgz2""
+	UPDATE DB_USER "** OBSCURED **"
+	UPDATE DB_PASSWORD "** OBSCURED **"
+	UPDATE DB_HOST ""127.0.0.1""
+	UPDATE DB_CHARSET "utf8mb3"
+	UPDATE DB_COLLATE ""
+	WP CONFIG UPDATE WP_DEBUG "false"
+	
+*** UPDATED WP CONFIG FILE ***
+
+====================================
+HTACCESS UPDATE
+====================================
+
+WEB SERVER CONFIGURATION FILE UPDATED:
+- Preparing .htaccess file with basic setup.
+HTACCESS FILE - Successfully updated the .htaccess file setting.
+
+====================================
+INDEX.PHP UPDATE
+====================================
+INDEX.PHP updated with new blog header "dirname(__FILE__) . '/wp-blog-header.php'"
+
+CHUNK ACTION: CURRENT [gen_update][][]
+
+====================================
+GENERAL UPDATES
+====================================
+
+====================================
+MANAGE PLUGINS
+====================================
+CHUNK ACTION: CURRENT [gen_clean][][]
+
+====================================
+GENERAL CLEANUP
+====================================
+RESET ALL USERS SESSION TOKENS
+MIGRATION INFO SET
+CHUNK ACTION: CURRENT [create_admin][][]
+
+====================================
+RESET USERS PASSWORD
+====================================
+CHUNK ACTION: CURRENT [notice_test][][]
+
+====================================
+CHECK FOR INDEX.HTML
+====================================
+NO INDEX.HTML WAS FOUND
+
+====================================
+NOTICES TEST
+====================================
+No General Notices Found
+
+CHUNK ACTION: CURRENT [cleanup_tmp_files][][]
+
+====================================
+CLEANUP TMP FILES
+====================================
+CHUNK ACTION: CURRENT [set_files_perms][][]
+
+====================================
+SET PARAMS PERMISSION
+====================================
+
+*** SET FOLDER PERMISSION AFTER EXTRACTION
+--------------------------------------
+PATHS MAPPING : "/home/olxnc8yunw20/vhosts/engsupervision.com/www"
+--------------------------------------
+SET FOLDER PERMISSION DONE
+CHUNK ACTION: CURRENT [final_report][][]
+
+====================================
+FINAL REPORT NOTICES
+====================================
+
+STEP-3 COMPLETE @ 07:27:05 - RUNTIME: 0.8632 sec. 
+
+
+AJAX ACTION [webupdate] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [finalpre] START
+AJAX ACTION [finalpre] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+-------------------------
+AJAX ACTION [finalafter] START
+AJAX ACTION [finalafter] SUCCESS
+-------------------------
+
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/src/Core/Bootstrap.php:71] RESET TIME
+
+====================================
+FINAL REPORT NOTICES LIST
+====================================
+====================================
+LOG-TIME[/home/olxnc8yunw20/vhosts/engsupervision.com/www/dup-installer/ctrls/ctrl.base.php:227][DELTA:   0.03184]  MESSAGE:END RENDER PAGE

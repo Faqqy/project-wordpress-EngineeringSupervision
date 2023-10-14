@@ -52,7 +52,9 @@ get_header();
                                 </div>
                                 <div class="footer_banner">
                                     <div class="button_about-us">
-                                        <button>About us</button>
+                                        <a href="<?php echo get_permalink(15); ?>">
+                                            <button>About us</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -72,6 +74,7 @@ get_header();
                             <span class="line line_h1"></span>
                             <div class="items_box">
                                 <div class="item-front">
+                                    <a href="<?php echo get_permalink(25); ?>">
                                     <?php
                                         $firstCardImage = carbon_get_theme_option('engineering_card_image_first');
                                         $photo = $firstCardImage ? wp_get_attachment_image_src($firstCardImage, 'full') : '';
@@ -94,8 +97,10 @@ get_header();
                                             
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                                 <div class="item-front">
+                                    <a href="<?php echo get_permalink(27); ?>">
                                     <?php
                                         $secondCardImage = carbon_get_theme_option('engineering_card_image_second');
                                         $photo = $secondCardImage ? wp_get_attachment_image_src($secondCardImage, 'full') : '';
@@ -116,8 +121,10 @@ get_header();
                                             </a>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                                 <div class="item-front">
+                                    <a href="<?php echo get_permalink(29); ?>">
                                     <?php
                                         $thirdCardImage = carbon_get_theme_option('engineering_card_image_third');
                                         $photo = $thirdCardImage ? wp_get_attachment_image_src($thirdCardImage, 'full') : '';
@@ -138,6 +145,7 @@ get_header();
                                             </a>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +153,7 @@ get_header();
                 </div>
                 </section>
 
-                <div class="container">
+                <div class="container mobile_container">
                     <div class="desktop_version">
                         <div class="row g-0">     
                             <div class="col-md-6 col-sm-12">

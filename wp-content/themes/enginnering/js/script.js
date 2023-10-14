@@ -1,7 +1,7 @@
 // google map
 
 let map;
-let imageMarker = '../img/pin.svg';
+let imageMarker = '/wp-content/themes/enginnering/img/pin.svg';
 let grayStyles = [
     {
         "featureType": "all",
@@ -14,7 +14,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 40
+                "lightness": 70
             }
         ]
     },
@@ -77,7 +77,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 20
+                "lightness": 25
             }
         ]
     },
@@ -89,7 +89,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 21
+                "lightness": 25
             }
         ]
     },
@@ -101,7 +101,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 17
+                "lightness": 35
             }
         ]
     },
@@ -113,7 +113,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 29
+                "lightness": 35
             },
             {
                 "weight": 0.2
@@ -128,7 +128,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 18
+                "lightness": 35
             }
         ]
     },
@@ -140,7 +140,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 16
+                "lightness": 35
             }
         ]
     },
@@ -152,7 +152,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 19
+                "lightness": 35
             }
         ]
     },
@@ -164,7 +164,7 @@ let grayStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 17
+                "lightness": 13
             }
         ]
     }

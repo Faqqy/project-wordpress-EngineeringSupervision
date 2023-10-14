@@ -390,6 +390,13 @@
 				}
 			}
 
+			if($et_divi = get_option("et_divi")){
+				// Divi Theme - Static CSS File Generation
+				if(isset($et_divi["et_pb_static_css_file"]) && $et_divi["et_pb_static_css_file"] == "on"){
+					return array("You have to disable the <u><a target='_blank' href='https://www.wpfastestcache.com/tutorial/divi-theme-settings/'>Static CSS File Generation</a></u> option of Divi Theme", "error");
+				}
+			}
+
 			if(file_exists($path.".htaccess")){
 				$htaccess = @file_get_contents($path.".htaccess");
 			}else{
@@ -405,6 +412,8 @@
 				return array("You have to set <strong><u><a target='_blank' href='https://www.wpfastestcache.com/tutorial/how-to-change-default-permalink-in-wordpress/'>permalinks</a></u></strong>", "error");
 			}else if($res = $this->checkSuperCache($path, $htaccess)){
 				return $res;
+			}else if($this->isPluginActive('cookie-notice/cookie-notice.php')){
+				return array("Cookie Notice & Compliance for GDPR / CCPA needs to be deactivated", "error");
 			}else if($this->isPluginActive('fast-velocity-minify/fvm.php')){
 				return array("Fast Velocity Minify needs to be deactivated", "error");
 			}else if($this->isPluginActive('far-future-expiration/far-future-expiration.php')){
@@ -752,7 +761,7 @@
 				}
 			}
 
-			if($this->isPluginActive('polylang/polylang.php')){
+			if($this->isPluginActive('polylang/polylang.php') || $this->isPluginActive('polylang-pro/polylang.php')){
 				$polylang_settings = get_option("polylang");
 
 				if(isset($polylang_settings["force_lang"])){
@@ -1053,11 +1062,16 @@
 
 				<div class="tabGroup">
 					<?php
-						$tabs = array(array("id"=>"wpfc-options","title" => __("Settings", "wp-fastest-cache" )),
-									  array("id"=>"wpfc-deleteCache","title" => __("Delete Cache", "wp-fastest-cache" )));
+						$tabs = array();
 						
+						array_push($tabs, array("id"=>"wpfc-options","title" => __("Settings", "wp-fastest-cache" )));
+						array_push($tabs, array("id"=>"wpfc-deleteCache","title" => __("Delete Cache", "wp-fastest-cache" )));
 						array_push($tabs, array("id"=>"wpfc-imageOptimisation","title" => __("Image Optimization", "wp-fastest-cache" )));
-						array_push($tabs, array("id"=>"wpfc-premium","title"=>"Premium"));
+
+						if(!class_exists("WpFastestCachePowerfulHtml")){
+							array_push($tabs, array("id"=>"wpfc-premium","title"=>"Premium"));
+						}
+
 						array_push($tabs, array("id"=>"wpfc-exclude","title"=>__("Exclude", "wp-fastest-cache" )));
 						array_push($tabs, array("id"=>"wpfc-cdn","title"=>"CDN"));
 						array_push($tabs, array("id"=>"wpfc-db","title"=>"DB"));
@@ -1127,7 +1141,30 @@
 							<div class="questionCon">
 								<div class="question"><?php _e('Preload', 'wp-fastest-cache'); ?></div>
 								<div class="inputCon"><input type="checkbox" <?php echo $wpFastestCachePreload; ?> id="wpFastestCachePreload" name="wpFastestCachePreload"><label for="wpFastestCachePreload"><?php _e("Create the cache of all the site automatically", "wp-fastest-cache"); ?></label></div>
-								<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/features/preload-settings/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+								
+
+								<div class="get-info" data-info-id="wpFastestCachePreload" style="<?php echo $wpFastestCachePreload ? "display:none;" : "" ?>" ><a target="_blank" href="http://www.wpfastestcache.com/features/preload-settings/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+
+								<div class="get-info" data-gear-id="wpFastestCachePreload" style="<?php echo $wpFastestCachePreload ? "" : "display:none;" ?>" >
+									<span class="dashicons dashicons-admin-generic"></span>
+								</div>
+								
+								<script type="text/javascript">
+									jQuery(document).ready(function() {
+										jQuery("#wpFastestCachePreload").change(function(e){
+											let id = jQuery(this).attr("id");
+
+											if(jQuery(this).is(':checked')){
+												jQuery("div[data-info-id='" + id + "']").hide();
+												jQuery("div[data-gear-id='" + id + "']").show();
+											}else{
+												jQuery("div[data-info-id='" + id + "']").show();
+												jQuery("div[data-gear-id='" + id + "']").hide();
+											}
+										});
+									});
+								</script>
+
 							</div>
 
 							<?php include(WPFC_MAIN_PATH."templates/update_now.php"); ?>
@@ -1372,7 +1409,14 @@
 											
 											<input type="checkbox" <?php echo $wpFastestCacheLazyLoad; ?> id="wpFastestCacheLazyLoad" name="wpFastestCacheLazyLoad"><label for="wpFastestCacheLazyLoad"><?php _e("Load images and iframes when they enter the browsers viewport", "wp-fastest-cache"); ?></label>
 										</div>
-										<div class="get-info"><a target="_blank" href="http://www.wpfastestcache.com/premium/lazy-load-reduce-http-request-and-page-load-time/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+
+
+										<div class="get-info" data-info-id="wpFastestCacheLazyLoad" style="<?php echo $wpFastestCacheLazyLoad ? "display:none;" : "" ?>" ><a target="_blank" href="http://www.wpfastestcache.com/premium/lazy-load-reduce-http-request-and-page-load-time/"><img src="<?php echo plugins_url("wp-fastest-cache/images/info.png"); ?>" /></a></div>
+
+										<div class="get-info" data-gear-id="wpFastestCacheLazyLoad" style="<?php echo $wpFastestCacheLazyLoad ? "" : "display:none;" ?>" >
+											<span class="dashicons dashicons-admin-generic"></span>
+										</div>
+
 									</div>
 
 									<?php 
@@ -1770,138 +1814,121 @@
 						</div>
 				    <?php } ?>
 				    <div class="tab5">
-				    	<?php
-				    		if(!get_option("WpFc_api_key")){
-				    			update_option("WpFc_api_key", md5(microtime(true)));
-				    		}
 
-				    		if(!defined('WPFC_API_KEY')){ // for download_error.php
-				    			define("WPFC_API_KEY", get_option("WpFc_api_key"));
-				    		}
-				    	?>
-				    	<div id="wpfc-premium-container">
-				    		<div class="wpfc-premium-step">
-				    			<div class="wpfc-premium-step-header">
-				    				<label><?php _e("Discover Features", "wp-fastest-cache"); ?></label>
-				    			</div>
-				    			<div class="wpfc-premium-step-content">
-				    				<?php _e("In the premium version there are some new features which speed up the sites more.", "wp-fastest-cache"); ?>
-				    			</div>
-				    			<div class="wpfc-premium-step-image">
-				    				<img src="<?php echo plugins_url("wp-fastest-cache/images/rocket.png"); ?>">
-				    			</div>
-				    			<div class="wpfc-premium-step-footer">
-				    				<h1 id="new-features-h1"><?php _e("New Features", "wp-fastest-cache"); ?></h1>
-				    				<ul>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/image-optimization/">Image Optimization</a></li>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/mobile-cache/">Mobile Cache</a></li>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/minify-html-plus/">Minify HTML Plus</a></li>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/combine-js-plus/">Combine Js Plus</a></li>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/minify-js/">Minify Js</a></li>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/delete-cache-logs/">Delete Cache Logs</a></li>
-				    					<li><a target="_blank" style="text-decoration: none;color: #444;" href="http://www.wpfastestcache.com/premium/cache-statics/">Cache Statics</a></li>
-				    				</ul>
-				    			</div>
-				    		</div>
-				    		<div class="wpfc-premium-step">
-				    			<div class="wpfc-premium-step-header">
-				    				<label><?php _e("Checkout", "wp-fastest-cache"); ?></label>
-				    			</div>
-				    			<div class="wpfc-premium-step-content">
-				    				<?php _e("You need to pay before downloading the premium version.", "wp-fastest-cache"); ?>
-				    			</div>
-				    			<div class="wpfc-premium-step-image">
-				    				<img width="140px" height="140px" src="<?php echo plugins_url("wp-fastest-cache/images/dollar.png"); ?>" />
-				    			</div>
-				    			<div class="wpfc-premium-step-footer">
-				    				<?php
+						<div id="wpfc-premium">
+				            <style>
+				                #wpfc-premium .transition { transition-duration: 0.3s; }
+				                #wpfc-premium * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; border: 0 solid; outline: 0 solid; }
+				                #wpfc-premium .w-full { width: 100%; }
+				                #wpfc-premium .h-full { height: 100%; }
+				                #wpfc-premium .flex { display: flex; }
+				                #wpfc-premium .items-center { align-items: center; }
+				                #wpfc-premium .justify-center { justify-content: center; }
+				                #wpfc-premium .w-10 { width: 2.5rem; }
+				                #wpfc-premium .h-10 { height: 2.5rem; }
+				                #wpfc-premium .bg-brand-blue { background-color: #0A1551; }
+				                #wpfc-premium .pricingBox-ribbon-belt { align-items: flex-start; display: flex; left: 0; overflow: hidden; position: absolute; right: 0; text-align: center; top: -8px }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow { display: inline-block; font-size: 12px; font-weight: 900; line-height: 16px; margin-left: auto; margin-right: auto; max-width: calc(100% - 24px); padding: 0; position: relative; text-transform: uppercase; top: 0; -webkit-transform: none; transform: none }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content { display: flex; padding: 0 0 4px; position: relative }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content>.text-content { background: #ff7321; border: 4px solid #ff7321; margin: 0 21px; max-height: 40px; overflow: hidden; position: relative; z-index: 2 }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content>.triangle-behind { border-bottom: 8px solid #d54000; border-left: 8px solid transparent; border-right: 8px solid transparent; height: 8px; margin-left: -8px; position: absolute; width: calc(100% + 16px); z-index: 0 }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content>.triangle-sides-shadow { border-bottom: 0; border-left: 16px solid transparent; border-right: 16px solid transparent; border-top: 36px solid rgba(0,0,0,.25); height: 8px; margin-left: 0; margin-top: 8px; position: absolute; width: 100%; z-index: 0 }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content>.triangle-sides { background: transparent; bottom: 4px; display: block; left: 0; overflow: hidden; position: absolute; right: 0; top: 0; z-index: 1 }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content>.triangle-sides:after { border-right: 21px solid transparent; border-top: 50px solid #ff7321; content: ""; height: 0; position: absolute; right: 0; width: 0 }
+				                #wpfc-premium .pricingBox-ribbon-belt .pricingBox-ribbon-shadow .pricingBox-ribbon-content>.triangle-sides:before { border-left: 21px solid transparent; border-top: 50px solid #ff7321; content: ""; height: 0; left: 0; position: absolute; width: 0 }
+				                #wpfc-premium * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; outline: 0 }
+				                #wpfc-premium{ font-family: Circular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol }
+				                #wpfc-premium{ -webkit-text-size-adjust: 100%; line-height: 1.15; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4 }
+				                #wpfc-premium{ margin: 0 }
+				                #wpfc-premium b, #wpfc-premium strong { font-weight: bolder }
+				                #wpfc-premium fieldset, #wpfc-premium ol, #wpfc-premium ul { margin: 0; padding: 0 }
+				                #wpfc-premium ol, #wpfc-premium ul { list-style: none }
+				                #wpfc-premium [role=button], #wpfc-premium button { cursor: pointer }
+				                /*#wpfc-premium .cursor-pointer { cursor: pointer }*/
+				                #wpfc-premium .font-circular { font-family: Circular,sans-serif }
+				                #wpfc-premium .absolute { position: absolute }
+				                #wpfc-premium .relative { position: relative }
+				                #wpfc-premium .text-center { text-align: center }
+				                #wpfc-premium .text-left { text-align: left }
+				                #wpfc-premium .pt-1, #wpfc-premium .py-1 { padding-top: .25rem }
+				                #wpfc-premium .py-2 { padding-bottom: .5rem }
+				                #wpfc-premium .pt-2, #wpfc-premium .py-2 { padding-top: .5rem }
+				                #wpfc-premium .p-3 { padding: .75rem }
+				                #wpfc-premium .px-3 { padding-left: .75rem; padding-right: .75rem }
+				                #wpfc-premium .py-3 { padding-bottom: .75rem }
+				                #wpfc-premium .pt-3, #wpfc-premium .py-3 { padding-top: .75rem }
+				                #wpfc-premium .pt-4, #wpfc-premium .py-4 { padding-top: 1rem }
+				                #wpfc-premium .space-y-1>*+* { margin-top: .25rem }
+				                #wpfc-premium .text-xs { font-size: .75rem; line-height: 1rem }
+				                #wpfc-premium .text-sm { font-size: .875rem; line-height: 1.125rem }
+				                #wpfc-premium .text-md { font-size: 1rem; line-height: 1.25rem }
+				                #wpfc-premium .text-lg { font-size: 1.125rem; line-height: 1.375rem }
+				                #wpfc-premium .text-xl { font-size: 1.25rem; line-height: 1.5rem }
+				                #wpfc-premium .text-2xl { font-size: 1.5rem; line-height: 1.75rem }
+				                #wpfc-premium .text-3xl { font-size: 1.75rem; line-height: 2rem }
+				                #wpfc-premium .text-6xl { font-size: 2.5rem; line-height: 2.875rem }
+				                #wpfc-premium .line-height-xs { line-height: 1rem }
+				                #wpfc-premium .line-height-md { line-height: 1.25rem }
+				                #wpfc-premium .line-height-4xl { line-height: 2.5rem }
+				                #wpfc-premium .justify-center { justify-content: center }
+				                #wpfc-premium .items-center { align-items: center }
+				                #wpfc-premium .items-end { align-items: flex-end }
+				                #wpfc-premium .min-h-32 { min-height: 6rem }
+				                #wpfc-premium .max-w-72 { max-width: 18rem }
+				                #wpfc-premium .max-w-10\/12, #wpfc-premium .max-w-5\/6 { max-width: 83.333333% }
+				                #wpfc-premium .gap-4 { gap: 1rem }
+				                #wpfc-premium .flex-col { flex-direction: column }
+				                #wpfc-premium .flex-1 { flex-grow: 1; flex-shrink: 1 }
+				                #wpfc-premium .flex-wrap { flex-wrap: wrap }
+				                #wpfc-premium .bg-red-300 { --bg-opacity: 1; background-color: rgba(248,113,113,var(--bg-opacity)) }
+				                #wpfc-premium .inline-block { display: inline-block }
+				                #wpfc-premium .block { display: block }
+				                #wpfc-premium .flex { display: flex }
+				                #wpfc-premium .font-normal { font-weight: 400 }
+				                #wpfc-premium .font-medium { font-weight: 500 }
+				                #wpfc-premium .font-bold { font-weight: 700 }
+				                #wpfc-premium .font-extrabold { font-weight: 800 }
+				                #wpfc-premium .h-1 { height: .25rem }
+				                #wpfc-premium .h-6 { height: 1.5rem }
+				                #wpfc-premium .w-6 { width: 1.5rem }
+				                #wpfc-premium .w-7 { width: 1.75rem }
+				                #wpfc-premium .h-8 { height: 2rem }
+				                #wpfc-premium .h-10 { height: 2.5rem }
+				                #wpfc-premium .w-10 { width: 2.5rem }
+				                #wpfc-premium .w-11 { width: 2.75rem }
+				                #wpfc-premium .h-12 { height: 3rem }
+				                #wpfc-premium .h-full { height: 100% }
+				                #wpfc-premium .w-full { width: 100% }
+				                #wpfc-premium .left-0 { left: 0 }
+				                #wpfc-premium .right-0 { right: 0 }
+				                #wpfc-premium .top-4 { top: 1rem }
+				                #wpfc-premium .top-4\/12 { top: 33.333333% }
+				                #wpfc-premium .radius { border-radius: .25rem }
+				                #wpfc-premium .radius-lg { border-radius: .5rem }
+				                #wpfc-premium .radius-t-lg, #wpfc-premium .radius-tl-lg { border-top-left-radius: .5rem }
+				                #wpfc-premium .radius-tr-lg { border-top-right-radius: .5rem }
+				                #wpfc-premium .radius-b-lg, #wpfc-premium .radius-br-lg { border-bottom-right-radius: .5rem }
+				                #wpfc-premium .radius-bl-lg, #wpfc-premium .radius-l-lg { border-bottom-left-radius: .5rem }
+				                #wpfc-premium .mr-1 { margin-right: .25rem }
+				                #wpfc-premium .mx-2 { margin-left: .25rem; margin-right: .25rem }
+				                #wpfc-premium .mt-2 { margin-top: .5rem }
+				                #wpfc-premium .my-3 { margin-bottom: .75rem; margin-top: .75rem }
+				                #wpfc-premium .mt-4 { margin-top: 1rem }
+				                #wpfc-premium .mb-4 { margin-bottom: 1rem }
+				                #wpfc-premium .mx-auto { margin-left: auto; margin-right: auto }
+				                #wpfc-premium .hover\:opacity-70:hover {opacity: .7;}
+				                @media only screen and (min-width: 30rem) { #wpfc-premium .xs\:px-2 { padding-left:.5rem; padding-right: .5rem } #wpfc-premium .xs\:px-3 { padding-left: .75rem; padding-right: .75rem } #wpfc-premium .xs\:px-4 { padding-left: 1rem; padding-right: 1rem } #wpfc-premium .xs\:gap-0 { gap: 0 } #wpfc-premium .xs\:inline { display: inline } #wpfc-premium .xs\:w-44 { width: 11rem } #wpfc-premium .xs\:w-auto { width: auto } #wpfc-premium .xs\:w-max { width: -moz-max-content; width: max-content } #wpfc-premium .xs\:ml-0 { margin-left: 0 } #wpfc-premium .xs\:mt-0 { margin-top: 0 } #wpfc-premium .xs\:mb-0 { margin-bottom: 0 } #wpfc-premium .xs\:mr-2 { margin-right: .5rem } }
+				                @media only screen and (min-width: 48rem) { #wpfc-premium .md\:border-b { border-bottom-width:1px } #wpfc-premium .md\:p-0 { padding: 0 } #wpfc-premium .md\:px-2 { padding-left: .5rem; padding-right: .5rem } #wpfc-premium .md\:p-3 { padding: .75rem } #wpfc-premium .md\:px-3 { padding-left: .75rem; padding-right: .75rem } #wpfc-premium .md\:py-3 { padding-bottom: .75rem; padding-top: .75rem } #wpfc-premium .md\:pl-3 { padding-left: .75rem } #wpfc-premium .md\:pr-3 { padding-right: .75rem } #wpfc-premium .md\:px-4 { padding-left: 1rem; padding-right: 1rem } #wpfc-premium .md\:pt-4 { padding-top: 1rem } #wpfc-premium .md\:pl-4 { padding-left: 1rem } #wpfc-premium .md\:pr-4 { padding-right: 1rem } #wpfc-premium .md\:px-8 { padding-left: 2rem; padding-right: 2rem } #wpfc-premium .md\:px-10 { padding-left: 2.5rem; padding-right: 2.5rem } #wpfc-premium .md\:pb-10 { padding-bottom: 2.5rem } #wpfc-premium .md\:pt-12 { padding-top: 3rem } #wpfc-premium .md\:pr-20 { padding-right: 5rem } #wpfc-premium .md\:pb-40 { padding-bottom: 10rem } #wpfc-premium .md\:text-md { font-size: 1rem; line-height: 1.25rem } #wpfc-premium .md\:text-2xl { font-size: 1.5rem; line-height: 1.75rem } #wpfc-premium .md\:text-3xl { font-size: 1.75rem; line-height: 2rem } #wpfc-premium .md\:line-height-xl { line-height: 1.5rem } #wpfc-premium .md\:line-height-3xl { line-height: 2rem } #wpfc-premium .md\:justify-start { justify-content: flex-start } #wpfc-premium .md\:items-center { align-items: center } #wpfc-premium .md\:items-start { align-items: flex-start } #wpfc-premium .md\:min-h-16 { min-height: 4rem } #wpfc-premium .md\:min-w-40 { min-width: 10rem } #wpfc-premium .md\:min-w-76 { min-width: 19rem } #wpfc-premium .md\:min-h-120 { min-height: 30rem } #wpfc-premium .md\:min-w-md { min-width: 48rem } #wpfc-premium .md\:max-w-84 { max-width: 21rem } #wpfc-premium .md\:max-w-92 { max-width: 23rem } #wpfc-premium .md\:max-w-md { max-width: 48rem } #wpfc-premium .md\:max-w-40vw { max-width: 40vw } #wpfc-premium .md\:cols-4 { grid-template-columns: repeat(4,minmax(0,1fr)) } #wpfc-premium .md\:gap-0 { gap: 0 } #wpfc-premium .md\:flex-row { flex-direction: row } #wpfc-premium .md\:flex-col { flex-direction: column } #wpfc-premium .md\:grow-0 { flex-grow: 0 } #wpfc-premium .md\:flex-nowrap { flex-wrap: nowrap } #wpfc-premium .md\:inline-block { display: inline-block } #wpfc-premium .md\:block { display: block } #wpfc-premium .md\:flex { display: flex } #wpfc-premium .md\:inline { display: inline } #wpfc-premium .md\:shadow-lg { box-shadow: 0 4px 6px -2px #1018280d,0 12px 16px -4px #1018281a } #wpfc-premium .md\:opacity-100 { opacity: 1 } #wpfc-premium .md\:font-bold { font-weight: 700 } #wpfc-premium .md\:w-52 { width: 13rem } #wpfc-premium .md\:w-80 { width: 20rem } #wpfc-premium .md\:w-120 { width: 30rem } #wpfc-premium .md\:h-auto { height: auto } #wpfc-premium .md\:w-auto { width: auto } #wpfc-premium .md\:w-2\/6 { width: 33.333333% } #wpfc-premium .md\:w-4\/6 { width: 66.666667% } #wpfc-premium .md\:basis-0 { flex-basis: 0 } #wpfc-premium .md\:basis-80 { flex-basis: 20rem } #wpfc-premium .md\:basis-92 { flex-basis: 23rem } #wpfc-premium .md\:radius-t-none { border-top-left-radius: 0 } #wpfc-premium .md\:radius-r-none, #wpfc-premium .md\:radius-t-none, #wpfc-premium .md\:radius-tr-none { border-top-right-radius: 0 } #wpfc-premium .md\:radius-r-none { border-bottom-right-radius: 0 } #wpfc-premium .md\:radius-bl-none { border-bottom-left-radius: 0 } #wpfc-premium .md\:radius-l { border-bottom-left-radius: .25rem; border-top-left-radius: .25rem } #wpfc-premium .md\:radius-r-md, #wpfc-premium .md\:radius-tr-md { border-top-right-radius: .375rem } #wpfc-premium .md\:radius-r-md { border-bottom-right-radius: .375rem } #wpfc-premium .md\:radius-bl-md, #wpfc-premium .md\:radius-l-md { border-bottom-left-radius: .375rem } #wpfc-premium .md\:radius-l-md { border-top-left-radius: .375rem } #wpfc-premium .md\:radius-tl-lg { border-top-left-radius: .5rem } #wpfc-premium .md\:radius-tr-lg { border-top-right-radius: .5rem } #wpfc-premium .md\:radius-br-lg { border-bottom-right-radius: .5rem } #wpfc-premium .md\:radius-bl-lg { border-bottom-left-radius: .5rem } #wpfc-premium .md\:ml-0 { margin-left: 0 } #wpfc-premium .md\:mr-0 { margin-right: 0 } #wpfc-premium .md\:mt-0 { margin-top: 0 } #wpfc-premium .md\:mb-0 { margin-bottom: 0 } #wpfc-premium .md\:mb-2 { margin-bottom: .5rem } #wpfc-premium .md\:mb-4 { margin-bottom: 1rem } #wpfc-premium .md\:mb-5 { margin-bottom: 1.25rem } #wpfc-premium .md\:ml-6 { margin-left: 1.5rem } #wpfc-premium .md\:mb-6 { margin-bottom: 1.5rem } #wpfc-premium .md\:mb-7 { margin-bottom: 1.75rem } #wpfc-premium .md\:ml-10 { margin-left: 2.5rem } #wpfc-premium .md\:mr-10 { margin-right: 2.5rem } #wpfc-premium .md\:mb-12 { margin-bottom: 3rem } #wpfc-premium .md\:mb-20 { margin-bottom: 5rem } #wpfc-premium .md\:ml-56 { margin-left: 14rem } #wpfc-premium .md\:ml-auto { margin-left: auto } #wpfc-premium .md\:mr-auto { margin-right: auto } }
+				                @media only screen and (min-width: 80rem) { #wpfc-premium .xl\:py-0 { padding-bottom:0; padding-top: 0 } #wpfc-premium .xl\:px-2 { padding-left: .5rem; padding-right: .5rem } #wpfc-premium .xl\:px-3 { padding-left: .75rem; padding-right: .75rem } #wpfc-premium .xl\:px-4 { padding-left: 1rem; padding-right: 1rem } #wpfc-premium .xl\:px-14 { padding-left: 3.5rem; padding-right: 3.5rem } #wpfc-premium .xl\:px-32 { padding-left: 8rem; padding-right: 8rem } #wpfc-premium .xl\:max-w-sm { max-width: 40rem } #wpfc-premium .xl\:gap-0 { gap: 0 } #wpfc-premium .xl\:flex-nowrap { flex-wrap: nowrap } #wpfc-premium .xl\:block { display: block } #wpfc-premium .xl\:inline { display: inline } #wpfc-premium .xl\:w-auto { width: auto } #wpfc-premium .xl\:radius { border-radius: .25rem } }
+				            </style>
+				            <ul class="flex flex-wrap xl:flex-nowrap justify-center gap-4 md:gap-0 w-full mt-2">
+				                <li class="w-full max-w-72 radius-lg xs:w-44 mx-2 mt-6"> <div class="text-center w-full h-full flex flex-col cursor-pointer" aria-label="BRONZE"> <div class="w-full"> <div class="relative flex justify-center items-center w-full font-bold radius-tl-lg radius-tr-lg text-xl" style="background-color: rgb(255, 96, 56); color: rgb(255, 255, 255);"> <span class="my-3">Bronze</span> </div> <div class="flex flex-col justify-center items-center w-full text-sm min-h-32" style="background-color: rgb(243, 243, 254); color: rgb(10, 21, 81);"> <span class="text-xl"> <div class="flex flex-col">  <div class="text-md py-2"> <div class="flex items-end"> <span class="text-sm">$</span> <strong class="font-extrabold flex items-end text-6xl line-height-4xl"> 49 <span class="flex flex-col text-left"> <strong class="font-bold text-xl line-height-md">.99</strong> <span class="text-sm font-normal line-height-xs" style="color: rgb(69, 78, 128);">/lifetime</span> </span> </strong> </div> </div> </div> </span>  </div> </div> <div class="w-full p-3" data-test-id="jf-pt-plan-cta" style="background-color: rgb(243, 243, 254);"> <form action="https://www.wpfastestcache.com/#buy" method="post"> <button class="flex justify-center items-center w-full font-bold transition hover:opacity-70 radius max-w-10/12 mx-auto h-10" style="background-color: rgb(255, 96, 56); color: rgb(255, 255, 255);">Buy</button></form> </div> <div class="w-full flex-1 radius-bl-lg radius-br-lg px-3" style="background: rgb(227, 229, 245); color: rgb(52, 60, 106);"> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">1 License</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Number of Licenses</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">1,000</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Image Credits per License</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong style="font-size:30px;" class="font-bold block flex justify-center items-center mx-2 text-lg">∞</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Support and Updates</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/dollar-gold.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">One-Time Fee</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/left-right.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">1 year license transfer right</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/refund.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">30 Day Money Back Guarantee</span> </span> </div>       </div> </div> </li>
+				                <li class="w-full max-w-72 radius-lg xs:w-44 mx-2 mt-6"> <div class="text-center w-full h-full flex flex-col cursor-pointer" aria-label="SILVER"> <div class="w-full"> <div class="relative flex justify-center items-center w-full font-bold radius-tl-lg radius-tr-lg text-xl" style="background-color: rgb(46, 105, 255); color: rgb(255, 255, 255);"> <span class="my-3">Silver</span>  </div> <div class="flex flex-col justify-center items-center w-full text-sm min-h-32" style="background-color: rgb(243, 243, 254); color: rgb(10, 21, 81);"> <span class="text-xl"> <div class="flex flex-col">  <div class="text-md py-2"> <div class="flex items-end"> <span class="text-sm">$</span> <strong class="font-extrabold flex items-end text-6xl line-height-4xl"> 125 <span class="flex flex-col text-left"> <strong class="font-bold text-xl line-height-md">.00</strong> <span class="text-sm font-normal line-height-xs" style="color: rgb(69, 78, 128);">/lifetime</span> </span> </strong> </div> </div> </div> </span>  </div> </div> <div class="w-full p-3" data-test-id="jf-pt-plan-cta" style="background-color: rgb(243, 243, 254);"> <form action="https://www.wpfastestcache.com/#buy" method="post"> <button class="flex justify-center items-center w-full font-bold transition hover:opacity-70 radius max-w-10/12 mx-auto h-10" style="background-color: rgb(46, 105, 255); color: rgb(255, 255, 255);">Buy</button></form> </div> <div class="w-full flex-1 radius-bl-lg radius-br-lg px-3" style="background: rgb(227, 229, 245); color: rgb(52, 60, 106);"> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">3 Licenses</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Number of Licenses</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">1,000</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Image Credits per License</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong style="font-size:30px;" class="font-bold block flex justify-center items-center mx-2 text-lg">∞</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Support and Updates</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/dollar-gold.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">One-Time Fee</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/left-right.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">1 year license transfer right</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/refund.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">30 Day Money Back Guarantee</span> </span> </div>       </div> </div> </li>
+				                <li class="w-full max-w-72 radius-lg xs:w-44 mx-2 mt-6"> <div class="text-center w-full h-full flex flex-col cursor-pointer" aria-label="GOLD"> <div class="w-full"> <div class="relative flex justify-center items-center w-full font-bold radius-tl-lg radius-tr-lg text-xl" style="background-color: rgb(255, 184, 40); color: rgb(43, 50, 69);"> <span class="my-3">Gold</span> </div> <div class="flex flex-col justify-center items-center w-full text-sm min-h-32" style="background-color: rgb(243, 243, 254); color: rgb(10, 21, 81);"> <span class="text-xl"> <div class="flex flex-col">  <div class="text-md py-2"> <div class="flex items-end"> <span class="text-sm">$</span> <strong class="font-extrabold flex items-end text-6xl line-height-4xl"> 175 <span class="flex flex-col text-left"> <strong class="font-bold text-xl line-height-md">.00</strong> <span class="text-sm font-normal line-height-xs" style="color: rgb(69, 78, 128);">/lifetime</span> </span> </strong> </div> </div> </div> </span>  </div> </div> <div class="w-full p-3" data-test-id="jf-pt-plan-cta" style="background-color: rgb(243, 243, 254);"> <form action="https://www.wpfastestcache.com/#buy" method="post"> <button class="flex justify-center items-center w-full font-bold transition hover:opacity-70 radius max-w-10/12 mx-auto h-10" style="background-color: rgb(255, 184, 40); color: rgb(43, 50, 69);">Buy</button></form> </div> <div class="w-full flex-1 radius-bl-lg radius-br-lg px-3" style="background: rgb(227, 229, 245); color: rgb(52, 60, 106);"> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">5 Licenses</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Number of Licenses</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">1,000</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Image Credits per License</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong style="font-size:30px;" class="font-bold block flex justify-center items-center mx-2 text-lg">∞</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Support and Updates</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/dollar-gold.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">One-Time Fee</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/left-right.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">1 year license transfer right</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/refund.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">30 Day Money Back Guarantee</span> </span> </div>       </div> </div> </li>
+				                <li class="w-full max-w-72 radius-lg xs:w-44 mx-2 mt-6"> <div class="text-center w-full h-full flex flex-col cursor-pointer" aria-label="GOLD"> <div class="w-full"> <div class="relative flex justify-center items-center w-full font-bold radius-tl-lg radius-tr-lg text-xl" style="background-color: #9661f9; color: rgb(255, 255, 255);"> <span class="my-3">Platinum</span> </div> <div class="flex flex-col justify-center items-center w-full text-sm min-h-32" style="background-color: rgb(243, 243, 254); color: rgb(10, 21, 81);"> <span class="text-xl"> <div class="flex flex-col">  <div class="text-md py-2"> <div class="flex items-end"> <span class="text-sm">$</span> <strong class="font-extrabold flex items-end text-6xl line-height-4xl"> 300 <span class="flex flex-col text-left"> <strong class="font-bold text-xl line-height-md">.00</strong> <span class="text-sm font-normal line-height-xs" style="color: rgb(69, 78, 128);">/lifetime</span> </span> </strong> </div> </div> </div> </span>  </div> </div> <div class="w-full p-3" data-test-id="jf-pt-plan-cta" style="background-color: rgb(243, 243, 254);"> <form action="https://www.wpfastestcache.com/#buy" method="post"> <button class="flex justify-center items-center w-full font-bold transition hover:opacity-70 radius max-w-10/12 mx-auto h-10" style="background-color: #9661f9; color: rgb(255, 255, 255);">Buy</button></form> </div> <div class="w-full flex-1 radius-bl-lg radius-br-lg px-3" style="background: rgb(227, 229, 245); color: rgb(52, 60, 106);"> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">10 Licenses</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Number of Licenses</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg">1,000</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Image Credits per License</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong style="font-size:30px;" class="font-bold block flex justify-center items-center mx-2 text-lg">∞</strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">Support and Updates</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/dollar-gold.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">One-Time Fee</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/left-right.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">1 year license transfer right</span> </span> </div> <div class="relative flex justify-center items-center text-sm py-3" style="border-bottom: 1px solid rgb(200, 206, 237);"> <span class="flex flex-col space-y-1"> <strong class="font-bold block flex justify-center items-center mx-2 text-lg"> <img src="<?php echo plugins_url("wp-fastest-cache/images/refund.png"); ?>" width="40" height="40" /> </strong> <span class="font-medium text-xs" style="color: rgb(69, 78, 128);">30 Day Money Back Guarantee</span> </span> </div>       </div> </div> </li>
+				            </ul>
+				        </div>
 
-				    					$premium_buy_link = "https://www.wpfastestcache.com/#buy";
-				    					$premium_price = "$49.99";
-
-				    				?>
-				    				<h1 style="float:left;" id="just-h1"><?php _e("Just", "wp-fastest-cache"); ?></h1><h1><span style="margin-left:5px;" id="wpfc-premium-price"><?php echo $premium_price; ?></span></h1>
-				    				<p><?php _e("The download button will be available after paid. You can buy the premium version now.", "wp-fastest-cache"); ?></p>
-
-				    				<?php if(class_exists("WpFastestCachePowerfulHtml")){ ?>
-					    					<button id="wpfc-buy-premium-button" type="submit" class="wpfc-btn primaryDisableCta" style="width:200px;">
-						    					<span><?php _e("Purchased", "wp-fastest-cache"); ?></span>
-						    				</button>
-					    				<?php }else{ ?>
-
-					    			
-					    					<form action="<?php echo $premium_buy_link; ?>" method="post">
-						    					<input type="hidden" name="ip" value="<?php echo $_SERVER["REMOTE_ADDR"]; ?>">
-						    					<input type="hidden" name="wpfclang" value="<?php echo isset($this->options->wpFastestCacheLanguage) ? esc_attr($this->options->wpFastestCacheLanguage) : ""; ?>">
-						    					<input type="hidden" name="bloglang" value="<?php echo get_bloginfo('language'); ?>">
-						    					<input type="hidden" name="hostname" value="<?php echo str_replace(array("http://", "www."), "", $_SERVER["HTTP_HOST"]); ?>">
-							    				<button id="wpfc-buy-premium-button" type="submit" class="wpfc-btn primaryCta" style="width:200px;">
-							    					<span><?php _e("Buy", "wp-fastest-cache"); ?></span>
-							    				</button>
-						    				</form>
-					    				
-
-					    			<?php } ?>
-
-
-				    			</div>
-				    		</div>
-				    		<div class="wpfc-premium-step">
-				    			<div class="wpfc-premium-step-header">
-				    				<label><?php _e("Download & Update", "wp-fastest-cache"); ?></label>
-				    			</div>
-				    			<div class="wpfc-premium-step-content">
-				    				<?php _e("You can download and update the premium when you want if you paid.", "wp-fastest-cache"); ?>
-				    			</div>
-				    			<div class="wpfc-premium-step-image" style="">
-				    				<img src="<?php echo plugins_url("wp-fastest-cache/images/download.png"); ?>">
-				    			</div>
-				    			<div class="wpfc-premium-step-footer">
-				    				<h1 id="get-now-h1"><?php _e("Get It Now!", "wp-fastest-cache"); ?></h1>
-				    				<p><?php _e("Please don't delete the free version. Premium version works with the free version.", "wp-fastest-cache"); ?></p>
-
-
-				    				<?php if(class_exists("WpFastestCachePowerfulHtml")){ ?>
-				    					<a href="http://www.wpfastestcache.com/blog/premium-update-before-v1-3-6/">
-						    				<button id="wpfc-update-premium-button" class="wpfc-btn primaryDisableCta" style="width:200px;">
-						    					<span data-type="update"><?php _e("Update", "wp-fastest-cache"); ?></span>
-						    				</button>
-				    					</a>
-				    				<?php }else{ ?>
-					    				<button class="wpfc-btn primaryCta" id="wpfc-download-premium-button" class="wpfc-btn primaryDisableCta" style="width:200px;">
-					    					<span data-type="download"><?php _e("Download", "wp-fastest-cache"); ?></span>
-					    				</button>
-
-					    				<?php include(WPFC_MAIN_PATH."templates/download.html"); ?> 
-
-					    				<script type="text/javascript">
-					    					jQuery("#wpfc-download-premium-button").click(function(){
-					    						//jQuery("#revert-loader-toolbar").show();
-
-					    						Wpfc_New_Dialog.dialog("wpfc-modal-downloaderror", {close: "default"});
-
-					    						var wpfc_api_url = '<?php echo "https://api.wpfastestcache.net/premium/newdownload/".str_replace(array("http://", "www."), "", $_SERVER["HTTP_HOST"])."/".get_option("WpFc_api_key"); ?>';
-					    						jQuery("div[id^='wpfc-modal-downloaderror'] a.wpfc-download-now").attr("href", wpfc_api_url);
-
-					    						// jQuery("body").append(data);
-					    						// jQuery("#wpfc-download-now").attr("href", wpfc_api_url);
-					    						// Wpfc_Dialog.dialog("wpfc-modal-downloaderror");
-					    						// jQuery("#revert-loader-toolbar").hide();
-						    					
-						    					// jQuery.get("<?php echo plugins_url('wp-fastest-cache/templates'); ?>/download.html", function( data ) {
-						    					// });
-					    					});
-					    				</script>
-				    				<?php } ?>
-				    				<!--
-				    				<button class="wpfc-btn primaryNegativeCta" style="width:200px;">
-				    					<span>Update</span>
-				    					<label>(v 1.0)</label>
-				    				</button>
-				    			-->
-				    			</div>
-				    		</div>
-				    	</div>
 				    </div>
 				    <div class="tab6" style="padding-left:20px;">
 				    	<!-- samples start: clones -->
@@ -2440,6 +2467,38 @@
 					});
 				</script>
 			<?php } ?>
+			<script type="text/javascript">
+				jQuery(document).ready(function() {
+					jQuery("#wpFastestCachePreload, #wpFastestCacheLazyLoad").change(function(){
+						let id = jQuery(this).attr("id");
+
+						if(jQuery(this).is(':checked')){
+							jQuery("div[data-info-id='" + id + "']").hide();
+							jQuery("div[data-gear-id='" + id + "']").show();
+						}else{
+							jQuery("div[data-info-id='" + id + "']").show();
+							jQuery("div[data-gear-id='" + id + "']").hide();
+						}
+					});
+
+					jQuery("div[data-gear-id='wpFastestCachePreload'], div[data-gear-id='wpFastestCacheLazyLoad']").click(function(){
+
+						if(jQuery(this).attr("data-gear-id") == "wpFastestCachePreload"){
+							WpFcPreload.open_modal();
+						}else if(jQuery(this).attr("data-gear-id") == "wpFastestCacheLazyLoad"){
+							open_lazy_load_modal();
+						}
+
+					})
+
+				});
+
+				if(typeof open_lazy_load_modal == "undefined"){
+					jQuery("div[data-info-id='wpFastestCacheLazyLoad']").show();
+					jQuery("div[data-gear-id='wpFastestCacheLazyLoad']").hide();
+
+				}
+			</script>
 			<script type="text/javascript">
 				jQuery(document).ready(function() {
 					//if "Mobile Theme" is selected, "Mobile" is selected as well

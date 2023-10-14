@@ -1,4 +1,51 @@
 <div template-id="wpfc-modal-preload" style="display:none; top: 10.5px; left: 226px; position: absolute; padding: 6px; height: auto; width: 560px; z-index: 10001;">
+	
+	<style type="text/css">
+		div[wpfc-cdn-page="sitemap"] .wpfc-textbox-con{position:absolute;left:0;top:0;-webkit-border-radius:3px;-moz-border-radius:3px;background:#fff;-webkit-box-shadow:0 2px 6px 2px rgba(0,0,0,0.3);box-shadow:0 2px 6px 2px rgba(0,0,0,0.3);-moz-box-shadow:0 2px 6px 2px rgba(0,0,0,0.3);float:left;z-index:444;width:150px;border:1px solid #adadad;}
+		div[wpfc-cdn-page="sitemap"] .keyword-item-list:after{box-shodow:0 2px 6px 0 rgba(0, 0, 0, 0.15);content:'';clear:both;height:0;visibility:hidden;display:block}
+		div[wpfc-cdn-page="sitemap"] .fixed-search input{width:100%;padding:6px 9px;line-height:20px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;border:none;border-bottom:1px solid #ccc;-webkit-box-shadow:0 2px 6px 0 rgba(0,0,0,0.1);box-shadow:0 2px 6px 0 rgba(0,0,0,0.1);-moz-box-shadow:0 2px 6px 0 rgba(0,0,0,0.1);-webkit-border-radius:3px 3px 0 0;-moz-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0;font-weight:bold}.fixed-search input:focus{outline:0}
+		div[wpfc-cdn-page="sitemap"] .keyword-item{width:auto;float:left;line-height:22px;position:relative;background:rgba(0,0,0,0.15);margin:0 5px 5px 0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+		div[wpfc-cdn-page="sitemap"] .wpfc-add-new-keyword, div[wpfc-cdn-page="sitemap"] .keyword-item a.keyword-label{
+			background-color: #ffa100;
+			color:#ffffff;
+			text-decoration:none;
+			padding:7px 15px;
+			display:block;
+			text-shadow:none;
+			-webkit-transition:all .1s linear;
+			-moz-transition:all .1s linear;
+			-o-transition:all .1s linear;
+			transition:all .1s linear;
+			cursor: pointer;
+		}
+		div[wpfc-cdn-page="sitemap"] .keyword-item a.keyword-label:hover{
+			padding-left: 4px;
+			padding-right: 26px;
+		}
+		div[wpfc-cdn-page="sitemap"] .keyword-item a.keyword-label:hover:after{
+			width:16px;
+			height:16px;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAAAIAAAACAAc9WmjcAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAA4klEQVQokWXOMSuFcRQH4EcZZFB3w0BZfIC7mLl3MaGu2cAtqyLJwMQiRuObidFG4hNQJrlFJBlMFgzKMfi/vPe9/ZbT+T11jvAbq2nI8k3aB1MymStPTrTcyWTmi2BDdCQrgprtjjQKIJgw15aZth+Co9KB6zLYL4GLMthqq7/slcFKoVzTa1ClHTT/wKwxt0I4N/wPGqk+NuTNqQ/PLt3oyUEtgQWbQl3NqHVhOgfVBCYdCC3dhnwKSzkYSWDXslDVNG5RqOegksCDPg/ufXv34kxXAkF/SpcBh1492tEbwg+6YscxiN7TegAAAABJRU5ErkJggg==');
+			content:"";
+			position:absolute;
+			top:10px;
+			right:4px;
+		}
+
+		div[wpfc-cdn-page="sitemap"] .wpfc-add-new-keyword{
+			cursor:pointer;
+			text-decoration:none;
+			background-color:#fff !important;
+			color:#ccc !important;
+			padding:5px 12px !important;
+			border:2px dashed #ccc;
+			line-height:21px;
+		}
+		div[wpfc-cdn-page="sitemap"] .wpfc-add-new-keyword:before{display:inline-block;content:"+";margin:-1px 4px 0 -6px;}
+		div[wpfc-cdn-page="sitemap"] .wpfc-add-new-keyword:hover{color:#589b43 !important;border-color:#589b43;}
+		
+	</style>
+
 	<div style="height: 100%; width: 100%; background: none repeat scroll 0% 0% rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; z-index: -1; opacity: 0.5; border-radius: 8px;">
 	</div>
 	<div style="z-index: 600; border-radius: 3px;">
@@ -459,7 +506,7 @@
 					}
 				}
 			});
-
+			
 		}
 	}
 
